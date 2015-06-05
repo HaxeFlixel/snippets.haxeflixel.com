@@ -1,2 +1,1 @@
-# haxeflixel-mechanics
-Building a Friendly Website to show/explain/inspire HaxeFlixel's mechanics
+Details on the [Wiki](https://github.com/SeiferTim/haxeflixel-mechanics/wiki)
