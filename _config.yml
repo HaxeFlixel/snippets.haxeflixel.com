@@ -1,0 +1,19 @@
+safe: false
+permalink: pretty
+google-analytics-id: "UA-63717309-1"
+highlighter: rouge
+
+assets:
+    js_compressor: yui
+
+gems: [jekyll-assets]
+
+collections: 
+  concepts:
+    output: true
+    permalink: /concepts/:path/
+  proofs:
+    output: true
+    permalink: /concepts/proofs/:path/
+    
+exclude: [.gitignore, Gemfile, Gemfile.lock, README.md, Rakefile, credentials.yaml]
