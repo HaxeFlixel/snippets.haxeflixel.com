@@ -6,7 +6,6 @@ import flixel.FlxState;
 
 class PlayState extends FlxState
 {
-	
 	private var _sprTest:FlxSprite;
 	
 	override public function create():Void
@@ -21,9 +20,9 @@ class PlayState extends FlxState
 		add(_sprTest);
 		
 		
-		_sprTest.velocity.set(100, 100);
+		_sprTest.acceleration.set(100, 100);
 		
-		trace(_sprTest.maxVelocity);
+		
 	}
 
 	override public function update(elapsed:Float):Void
@@ -31,6 +30,10 @@ class PlayState extends FlxState
 		super.update(elapsed);
 		
 		if (_sprTest.x > FlxG.width || _sprTest.y > FlxG.height)
+		{
+			_sprTest.velocity.set(0, 0);
 			_sprTest.setPosition( -32, -32);
+			
+		}
 	}	
 }

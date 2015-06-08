@@ -3,8 +3,8 @@
   <li id="li-{{ concept.permalink | slugify }}">
     <a href="{{ concept.permalink }}">{{ concept.title }}</a>
     <ul class="nav nav-pills nav-stacked nav-subbar">
-      {% assign proofs = (site.proofs | where:"concept",concept.title) %}
-      {% for proof in proofs | sort: 'order' %}
+      {% assign proofs = (site.proofs | where:"concept",concept.title) | sort: 'order' %}
+      {% for proof in proofs %}
         <li id="li-{{ proof.permalink | slugify }}"><a  href="{{ proof.permalink }}">{{ proof.title }}</a>
       {% endfor %}
     </ul>
