@@ -1,0 +1,15 @@
+---
+layout: default
+type: tags
+---
+<div id="tags" class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title"><span class="glyphicon glyphicon-tags"></span> Tags</h3>
+  </div>
+    <div class="panel-body">
+    {% assign sorted_tags = (site.tag_data | sort ) %}
+    {% for tag in sorted_tags %}
+    <a href="/tags/{{ tag[0] | link_to_tag: tag[0] }}"><span class="label label-primary">{{ tag[0] }} <span class="badge">{{ tag[1] }}</span></span></a>    
+    {% endfor %}
+  </div>
+</div>

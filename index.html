@@ -1,5 +1,9 @@
 ---
 layout: default
-permalink: /index.html
 ---
-Welcome!
+<p>Welcome!</p>
+<ul>
+{% for tag in site.tags %}
+<li>{{ tag }}</li>
+{% endfor %}
+</ul>

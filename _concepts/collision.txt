@@ -1,6 +1,0 @@
----
-title: Collision
-order: 2
-layout: concept
-permalink: /concepts/collision/
----

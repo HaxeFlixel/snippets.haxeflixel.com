@@ -11,9 +11,35 @@ gems: [jekyll-assets]
 collections: 
   concepts:
     output: true
-    permalink: /concepts/:path/
+    permalink: /:title/
+
   proofs:
     output: true
-    permalink: /concepts/proofs/:path/
+    permalink: /:path/
+    
+defaults:
+    -
+        scope:
+            path: ""
+            type: "concepts"
+        values:
+            layout: concept
+            type: concept
+            tags: [untagged]
+    -
+        scope:
+            path: ""
+            type: "proofs"
+        values:
+            layout: proof
+            type: proof
+            tags: [untagged]
+            
+
     
 exclude: [.gitignore, Gemfile, Gemfile.lock, README.md, Rakefile, credentials.yaml]
+
+tag_page_layout: tag_page
+tag_page_dir: tags
+
+tags: [haxeflixel, flixel, haxe]
