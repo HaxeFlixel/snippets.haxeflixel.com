@@ -35,10 +35,12 @@ function makePattern()
 
 
 $(document).ready(function() {
-      
+
   sh_highlightDocument();
   
   makePattern();
+  
+  $('[data-toggle="tooltip"]').tooltip();
   
   
 });
