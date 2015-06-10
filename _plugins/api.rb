@@ -11,14 +11,12 @@ module Jekyll
       desc = @params[0]
       link = @params[1]
       anchor = ""
-      a = ""
-      alink = ""
+      tip = @params[1].sub '/', '.'
+      
       if !@params[2].empty?
-        anchor = @params[2]
-        a = "##{anchor}"
-        alink = ".#{anchor}"
+        anchor = "##{@params[2]}"
       end
-      "<code><a data-toggle=\"tooltip\" data-placement=\"top\" title=\"#{link}#{alink}\" href=\"http://api.haxeflixel.com/#{link}.html#{a}\">#{desc}</a></code>"
+      "<code><a data-toggle=\"tooltip\" data-placement=\"top\" title=\"#{tip}#{anchor}\" href=\"http://api.haxeflixel.com/#{link}.html#{anchor}\">#{desc}</a></code>"
     end
   end
 end
