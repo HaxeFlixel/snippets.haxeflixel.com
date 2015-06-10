@@ -47,9 +47,9 @@ class PlayState extends FlxState
 		
 	}
 	
-	private function collision(SpriteA:FlxSprite, SpriteB:FlxSprite):Void
+	private function collision(spriteA:FlxSprite, spriteB:FlxSprite):Void
 	{
-		SpriteA.velocity.x = -50;
-		SpriteB.velocity.x = 50;
+		spriteA.velocity.x = -50;
+		spriteB.velocity.x = 50;
 	}
 }
