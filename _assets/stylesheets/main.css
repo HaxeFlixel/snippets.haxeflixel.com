@@ -61,4 +61,15 @@ body {
   margin-top: 0;
 }
 
+canvas.demo-back {
+  position:absolute;
+  border: 2px solid #dff0d8;
+  
+}
+
+object.demo {
+  position:relative;
+  top:2px;
+  left:2px;
+}
 

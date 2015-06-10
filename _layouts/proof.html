@@ -14,7 +14,8 @@ layout: default
     <h3 class="panel-title">Demonstration</h3>
   </div>
   <div class="panel-body">
-    <object  width="200" height="200" data="/demos/{{ page.concept }}-{{ page.title }}/export/flash/bin/{{ page.concept }}-{{ page.title }}.swf">
+    <object  class="demo" width="320" height="240" data="/demos/{{ page.concept | slugify }}-{{ page.title | slugify }}/export/flash/bin/{{ page.concept | slugify }}-{{ page.title | slugify }}.swf">
+      <param name="wmode" value="transparent">
     alt : test
     </object>
   </div>
