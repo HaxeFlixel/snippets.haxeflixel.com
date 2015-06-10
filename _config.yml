@@ -1,7 +1,6 @@
 safe: false
 permalink: pretty
 google-analytics-id: "UA-63717309-1"
-highlighter: rouge
 
 assets:
     js_compressor: yui
