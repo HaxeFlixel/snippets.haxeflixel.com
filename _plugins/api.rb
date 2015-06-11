@@ -13,7 +13,7 @@ module Jekyll
       last = segments.last[0]
       isfunc = @param.split(//).last(2).join() == '()'
       isconst = !last.match(/\p{LOWER}/)
-      isprop = !last.match(/\p{UPPER}/) || isconst || isfunc
+      isprop = !last.match(/[A-Z]([A-Z0-9]*[a-z][a-z0-9]*[A-Z]|[a-z0-9]*[A-Z][A-Z0-9]*[a-z])[A-Za-z0-9]*/) || isconst || isfunc
       
       link = ''
       desc = ''

@@ -6,7 +6,7 @@ tags: [movement, acceleration]
 seealso: [Movement/Velocity, Movement/Gravity]
 complexity: 1
 ---
-Use {% api acceleration flixel/FlxObject acceleration %} to change the {% api velocity flixel/FlxObject velocity %} of a {% api FlxObject flixel/FlxObject %} over time.
+Use {% api flixel.FlxObject.acceleration %} to change the {% api flixel.FlxObject.velocity %} of a {% api flixel.FlxObject %} over time.
 
 ```haxe
 // object will accelerate from left to right 250 pixels per second
