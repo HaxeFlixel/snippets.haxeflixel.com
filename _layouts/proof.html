@@ -1,17 +1,16 @@
 ---
 layout: default
 ---
-<div class="page-header">
-  <h1>{{ page.title }}</h1>
-</div>
-
 <div id="content">
 {{ content }}
 </div>
 
 <div class="panel panel-primary">
-  <div class="panel-heading">
-    <h3 class="panel-title"><span class="glyphicon glyphicon-play"></span> Demonstration</h3>
+  <div class="panel-heading clearfix">
+    
+      <a class="btn btn-info pull-right btn-sm" role="button" href="https://github.com/SeiferTim/haxeflixel-mechanics/tree/master/demos/{{ page.concept | slugify }}-{{ page.title | slugify }}/"><span class="glyphicon glyphicon-book"></span> Source</a>
+      <h3 class="panel-title pull-left"><span class="glyphicon glyphicon-play"></span> Demonstration</h3>
+    
   </div>
   <div class="panel-body">
     <object  class="demo" width="320" height="240" data="/demos/{{ page.concept | slugify }}-{{ page.title | slugify }}/export/flash/bin/{{ page.concept | slugify }}-{{ page.title | slugify }}.swf">
@@ -19,8 +18,4 @@ layout: default
     alt : test
     </object>
   </div>
-  <div class="panel-footer">
-    <a href="https://github.com/SeiferTim/haxeflixel-mechanics/tree/master/demos/{{ page.concept | slugify }}-{{ page.title | slugify }}/"><span class="glyphicon glyphicon-cog"></span> Source</a>
-  </div>
 </div>
-

@@ -3,6 +3,7 @@ title: 1-to-1 Collision
 concept: Collision
 order: 1
 tags: [collision]
+seealso: [Movement/Velocity]
 ---
 The simplest form of collision is 1-to-1 collision. You call the {% api collide flixel/FlxG collide %} function, optionally setting a callback to trigger when collision happens.
 

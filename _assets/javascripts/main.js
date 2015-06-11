@@ -1,16 +1,18 @@
 function makePattern()
 {
 
-  var checkSize = 10;
-  var demoWidth = 200;
-  var demoHeight = 200;
+  var checkSize = 32;
+  var demoWidth = 320;
+  var demoHeight = 240;
   
   var pattern = document.createElement('canvas');
   pattern.width = checkSize*2;
   pattern.height = checkSize*2;
   var pctx = pattern.getContext('2d');
 
-  pctx.fillStyle = "rgb(223, 240, 216)";
+  pctx.fillStyle = "rgb(60,60,60)";
+  pctx.fillRect(0,0,checkSize*2, checkSize*2);
+  pctx.fillStyle = "rgb(135, 135, 135)";
   pctx.fillRect(0,0,checkSize,checkSize);
   pctx.fillRect(checkSize,checkSize,checkSize,checkSize);
   

@@ -1,0 +1,15 @@
+{% if page.seealso | first %}
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <span class="glyphicon glyphicon-pushpin"></span> See Also
+  </div>
+  <div class="panel-body">
+    <ul>
+    {% assign links = page.seealso %}
+    {% for link in links %}
+      <li><a href="{% assign linkparts = link | split: '/' %}{% for linkpart in linkparts %}/{{ (linkpart | slugify }}{% endfor %}">{{ link }}</a></li>
+    {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endif %}

@@ -44,6 +44,10 @@ body {
   padding-left:20px;
 }
 
+.navbar-fixed-top {
+  box-shadow: 0 0 3px 3px rgba(0,0,0,0.3);
+}
+
 /*
  * Main content
  */
@@ -70,20 +74,26 @@ html, body { height:100%; }
 
 canvas.demo-back {
   position:absolute;
-  border: 2px solid #dff0d8;
+  border: 4px solid #3c3c3c;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  box-shadow: 0 1px 1px rgba(0,0,0,.05);
   
 }
 
 object.demo {
   position:relative;
-  top:2px;
-  left:2px;
+  top:4px;
+  left:4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  box-shadow: 0 1px 1px rgba(0,0,0,.05);
 }
 
 footer {
   display:block;
   margin-top:-60px;
-  background:url("/images/footer-shadow.png") repeat-x scroll 0 0 #515151;
+  background:#515151;
   min-height:60px;
   text-shadow:none;
   position:relative;
@@ -103,4 +113,21 @@ footer:before {
   left:0;
   position:absolute;
   right:0;
+}
+
+
+#footer-social {
+  margin-top:15px;
+  float:none;
+  text-align:center;
+  
+}
+
+.search-form{
+  float:right;
+}
+
+.source-button {
+  position: absolute:
+  right: 0;
 }

@@ -14,53 +14,22 @@
             {% include sidebar.html %}
           </div>
           <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-              {{ content }}
-              
-              {% if page.type %}
-              {% include tags.html %}
-              
-              {% if page.type == 'proof' %}
-              
-              <ol class="breadcrumb">
-                <li><a href="/">Home</a></li>
-                <li><a href="/{{ page.concept | slugify }}">{{ page.concept }}</a></li>
-                <li class="active">{{ page.title }}</li>
-              </ol>  
-              
-              {% else if page.type == 'concept' %}
-              
-              <ol class="breadcrumb">
-                <li><a href="/">Home</a></li>
-                <li class="active">{{ page.title }}</li>
-              </ol>
-              
-              {% else if page.type == 'tags' %}
-              
-              
-              <ol class="breadcrumb">
-                <li><a href="/">Home</a></li>
-                <li class="active">Tags</li>
-              </ol>
-              
-              {% else if page.type == 'tag' %}
-              
-              
-              <ol class="breadcrumb">
-                <li><a href="/">Home</a></li>
-                <li><a href="/tags/">Tags</a></li>
-                <li class="active">{{ page.tag | capitalize }}</li>
-              </ol>
-              
-              {% endif %}
-              {% endif %}
-              
+            <div class="page-header">
+              <h1>{% if page.type != "tag" %}
+              {{ page.title }}
+              {% elsif page.type == "tag" %}
+              {{ page.tag | capitalize }}
+              {% endif %}</h1>
+            </div>
+
+            {{ content }}
+            {% include seealso.html %}
+            {% include breadcrumb.html %}
           </div>
         </div>
-        
       </div>
     </div>
-    {% include footer.html %}
-    
+    {% include footer.html %}    
   </body>
   
   <!-- scripts -->

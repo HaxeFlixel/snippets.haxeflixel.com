@@ -1,0 +1,36 @@
+{% if page.type %}
+
+{% if page.type == 'proof' %}
+
+{% include tags.html %}
+<ol class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li><a href="/{{ page.concept | slugify }}">{{ page.concept }}</a></li>
+  <li class="active">{{ page.title }}</li>
+</ol>  
+
+{% elsif page.type == 'concept' %}
+
+{% include tags.html %}
+<ol class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li class="active">{{ page.title }}</li>
+</ol>
+
+{% elsif page.type == 'tags' %}
+
+<ol class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li class="active">Tags</li>
+</ol>
+
+{% elsif page.type == 'tag' %}
+
+<ol class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li><a href="/tags/">Tags</a></li>
+  <li class="active">{{ page.tag | capitalize }}</li>
+</ol>
+
+{% endif %}
+{% endif %}

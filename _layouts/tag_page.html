@@ -2,7 +2,6 @@
 layout: default
 type: tag
 ---
-<h2>{{ page.tag | capitalize }}</h2>
 <ul>
 {% for post in page.posts %}
   <li><a href="{{ post.url }}">{% if post.type == 'proof' %}{{ post.concept }} / {% endif %}{{ post.title }}</a> (Tags: {{ post | tags }})</li>

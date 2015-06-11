@@ -5,7 +5,7 @@ google-analytics-id: "UA-63717309-1"
 assets:
     js_compressor: yui
 
-gems: [jekyll-assets]
+gems: [jekyll-assets, jekyll-sitemap]
 
 collections: 
   concepts:
