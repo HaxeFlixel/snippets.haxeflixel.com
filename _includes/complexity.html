@@ -1,0 +1,10 @@
+{% if page.complexity %}
+{% case page.complexity %}
+{% when 3 %}
+ <span class="label label-danger">Advanced</span>
+{% when 2 %}
+ <span class="label label-warning">Medium</span>
+{% else %}
+ <span class="label label-success">Beginner</span>
+{% endcase %}
+{% endif %}

@@ -4,8 +4,9 @@ concept: Movement
 order: 2
 tags: [movement, acceleration]
 seealso: [Movement/Velocity, Movement/Gravity]
+complexity: 1
 ---
-{% api Acceleration flixel/FlxObject acceleration %} is the amount of {% api Velocity flixel/FlxObject velocity %} to add to a {% api FlxObject flixel/FlxObject %} per second. This is used to increase or decrease the object's velocity over time.
+Use {% api acceleration flixel/FlxObject acceleration %} to change the {% api velocity flixel/FlxObject velocity %} of a {% api FlxObject flixel/FlxObject %} over time.
 
 ```haxe
 // object will accelerate from left to right 250 pixels per second

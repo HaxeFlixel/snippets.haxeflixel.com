@@ -2,5 +2,6 @@
 title: Movement
 order: 1
 tags: [movement]
+complexity: 1
 ---
-If you want to move a {% api FlxObject flixel/FlxObject %}, there are many ways to do so.
+If you want to move a {% api flixel.FlxObject %}, there are many ways to do so.

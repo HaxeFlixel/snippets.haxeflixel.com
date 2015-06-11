@@ -3,8 +3,9 @@ title: Velocity
 concept: Movement
 order: 1
 tags: [movement, velocity]
+complexity: 1
 ---
-{% api Velocity flixel/FlxObject velocity %} is used on a {% api FlxObject flixel/FlxObject %} to make it move at a constant rate, in pixels per second.
+Set {% api velocity flixel/FlxObject velocity %} on a {% api FlxObject flixel/FlxObject %} to make it move at a constant rate, in pixels per second.
 
 ```haxe
 // object will move from left to right at 50 pixels per second
