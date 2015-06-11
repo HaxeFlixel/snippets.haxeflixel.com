@@ -23,9 +23,9 @@ class PlayState extends FlxState
 
 	override public function update(elapsed:Float):Void
 	{
-		super.update(elapsed);
-		
 		if (sprite.x >= FlxG.width)
 			sprite.x = -sprite.width;
+			
+		super.update(elapsed);
 	}
 }
