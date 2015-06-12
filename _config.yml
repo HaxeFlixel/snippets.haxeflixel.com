@@ -36,7 +36,7 @@ defaults:
             
 
     
-exclude: [.gitignore, Gemfile, Gemfile.lock, README.md, Rakefile, credentials.yaml]
+exclude: [vendor, .gitignore, Gemfile, Gemfile.lock, README.md, Rakefile, credentials.yaml, .travis.yml]
 
 tag_page_layout: tag_page
 tag_page_dir: tags
