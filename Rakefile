@@ -16,7 +16,7 @@ task :publish => [:generate] do
 end
 
 desc "Default Task"
-task :default => [:generate]
+task :default => [:generate] do
   HTML::Proofer.new("./_site").run
 end
   
