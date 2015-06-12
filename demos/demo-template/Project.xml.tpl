@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project>
-	<app title="movement-velocity" file="movement-velocity" main="Main" version="0.0.1" company="HaxeFlixel" />
+	<app title="${PROJECT_NAME}" file="${PROJECT_NAME}" main="Main" version="0.0.1" company="HaxeFlixel" />
 	<set name="SWF_VERSION" value="11.8" />
-	<window width="320" height="240" fps="30" hardware="true" vsync="true" />
-	<window unless="web" background="#000000" />
+	<window width="320" height="240" fps="30" hardware="false" vsync="false" />
+  <window unless="web" background="#000000" />
 	<window if="web" orientation="portrait"  />
 	<window if="desktop" orientation="landscape" fullscreen="false" resizable="true" />
 	<window if="mobile" orientation="landscape" fullscreen="true" width="0" height="0" />
