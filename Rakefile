@@ -1,8 +1,6 @@
 require "rubygems"
 require "bundler/setup"
 require "jekyll"
-#require "yaml"
-#require "net/ftp"
 require "html/proofer"
 
 desc "Generate Site"

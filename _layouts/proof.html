@@ -1,21 +1,30 @@
 ---
 layout: default
 ---
+{% capture demopath %}{{ page.concept | slugify }}-{{ page.title | slugify }}{% endcapture %}
 <div id="content">
 {{ content }}
 </div>
 
 <div class="panel panel-primary">
-  <div class="panel-heading clearfix">
-    
-      <a class="btn btn-info pull-right btn-sm" role="button" href="https://github.com/SeiferTim/haxeflixel-mechanics/tree/master/demos/{{ page.concept | slugify }}-{{ page.title | slugify }}/source/PlayState.hx"><i class="icon-file-code"> </i> Source</a>
-      <h3 class="panel-title pull-left"><i class="icon-dashboard"> </i> Demonstration</h3>
-    
+  <div class="panel-heading">
+      <h3 class="panel-title"><i class="icon-dashboard"> </i> Demonstration</h3>
   </div>
   <div class="panel-body">
-    <object  class="demo" width="320" height="240" data="/demos/{{ page.concept | slugify }}-{{ page.title | slugify }}/export/flash/bin/{{ page.concept | slugify }}-{{ page.title | slugify }}.swf">
+    <object  class="demo" width="320" height="240" data="/demos/{{ demopath }}/export/flash/bin/{{ page.concept | slugify }}-{{ page.title | slugify }}.swf">
       <param name="wmode" value="transparent">
     alt : test
     </object>
   </div>
+  
 </div>
+{% if page.sourcefiles %}
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title"><i class="icon-file-code"> </i>Source</h3></li>  
+  </div>
+  <div class="panel-body">
+      {% source {{demopath}} {{page.sourcefiles}} %}
+  </div>
+</div>
+{% endif %}
