@@ -8,6 +8,7 @@ class PlayState extends FlxState
 {
 	private var sprite:FlxSprite;
 	private var box:FlxSprite;
+	private var overlaps:Bool;
 	
 	override public function create():Void
 	{
@@ -24,8 +25,6 @@ class PlayState extends FlxState
 		sprite.velocity.x = 100;
 		add(sprite);
 		
-		
-		
 	}
 
 	override public function update(elapsed:Float):Void
@@ -36,7 +35,11 @@ class PlayState extends FlxState
 			sprite.velocity.x *= -1;
 		}
 		
-		if (sprite.overlaps(box))
+		overlaps = false;
+		
+		FlxG.overlap(sprite, box, doOverlap, doOverlapCheck);
+		
+		if (overlaps)
 		{
 			box.alpha = .5;
 		}
@@ -48,5 +51,15 @@ class PlayState extends FlxState
 		super.update(elapsed);
 		
 		
+	}
+	
+	private function doOverlap(objectA:FlxSprite, objectB:FlxSprite):Void
+	{
+		overlaps = true;
+	}
+	
+	private function doOverlapCheck(objectA:FlxSprite, objectB:FlxSprite):Bool
+	{
+		return objectA.velocity.x > 0;
 	}
 }

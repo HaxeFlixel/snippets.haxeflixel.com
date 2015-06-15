@@ -33,6 +33,7 @@ defaults:
             layout: proof
             type: proof
             tags: [untagged]
+            sourcefiles: source/PlayState.hx
             
 
     

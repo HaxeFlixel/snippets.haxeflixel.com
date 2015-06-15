@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project>
-	<app title="overlap-1-to-1-overlap" file="overlap-1-to-1-overlap" main="Main" version="0.0.1" company="HaxeFlixel" />
+	<app title="overlap-simple-overlap" file="overlap-simple-overlap" main="Main" version="0.0.1" company="HaxeFlixel" />
 	<set name="SWF_VERSION" value="11.8" />
 	<window width="320" height="240" fps="30" hardware="false" vsync="false" />
   <window unless="web" background="#000000" />

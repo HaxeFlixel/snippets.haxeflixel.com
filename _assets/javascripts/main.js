@@ -44,19 +44,17 @@ $(document).ready(function() {
   
   $('[data-toggle="tooltip"]').tooltip();
   
-  
-});
-
-  
-  $('div.source-body').on('shown', function () {
-    
-    $(this).parent("div").find(".icon-chevron-right").removeClass("icon-chevron-right").addClass("icon-chevron-down");
-    
+  $('div.source-body').on('show.bs.collapse', function () {
+    $(this).parent('div').find('.icon-chevron-right').removeClass('icon-chevron-right').addClass('icon-chevron-down');
   });
-
-  $('div.source-body').on('hidden', function () {
-    alert("hidden");
-    $(this).parent("div").find(".icon-chevron-down").removeClass("icon-chevron-down").addClass("icon-chevron-right");
-    
-    
+  
+  
+  $('div.source-body').on('hidden.bs.collapse', function () {
+    $(this).parent('div').find('.icon-chevron-down').removeClass('icon-chevron-down').addClass('icon-chevron-right');
+  });
+  
 });
+
+
+  
+
