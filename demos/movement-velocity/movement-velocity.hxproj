@@ -15,9 +15,9 @@
   </output>
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
-    <class path="T:\HaxeToolkit\haxe\lib\flixel\git" />
-    <class path="T:\HaxeToolkit\haxe\lib\openfl\3,1,0" />
-    <class path="T:\HaxeToolkit\haxe\lib\lime\2,4,4" />
+    <class path="C:\HaxeToolkit\haxe\lib\flixel\git" />
+    <class path="C:\HaxeToolkit\haxe\lib\openfl\3,1,0" />
+    <class path="C:\HaxeToolkit\haxe\lib\lime\2,4,4" />
     <class path="source" />
     <class path="export\flash\haxe" />
   </classpaths>
