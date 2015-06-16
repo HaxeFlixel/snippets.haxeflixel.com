@@ -1,6 +1,6 @@
 ---
 title: Tiling
-order: 4
+order: 5
 tags: [tiling, tilemaps]
 complexity: 1
 ---

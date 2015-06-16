@@ -4,7 +4,6 @@ concept: Movement
 order: 1
 tags: [movement, velocity]
 complexity: 1
-sourcefiles: source/PlayState.hx source/Main.hx
 ---
 Set {% api flixel.FlxObject.velocity %} on a {% api flixel.FlxObject %} to make it move at a constant rate, in pixels per second.
 

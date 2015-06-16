@@ -21,7 +21,7 @@ function makePattern()
     demoWidth = $(this).width();
     demoHeight = $(this).height();
     
-    var can = $('<canvas width="' + demoWidth +  '" height="' + demoHeight +  '" class="demo-back">')[0];//.addClass();//document.createElement('canvas');
+    var can = $('<canvas width="' + demoWidth +  '" height="' + demoHeight +  '" class="demo-back">')[0];
     var ctx = can.getContext('2d');
     
     var p = ctx.createPattern(pattern, "repeat");
