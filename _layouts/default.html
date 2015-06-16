@@ -13,6 +13,7 @@
             <div class="pull-right">
               {% include complexity.html %}
             </div>
+            {% if page.title %}
             <div class="page-header">
               <h1>{% if page.type != "tag" %}
               {{ page.title }}
@@ -20,6 +21,7 @@
               {{ page.tag | capitalize }}
               {% endif %}</h1>
             </div>
+            {% endif %}
             {{ content }}
             {% include seealso.html %}
             {% include breadcrumb.html %}
