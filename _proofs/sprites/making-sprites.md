@@ -4,7 +4,6 @@ concept: Sprites
 order: 1
 tags: [sprites, graphics]
 complexity: 1
-seealso: [Utils/FlxColor]
 ---
 Use {% api flixel.FlxSprite.makeGraphic() %} to create a {% api flixel.FlxSprite %} of a solid color.
 
