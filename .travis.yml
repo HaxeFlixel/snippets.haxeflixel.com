@@ -2,7 +2,7 @@ language: ruby
 rvm:
 - 2.1
 before_script: 
-- bundle updat
+- bundle update
 script:
 - bundle exec jekyll build
 - bundle exec htmlproof ./_site
