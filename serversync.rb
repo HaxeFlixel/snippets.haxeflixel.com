@@ -61,16 +61,15 @@ class SiteSync
             f.gsub("#{localpath}", '')
             local = File.join localpath, f
             remote = "#{remotepath}/#{f}".gsub(/\/+/, '/')
-            log remote
             if File.directory?(remote)
               unless File.directory?(local)
-                sftp.rmdir!(remote)
                 log "Removed directory #{remote}"
+                sftp.rmdir!(remote)
               end
             elsif File.file?(remote)
               unless File.exist?(local)
-                sftp.remove(remote)
                 log "Removed file #{remote}"
+                sftp.remove(remote)
               end
             end
           end
