@@ -1,6 +1,6 @@
 ---
 title: Sprites
-order: 4
+order: 1
 tags: [sprites]
 complexity: 1
 ---

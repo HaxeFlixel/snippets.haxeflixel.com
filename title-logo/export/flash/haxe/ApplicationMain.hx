@@ -119,7 +119,7 @@ class ApplicationMain {
 			fps: Std.int (30),
 			fullscreen: false,
 			hardware: false,
-			height: Std.int (75),
+			height: Std.int (85),
 			orientation: "portrait",
 			packageName: "com.example.myapp",
 			resizable: true,
@@ -127,13 +127,13 @@ class ApplicationMain {
 			title: "title-logo",
 			version: "0.0.1",
 			vsync: false,
-			width: Std.int (920),
+			width: Std.int (725),
 			
 		}
 		
 		#if (js && html5)
 		#if (munit || utest)
-		openfl.Lib.embed (null, 920, 75, "FFFFFF");
+		openfl.Lib.embed (null, 725, 85, "FFFFFF");
 		#end
 		#else
 		create ();

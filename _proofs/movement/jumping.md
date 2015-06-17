@@ -6,7 +6,7 @@ complexity: 2
 seealso: [Collision, Movement/Velocity, Movement/Acceleration]
 tags: [movement, jumping, game mechanic]
 ---
-There are many ways to implement a jumping mechanic, but the simplest method is to add -y {% api flixel.FlxObject.velocity %} temporarily to a {% api flixel.FlxObject %} with +y {% api flixel.FlxObject.acceleration %}, using some kind of timer to limit the jump time.
+There are many ways to implement a jumping mechanic, but the simplest method is to add negative <var>y</var> {% api flixel.FlxObject.velocity %} temporarily to a {% api flixel.FlxObject %} with positive <var>y</var> {% api flixel.FlxObject.acceleration %}, using some kind of timer to limit the jump time.
 
 
 ```haxe

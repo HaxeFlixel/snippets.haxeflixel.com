@@ -10,7 +10,7 @@ class Main extends Sprite
 	{
 		super();
 
-		addChild(new FlxGame(920, 75, PlayState, 1, 60, 60, true, false));
+		addChild(new FlxGame(725, 85, PlayState, 1, 60, 60, true, false));
 		FlxG.camera.pixelPerfectRender = false;
 	}
 }
