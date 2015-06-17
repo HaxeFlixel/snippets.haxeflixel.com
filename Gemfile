@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'bundler'
 gem 'jekyll'
 gem 'wdm', '~> 0.1.0' if Gem.win_platform?
 gem 'jekyll-assets'
@@ -10,3 +11,4 @@ gem 'jekyll-sitemap'
 gem 'html-proofer'
 gem 'net-ssh'
 gem 'net-sftp'
+gem 'rake'
