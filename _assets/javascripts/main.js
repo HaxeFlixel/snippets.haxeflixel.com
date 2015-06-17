@@ -35,7 +35,6 @@ function makePattern()
 
 }
 
-
 $(document).ready(function() {
 
   sh_highlightDocument();
