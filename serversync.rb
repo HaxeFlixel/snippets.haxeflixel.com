@@ -24,51 +24,59 @@ class SiteSync
   def push_dir(localpath, remotepath)
     log "Starting Sync"
     Net::SSH.start(@host, @user, :host_key => "ssh-rsa", :keys => [@key]) do |ssh|
+      log "Connecting"
       ssh.sftp.connect do |sftp|
+        log "Connected"
         Dir.glob(File.join(localpath, '**', '*')) do |f|
           f.gsub!("#{localpath}", '')
           local = File.join localpath, f
           remote = "#{remotepath}/#{f}".gsub(/\/+/, '/')
           if local !~ /\/export\/(flash\/(haxe|obj)|.build)/
             if File.directory?(local)
-              unless sftp.lstat!(remote).directory?
+              unless remote_file_exists?(sftp, remote)
+                log "Creating Remote Directory #{remote}..."
                 sftp.mkdir! remote
-                log "Created Remote Directory #{remote}"
               end
             elsif File.file?(local)
-              if sftp.lstat!(remote).file?
-                file = sftp.file.open!(remote)
+              if remote_file_exists?(sftp, remote)
+                file = sftp.file.open(remote)
                 filesize = file.stat.size
-                if File.stat(local).size != filesize
-                  sftp.upload local, remote
-                  log "Pushed file #{remote}"
-                end
                 file.close
+                if File.stat(local).size != filesize
+                  log "Pushed file #{remote}"
+                  sftp.upload! local, remote
+                end
               else
-                sftp.upload! local, remote
-                sftp.setstat(remote, :permissions => file_perm)
                 log "Pushed file #{remote}"
-              end              
+                sftp.upload! local, remote
+                sftp.setstat(remote, :permissions => @file_perm)
+              end
             end
           end
         end
-        
-        sftp.dir.glob(remotepath, '**') do |entry|
-          f = entry.name
-          f.gsub("#{localpath}", '')
-          local = File.join localpath, f
-          remote = "#{remotepath}/#{f}".gsub(/\/+/, '/')
-          if File.directory?(remote)
-            unless File.directory?(local)
-              sftp.rmdir!(remote)
-              log "Removed directory #{remote}"
-            end
-          elsif File.file?(remote)
-            unless File.exist?(local)
-              sftp.remove!(remote)
-              log "Removed file #{remote}"
+        log "Finished UP Sync"
+        begin
+          sftp.dir.glob(remotepath, '**') do |entry|
+            f = entry.name
+            f.gsub("#{localpath}", '')
+            local = File.join localpath, f
+            remote = "#{remotepath}/#{f}".gsub(/\/+/, '/')
+            log remote
+            if File.directory?(remote)
+              unless File.directory?(local)
+                sftp.rmdir!(remote)
+                log "Removed directory #{remote}"
+              end
+            elsif File.file?(remote)
+              unless File.exist?(local)
+                sftp.remove(remote)
+                log "Removed file #{remote}"
+              end
             end
           end
+        rescue Net::SFTP::StatusException => e
+          raise unless e.code == 2
+          next
         end
         
       end
@@ -77,10 +85,21 @@ class SiteSync
     log "Finished Sync"
   end
   
+  private
+  def remote_file_exists?(sftp, remote_path)
+    begin
+    sftp.stat!(remote_path) do |response|
+      return true if response.ok?
+    end
+    rescue Net::SFTP::StatusException
+      return false
+    end
+  end
+  
   def log(msg)
     puts msg if @verbose
   end
     
 end
 
-sync = SiteSync.new 'ssh.phx.nearlyfreespeech.net', 'seifertim_hfmechanics', './_site', '/home/public', './.ssh/key'
+sync = SiteSync.new 'ssh.phx.nearlyfreespeech.net', 'seifertim_hfmechanics', '_site', '/home/public', './.ssh/key'
