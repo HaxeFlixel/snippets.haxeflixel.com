@@ -1,4 +1,5 @@
 #!/usr/bin/ruby
+require 'rubygems'
 require 'net/ssh'
 require 'net/sftp'
 require 'fileutils'
