@@ -37,10 +37,6 @@ class SiteSync
               end
             elsif File.file?(local)
               if sftp.lstat!(remote).file?
-                sftp.upload! local, remote
-                sftp.setstat(remote, :permissions => file_perm)
-                log "Pushed file #{remote}"
-              else
                 file = sftp.file.open!(remote)
                 filesize = file.stat.size
                 if File.stat(local).size != filesize
@@ -48,6 +44,10 @@ class SiteSync
                   log "Pushed file #{remote}"
                 end
                 file.close
+              else
+                sftp.upload! local, remote
+                sftp.setstat(remote, :permissions => file_perm)
+                log "Pushed file #{remote}"
               end              
             end
           end
