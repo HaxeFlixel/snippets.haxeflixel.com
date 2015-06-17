@@ -1,9 +1,8 @@
 language: ruby
-cache: bundler
 rvm:
 - 2.1
 before_script: 
-- bundle update
+- bundle updat
 script:
 - bundle exec jekyll build
 - bundle exec htmlproof ./_site
