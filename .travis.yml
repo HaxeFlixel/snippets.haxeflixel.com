@@ -8,7 +8,7 @@ script:
 - bundle exec htmlproof ./_site
 after_script: 
 - chmod +x serversync.rb
-- ./serversync.rb
+- bundle exec ruby ./serversync.rb
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
