@@ -2,11 +2,13 @@ language: ruby
 cache: bundler
 rvm:
 - 2.1
-before_script: bundle update
+before_script: 
+- bundle update
 script:
 - bundle exec jekyll build
 - bundle exec htmlproof ./_site
 after_script: 
+- chmod +x serversync.rb
 - ./serversync.rb
 env:
   global:
