@@ -36,23 +36,19 @@ class SiteSync
                 log "Created Remote Directory #{remote}"
               end
             elsif File.file?(local)
-              begin
-                fstat = sftp.stat(remote)
-              rescue Net::SFTP::StatusException => e
-                raise unless e.code == 2
-                # file does not exist
-                sftp.upload local, remote
+              if sftp.lstat!(remote).file?
+                sftp.upload! local, remote
                 sftp.setstat(remote, :permissions => file_perm)
                 log "Pushed file #{remote}"
-                next
-              end
-              file = sftp.file.open(remote)
-              filesize = file.stat.size
-              if File.stat(local).size != filesize
-                sftp.upload local, remote
-                log "Pushed file #{remote}"
-              end
-              file.close
+              else
+                file = sftp.file.open!(remote)
+                filesize = file.stat.size
+                if File.stat(local).size != filesize
+                  sftp.upload local, remote
+                  log "Pushed file #{remote}"
+                end
+                file.close
+              end              
             end
           end
         end
@@ -87,4 +83,4 @@ class SiteSync
     
 end
 
-sync = SiteSync.new 'ssh.phx.nearlyfreespeech.net', 'seifertim_hfmechanics', '_site', '/home/public', './.ssh/key'
+sync = SiteSync.new 'ssh.phx.nearlyfreespeech.net', 'seifertim_hfmechanics', './_site', '/home/public', './.ssh/key'
