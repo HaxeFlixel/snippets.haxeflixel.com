@@ -5,3 +5,4 @@ bin
 *.lock
 credentials.yaml
 demos/*/export/
+*/export/
