@@ -39,4 +39,4 @@ for f in $(find ./demos/**/Project.xml -type f -printf '%h\n' -type f ); do
     FAILED=1
   fi
 done | sort -u
-exit FAILED
+exit $FAILED
