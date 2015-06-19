@@ -1,9 +1,12 @@
 language: ruby
 require: sudo
+sudo: true
 rvm:
 - 2.1
 install:
 - bundle install
+- sudo apt-get update -qq
+- sudo apt-get install -qq libgc1c2
 - chmod +x ./build/*
 - ./build/install-haxe.sh
 before_script: 
