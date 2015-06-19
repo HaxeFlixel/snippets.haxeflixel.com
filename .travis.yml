@@ -3,8 +3,8 @@ require: sudo
 sudo: true
 rvm:
 - 2.1
+cache: bundler
 install:
-- bundle install
 - sudo apt-get update -qq
 - sudo apt-get install -qq libgc1c2
 - chmod +x ./build/*
