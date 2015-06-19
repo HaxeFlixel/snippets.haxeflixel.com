@@ -1,5 +1,5 @@
 #!/bin/bash
-apt-get install libgc1c2
+sudo apt-get install libgc1c2
 mkdir -p ~/neko
 curl -s -L --retry 3 'http://nekovm.org/_media/neko-2.0.0-linux64.tar.gz' | tar -C ~/neko -x -z --strip-components=1 -f -
 export NEKOPATH="${HOME}/neko"
@@ -23,7 +23,6 @@ haxelib install task > /dev/null
 haxelib install hscript > /dev/null
 haxelib install poly2trihx > /dev/null
 haxelib git spinehaxe https://github.com/bendmorris/spinehaxe > /dev/null
-haxelib git openfl-bitfive https://github.com/YellowAfterlife/openfl-bitfive > /dev/null
 haxelib git firetongue https://github.com/larsiusprime/firetongue > /dev/null
 haxelib git flixel https://github.com/HaxeFlixel/flixel > /dev/null
 haxelib git flixel-tools https://github.com/HaxeFlixel/flixel-tools > /dev/null

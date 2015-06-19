@@ -1,4 +1,5 @@
 language: ruby
+require: sudo
 rvm:
 - 2.1
 install:
