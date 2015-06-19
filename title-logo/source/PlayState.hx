@@ -134,7 +134,7 @@ class PlayState extends FlxState
 	private function startEffect():Void
 	{
 		doingEffect = true;
-		whichEffect = FlxG.random.int(4, 5, [whichEffect]);
+		whichEffect = FlxG.random.int(0, 5, [whichEffect]);
 		target = FlxG.random.int(0, sprites.length - 1, [target]);
 		switch (whichEffect) 
 		{
