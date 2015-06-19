@@ -1,6 +1,4 @@
 #!/bin/bash
-sudo apt-get update -qq
-sudo apt-get install -qq libgc1c2
 mkdir -p ~/neko
 curl -s -L --retry 3 'http://nekovm.org/_media/neko-2.0.0-linux64.tar.gz' | tar -C ~/neko -x -z --strip-components=1 -f -
 export NEKOPATH="${HOME}/neko"

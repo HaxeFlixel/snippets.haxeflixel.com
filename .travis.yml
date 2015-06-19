@@ -14,7 +14,7 @@ before_script:
 script:
 - bundle exec jekyll build
 - bundle exec htmlproof ./_site
-- ./build/build_demos.sh
+- ./build/build-demos.sh
 after_script: 
 - bundle exec ruby ./build/serversync.rb
 env:
