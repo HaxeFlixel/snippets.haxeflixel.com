@@ -29,11 +29,12 @@ class SiteSync
         log "Connected"
         log "Starting Clear"
         
-        files = sftp.dir.glob(remotepath, '**/*').map { |file| [file.name.count("/"), file] }
+        files = sftp.dir.glob(remotepath, '**/*')
+        files = files.map { |file| [file.name.count("/"), file.name] }
         files = files.sort.map { |file| file[1] }
         files = files.reverse
         files.each do |entry|
-          f = entry.name
+          f = entry
           f.gsub("#{localpath}", '')
           local = File.join localpath, f
           remote = "#{remotepath}/#{f}".gsub(/\/+/, '/')
