@@ -29,6 +29,14 @@ haxelib git flixel-tools https://github.com/HaxeFlixel/flixel-tools > /dev/null
 haxelib git flixel-addons https://github.com/HaxeFlixel/flixel-addons dev > /dev/null
 haxelib git flixel-ui https://github.com/HaxeFlixel/flixel-ui dev > /dev/null
 haxelib list
-for f in $(find ./demos/**/Project.xml -type f); do
-  haxelib run lime build $f flash -release
-done
+FAILED=0
+for f in $(find ./demos/**/Project.xml -type f -printf '%h\n' -type f ); do
+  printf "Building $f..."
+  if haxelib run lime build $f flash -release > /dev/null ; then
+    printf "SUCCESS!\n"
+  else
+    printf "FAIL!\n"
+    FAILED=1
+  fi
+done | sort -u
+exit FAILED
