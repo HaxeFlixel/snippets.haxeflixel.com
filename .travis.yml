@@ -1,11 +1,15 @@
 language: ruby
 rvm:
 - 2.1
+install:
+- bundle install
+- ./install-haxe.sh
 before_script: 
 - bundle update
 script:
 - bundle exec jekyll build
 - bundle exec htmlproof ./_site
+- ./build_demos.sh
 after_script: 
 - chmod +x serversync.rb
 - bundle exec ruby ./serversync.rb
