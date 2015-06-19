@@ -28,25 +28,27 @@ class SiteSync
       ssh.sftp.connect do |sftp|
         log "Connected"
         log "Starting Clear"
-        begin
-          sftp.dir.glob(remotepath, '**') do |entry|
-            f = entry.name
-            f.gsub("#{localpath}", '')
-            local = File.join localpath, f
-            remote = "#{remotepath}/#{f}".gsub(/\/+/, '/')
-            if File.directory?(remote)
+        
+        files = sftp.dir.glob(remotepath, '**/*').map { |file| [file.name.count("/"), file] }
+        files = files.sort.map { |file| file[1] }.reverse
+        files.each do |entry|
+          f = entry.name
+          f.gsub("#{localpath}", '')
+          local = File.join localpath, f
+          remote = "#{remotepath}/#{f}".gsub(/\/+/, '/')
+          log "Removing #{remote}"
+          unless File.exist?(local)
+            if sftp.lstat!(remote).directory?
               log "Removed directory #{remote}"
               sftp.rmdir!(remote)
-            elsif File.file?(remote)              
+            else     
               log "Removed file #{remote}"
-              sftp.remove(remote)              
+              sftp.remove!(remote)              
             end
           end
-        rescue Net::SFTP::StatusException => e
-          raise unless e.code == 2
-          next
         end
-        log "Finsihed Clear"
+        
+        log "Finished Clear"
         log "Starting Upload"
         Dir.glob(File.join(localpath, '**', '*')) do |f|
           f.gsub!("#{localpath}", '')
@@ -67,9 +69,12 @@ class SiteSync
         end
         log "Finished Upload"
       end
+      
+      
     end
     log "Finished Sync"
   end
+  
   
   private
   def remote_file_exists?(sftp, remote_path)
