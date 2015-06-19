@@ -13,9 +13,9 @@ install:
 before_script:
 - chmod +x ./build/*
 script:
+- ./build/build-demos.sh
 - bundle exec jekyll build
 - bundle exec htmlproof ./_site
-- ./build/build-demos.sh
 - bundle exec ruby ./build/serversync.rb
 env:
   global:
