@@ -1,4 +1,5 @@
 #!/bin/bash
+apt-get install libgc1c2
 mkdir -p ~/neko
 curl -s -L --retry 3 'http://nekovm.org/_media/neko-2.0.0-linux64.tar.gz' | tar -C ~/neko -x -z --strip-components=1 -f -
 export NEKOPATH="${HOME}/neko"
@@ -11,6 +12,7 @@ export HAXE_STD_PATH="${HOME}/haxe/std"
 mkdir -p ~/haxe/lib
 haxelib setup ~/haxe/lib
 echo $(haxe -version)
+echo $(neko -version)
 haxelib install munit > /dev/null
 haxelib install lime > /dev/null
 haxelib install openfl > /dev/null
