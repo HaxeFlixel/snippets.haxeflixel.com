@@ -56,7 +56,7 @@ class SiteSync
           f.gsub!("#{localpath}", '')
           local = File.join localpath, f
           remote = "#{remotepath}/#{f}".gsub(/\/+/, '/')
-          if local !~ /\/export\/(flash\/(haxe|obj)|.build)/
+          #if local !~ /\/export\/(flash\/(haxe|obj)|.build)/
             if File.directory?(local)
               unless remote_file_exists?(sftp, remote)
                 log "Creating Remote Directory #{remote}..."
@@ -67,7 +67,7 @@ class SiteSync
               sftp.upload! local, remote
               sftp.setstat(remote, :permissions => @file_perm)
             end
-          end
+          #end
         end
         log "Finished Upload"
       end
