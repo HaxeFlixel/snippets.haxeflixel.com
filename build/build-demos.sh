@@ -29,6 +29,7 @@ haxelib git flixel-tools https://github.com/HaxeFlixel/flixel-tools > /dev/null
 haxelib git flixel-addons https://github.com/HaxeFlixel/flixel-addons dev > /dev/null
 haxelib git flixel-ui https://github.com/HaxeFlixel/flixel-ui dev > /dev/null
 FAILED=0
+echo $(pwd)
 for f in $(find ~/demos/**/Project.xml -type f -printf '%h\n' -type f ); do
   printf "Building $f..."
   cd $f
