@@ -3,19 +3,19 @@ require: sudo
 sudo: true
 rvm:
 - 2.1
-cache: bundler
+cache: 
+- bundler
 install:
 - sudo apt-get update -qq
 - sudo apt-get install -qq libgc1c2
-- chmod +x ./build/*
-- ./build/install-haxe.sh
 before_script: 
 - bundle update
+- chmod +x ./build/*
 script:
 - bundle exec jekyll build
 - bundle exec htmlproof ./_site
 - ./build/build-demos.sh
-after_script: 
+after_success: 
 - bundle exec ruby ./build/serversync.rb
 env:
   global:
