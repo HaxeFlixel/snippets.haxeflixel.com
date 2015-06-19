@@ -29,11 +29,11 @@ haxelib git flixel-tools https://github.com/HaxeFlixel/flixel-tools > /dev/null
 haxelib git flixel-addons https://github.com/HaxeFlixel/flixel-addons dev > /dev/null
 haxelib git flixel-ui https://github.com/HaxeFlixel/flixel-ui dev > /dev/null
 FAILED=0
-
+cd ..
 for f in $(find demos/**/Project.xml -type f -printf '%h\n' -type f ); do
   printf "Building $f..."
   cd $f
-  if haxelib run lime build Project.xml flash -release > /dev/null ; then
+  if haxelib run lime build Project.xml flash -release ; then
     printf "SUCCESS!\n"
   else
     printf "FAIL!\n"
@@ -44,7 +44,7 @@ done | sort -u
 
 printf "Building ./title-logo..."
 cd title-logo
-if haxelib run lime build Project.xml flash -release > /dev/null ; then
+if haxelib run lime build Project.xml flash -release ; then
   printf "SUCCESS!\n"
 else
   printf "FAIL!\n"

@@ -30,7 +30,7 @@ class SiteSync
         log "Starting Clear"
         
         files = sftp.dir.glob(remotepath, '**/*').map { |file| [file.name.count("/"), file] }
-        files = files.sort.map { |file| file[1] }.reverse
+        files = files.sort.reverse_each.map { |file| file[1] }
         files.each do |entry|
           f = entry.name
           f.gsub("#{localpath}", '')

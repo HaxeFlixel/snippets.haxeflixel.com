@@ -8,7 +8,7 @@ seealso: [Movement/angle]
 ---
 {% api flixel.FlxObject.angularVelocity %} sets a {% api flixel.FlxObject %} to rotate at a steady speed in degrees per second.
 
-``haxe
+```haxe
 // sprite will spin 30 degrees/s, clockwise
 sprite.angularVelocity = 30;
 ```
