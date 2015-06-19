@@ -32,7 +32,7 @@ haxelib list
 FAILED=0
 for f in $(find ./demos/**/Project.xml -type f -printf '%h\n' -type f ); do
   printf "Building $f..."
-  if haxelib run lime build $f flash -release > /dev/null ; then
+  if haxelib run lime build $f/Project.xml flash -release > /dev/null ; then
     printf "SUCCESS!\n"
   else
     printf "FAIL!\n"
