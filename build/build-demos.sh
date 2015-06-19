@@ -31,7 +31,7 @@ haxelib git flixel-ui https://github.com/HaxeFlixel/flixel-ui dev > /dev/null
 haxelib list
 FAILED=0
 
-for f in $(find ./**/Project.xml -type f -printf '%h\n' -type f ); do
+for f in $(find ./demos/**/Project.xml -type f -printf '%h\n' -type f ); do
   printf "Building $f..."
   if haxelib run lime build $f/Project.xml flash -release > /dev/null ; then
     printf "SUCCESS!\n"
@@ -40,4 +40,13 @@ for f in $(find ./**/Project.xml -type f -printf '%h\n' -type f ); do
     FAILED=1
   fi
 done | sort -u
+
+printf "Building title-logo"
+if haxelib run lime build ./title-logo/Project.xml flash -release > /dev/null ; then
+  printf "SUCCESS!\n"
+else
+  printf "FAIL!\n"
+  FAILED=1
+fi
+
 exit $FAILED

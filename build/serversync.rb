@@ -27,6 +27,27 @@ class SiteSync
       log "Connecting"
       ssh.sftp.connect do |sftp|
         log "Connected"
+        log "Starting Clear"
+        begin
+          sftp.dir.glob(remotepath, '**') do |entry|
+            f = entry.name
+            f.gsub("#{localpath}", '')
+            local = File.join localpath, f
+            remote = "#{remotepath}/#{f}".gsub(/\/+/, '/')
+            if File.directory?(remote)
+              log "Removed directory #{remote}"
+              sftp.rmdir!(remote)
+            elsif File.file?(remote)              
+              log "Removed file #{remote}"
+              sftp.remove(remote)              
+            end
+          end
+        rescue Net::SFTP::StatusException => e
+          raise unless e.code == 2
+          next
+        end
+        log "Finsihed Clear"
+        log "Starting Upload"
         Dir.glob(File.join(localpath, '**', '*')) do |f|
           f.gsub!("#{localpath}", '')
           local = File.join localpath, f
@@ -37,50 +58,16 @@ class SiteSync
                 log "Creating Remote Directory #{remote}..."
                 sftp.mkdir! remote
               end
-            elsif File.file?(local)
-              if remote_file_exists?(sftp, remote)
-                file = sftp.file.open(remote)
-                filesize = file.stat.size
-                file.close
-                if File.stat(local).size != filesize
-                  log "Pushed file #{remote}"
-                  sftp.upload! local, remote
-                end
-              else
-                log "Pushed file #{remote}"
-                sftp.upload! local, remote
-                sftp.setstat(remote, :permissions => @file_perm)
-              end
+            elsif File.file?(local)              
+              log "Pushed file #{remote}"
+              sftp.upload! local, remote
+              sftp.setstat(remote, :permissions => @file_perm)
             end
           end
         end
-        log "Finished UP Sync"
-        begin
-          sftp.dir.glob(remotepath, '**') do |entry|
-            f = entry.name
-            f.gsub("#{localpath}", '')
-            local = File.join localpath, f
-            remote = "#{remotepath}/#{f}".gsub(/\/+/, '/')
-            if File.directory?(remote)
-              unless File.directory?(local)
-                log "Removed directory #{remote}"
-                sftp.rmdir!(remote)
-              end
-            elsif File.file?(remote)
-              unless File.exist?(local)
-                log "Removed file #{remote}"
-                sftp.remove(remote)
-              end
-            end
-          end
-        rescue Net::SFTP::StatusException => e
-          raise unless e.code == 2
-          next
-        end
-        
+        log "Finished Upload"
       end
     end
-    
     log "Finished Sync"
   end
   
