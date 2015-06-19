@@ -16,7 +16,6 @@ script:
 - bundle exec jekyll build
 - bundle exec htmlproof ./_site
 - ./build/build-demos.sh
-after_success: 
 - bundle exec ruby ./build/serversync.rb
 env:
   global:
