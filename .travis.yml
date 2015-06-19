@@ -3,16 +3,16 @@ rvm:
 - 2.1
 install:
 - bundle install
-- ./install-haxe.sh
+- ./build/install-haxe.sh
 before_script: 
 - bundle update
 script:
 - bundle exec jekyll build
 - bundle exec htmlproof ./_site
-- ./build_demos.sh
+- ./build/build_demos.sh
 after_script: 
-- chmod +x serversync.rb
-- bundle exec ruby ./serversync.rb
+- chmod +x build/serversync.rb
+- bundle exec ruby ./build/serversync.rb
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
