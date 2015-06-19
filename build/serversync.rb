@@ -31,7 +31,8 @@ class SiteSync
         
         files = sftp.dir.glob(remotepath, '**/*').map { |file| [file.name.count("/"), file] }
         files = files.sort.map { |file| file[1] }
-        files.reverse.each do |entry|
+        files = files.reverse
+        files.each do |entry|
           f = entry.name
           f.gsub("#{localpath}", '')
           local = File.join localpath, f
