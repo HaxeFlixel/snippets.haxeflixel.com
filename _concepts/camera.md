@@ -1,6 +1,6 @@
 ---
 title: Camera
-order: 6
+order: 9
 tags: [camera]
 complexity: 1
 ---

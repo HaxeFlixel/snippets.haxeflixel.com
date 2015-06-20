@@ -6,10 +6,7 @@ import flixel.FlxState;
 
 class PlayState extends FlxState
 {
-	
 	private var sprite:FlxSprite;
-	private var timer:Float = 0;
-	private var speed:Int = 1;
 	
 	override public function create():Void
 	{
@@ -19,23 +16,16 @@ class PlayState extends FlxState
 		sprite = new FlxSprite(AssetPaths.arrow__png);
 		sprite.x = FlxG.width / 2 - sprite.width / 2;
 		sprite.y = FlxG.height / 2 - sprite.height / 2;
-		
-		sprite.angularVelocity = 30;
-		
 		add(sprite);
+		
+		sprite.angularAcceleration = 30;
 	}
 
 	override public function update(elapsed:Float):Void
 	{
-		timer += elapsed;
-		if (timer >= 2)
-		{
-			timer = 0;
-			speed++;
-			if (speed >= 8)
-				speed = 1;
-			sprite.angularVelocity = speed * 100;
-		}
+		
+		if (Math.abs(sprite.angularVelocity) >= 600)
+			sprite.angularAcceleration *= -1;
 		
 		super.update(elapsed);
 	}
