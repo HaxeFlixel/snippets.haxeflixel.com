@@ -1,6 +1,6 @@
 ---
 title: Movement
-order: 2
+order: 4
 tags: [movement]
 complexity: 1
 ---
