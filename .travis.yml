@@ -23,6 +23,3 @@ env:
 branches:
   only:
   - master
-before_install:
-- openssl aes-256-cbc -K $encrypted_0c44f687d720_key -iv $encrypted_0c44f687d720_iv
-  -in key.enc -out .ssh/key -d
