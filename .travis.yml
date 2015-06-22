@@ -16,8 +16,6 @@ script:
 - "./build/build-demos.sh"
 - bundle exec jekyll build
 - bundle exec htmlproof ./_site
-- if [[ "$TRAVIS_REPO_SLUG" == "SeiferTim/haxeflixel-mechanics" ]]; then bundle exec
-  ruby ./build/serversync.rb; fi
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
@@ -25,3 +23,6 @@ env:
 branches:
   only:
   - master
+after_success:
+- if [[ "$TRAVIS_REPO_SLUG" == "SeiferTim/haxeflixel-mechanics" ]]; then bundle exec
+  ruby ./build/serversync.rb; fi
