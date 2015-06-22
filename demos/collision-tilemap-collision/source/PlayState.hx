@@ -1,0 +1,37 @@
+package;
+
+import flixel.FlxG;
+import flixel.FlxSprite;
+import flixel.FlxState;
+import flixel.tile.FlxTilemap;
+
+class PlayState extends FlxState
+{
+	private var map:FlxTilemap;
+	private var sprite:FlxSprite;
+	
+	override public function create():Void
+	{
+		bgColor = 0;
+		super.create();
+		
+		map = new FlxTilemap();
+		map.loadMapFromCSV(AssetPaths.room_map__csv, AssetPaths.tiles__png, 16, 16);
+		add(map);
+		
+		sprite = new FlxSprite(AssetPaths.sprite__png);
+		sprite.x = FlxG.width / 2 - sprite.width / 2;
+		sprite.y = FlxG.height / 2 - sprite.height / 2;
+		add(sprite);
+		
+		sprite.velocity.set(200, 200);
+		sprite.elasticity = 1;
+	}
+
+	override public function update(elapsed:Float):Void
+	{
+		super.update(elapsed);
+		
+		FlxG.collide(map, sprite);
+	}
+}
