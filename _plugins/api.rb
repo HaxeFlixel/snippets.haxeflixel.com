@@ -13,13 +13,12 @@ module Jekyll
       last = segments.last[0]
       isfunc = @param.split(//).last(2).join() == '()'
       isconst = !last.match(/\p{LOWER}/)
-      isprop = !last.match(/[A-Z]([A-Z0-9]*[a-z][a-z0-9]*[A-Z]|[a-z0-9]*[A-Z][A-Z0-9]*[a-z])[A-Za-z0-9]*/) || isconst || isfunc
-      
+      isprop = !last.match(/[A-Z]([A-Z0-9]*[a-z][a-z0-9]*[A-Z]|[a-z0-9]*[A-Z][A-Z0-9]*[a-z])[A-Za-z0-9]*/) | isconst || isfunc
       link = ''
       desc = ''
-      segments.each do |seg| 
+      segments.each_with_index do |seg, index| 
         seg_s = seg[0]
-        if !isprop || last != seg_s
+        if !isprop || index < segments.length-1
           link << "/#{seg_s}"
         end
       end
@@ -32,7 +31,6 @@ module Jekyll
       else
         desc = last
       end
-      
       "<code><a data-toggle=\"tooltip\" data-placement=\"top\" title=\"#{tooltip}\" href=\"http://api.haxeflixel.com#{link}\">#{desc}</a></code>"
     end
   end

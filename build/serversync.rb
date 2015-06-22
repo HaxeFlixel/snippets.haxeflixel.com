@@ -94,4 +94,4 @@ class SiteSync
     
 end
 
-sync = SiteSync.new 'ssh.phx.nearlyfreespeech.net', 'seifertim_hfmechanics', '_site', '/home/public', './.ssh/key'
+sync = SiteSync.new 'ssh.phx.nearlyfreespeech.net', 'seifertim_hfmechanics', '_site', '/home/public'
