@@ -7,13 +7,12 @@ class SiteSync
   
   attr_accessor :verbose, :server, :user, :passive
   
-  def initialize(host, user, local_path, remote_path, key, options = {})
+  def initialize(host, user, local_path, remote_path, options = {})
     @host = host
     @user = user
     @ignore = options[:ignore]
     @verbose = options[:verbose] || true
     @passive = options[:passive] || false
-    @key = key
     @local_path = local_path
     @remote_path = remote_path
     @file_perm = options[:file_perm] || 0644
@@ -23,7 +22,7 @@ class SiteSync
 
   def push_dir(localpath, remotepath)
     log "Starting Sync"
-    Net::SSH.start(@host, @user, :host_key => "ssh-rsa", :keys => [@key]) do |ssh|
+    Net::SSH.start(@host, @user, :password => ENV["SECRET_CODE"]) do |ssh|
       log "Connecting"
       ssh.sftp.connect do |sftp|
         log "Connected"
