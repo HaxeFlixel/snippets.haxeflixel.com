@@ -6,3 +6,4 @@ bin
 credentials.yaml
 demos/*/export/
 */export/
+.ssh/*
