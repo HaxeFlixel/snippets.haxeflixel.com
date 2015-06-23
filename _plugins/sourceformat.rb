@@ -51,7 +51,9 @@ module Jekyll
         else
           filetype = 'desktop'
         end
-        contents = IO.binread("demos/#{path}/#{file}")
+        filter = Class.new { include Jekyll::Filters }
+        
+        contents = filter.new.xml_escape(IO.binread("demos/#{path}/#{file}"))
         slug = Utils.slugify(file)
         sources << "<div class=\"panel-group\" id=\"accordion-#{slug}\" role=\"tablist\" aria-multiselectable=\"true\">
   <div class=\"panel panel-default\">

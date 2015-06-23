@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project>
-	<app title="groups-flxgroup" file="groups-flxgroup" main="Main" version="0.0.1" company="HaxeFlixel" />
+	<app title="groups-recycling" file="groups-recycling" main="Main" version="0.0.1" company="HaxeFlixel" />
 	<set name="SWF_VERSION" value="11.8" />
 	<window width="320" height="240" fps="30" hardware="false" vsync="false" />
   <window unless="web" background="#000000" />
