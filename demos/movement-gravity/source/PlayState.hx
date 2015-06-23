@@ -19,16 +19,15 @@ class PlayState extends FlxState
 		sprite.maxVelocity.y = 200;
 		
 		add(sprite);
-		
 	}
 
 	override public function update(elapsed:Float):Void
 	{
 		super.update(elapsed);
 		
-		if (sprite.velocity.y > 0 && sprite.y >= FlxG.height+8)
+		if (sprite.velocity.y > 0 && sprite.y >= FlxG.height + 8)
 		{
-			sprite.y = FlxG.height+8;
+			sprite.y = FlxG.height + 8;
 			sprite.acceleration.y = 0;
 			sprite.velocity.y = -100;
 		}
@@ -38,7 +37,5 @@ class PlayState extends FlxState
 			sprite.velocity.y = 0;
 			sprite.acceleration.y = 800;
 		}
-		
-		
 	}
 }

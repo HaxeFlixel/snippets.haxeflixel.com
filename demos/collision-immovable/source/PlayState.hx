@@ -18,41 +18,49 @@ class PlayState extends FlxState
 		bgColor = 0;
 		super.create();
 		
-		boxA = new FlxSprite(AssetPaths.bigbox__png);
-		boxA.x = FlxG.width /2 - boxA.width / 2;
-		boxA.y = FlxG.height * .25 - boxA.height / 2;
-		add(boxA);
+		boxA = createBox(.25);
+		boxB = createBox(.75);
 		
-		boxB = new FlxSprite(AssetPaths.bigbox__png);
-		boxB.x = FlxG.width / 2 - boxB.width / 2;
-		boxB.y = FlxG.height * .75 - boxB.height / 2;
-		add(boxB);
-		
-		spriteA = new FlxSprite(AssetPaths.sprite__png);
-		spriteA.x = 16;
-		spriteA.y = FlxG.height * .25 - spriteA.height / 2;
-		spriteA.velocity.x = 200;
-		add(spriteA);
-		
-		spriteB = new FlxSprite(AssetPaths.sprite__png);
-		spriteB.x = 16;
-		spriteB.y = FlxG.height * .75 - spriteB.height / 2;
-		spriteB.velocity.x = 200;
-		add(spriteB);
+		spriteA = createSprite(.25);
+		spriteB = createSprite(.75);
 		
 		boxB.immovable = true;
+	}
+	
+	private function createBox(xFactor:Float):FlxSprite
+	{
+		var box = new FlxSprite(AssetPaths.bigbox__png);
+		box.x = FlxG.width / 2 - box.width / 2;
+		box.y = FlxG.height * xFactor - box.height / 2;
+		add(box);
+		return box;
+	}
+	
+	private function createSprite(xFactor:Float):FlxSprite
+	{
+		var sprite = new FlxSprite(AssetPaths.sprite__png);
+		sprite.x = 16;
+		sprite.y = FlxG.height * xFactor - sprite.height / 2;
+		sprite.velocity.x = 200;
+		add(sprite);
+		return sprite;
 	}
 
 	override public function update(elapsed:Float):Void
 	{
 		super.update(elapsed);
 		
+		updateMovableExample();
+		updateImmovableExample();
+	}
+	
+	private function updateMovableExample():Void
+	{
 		FlxG.collide(spriteA, boxA);
-		FlxG.collide(spriteB, boxB);
 		
 		if (spriteA.velocity.x > 0)
 		{
-			if (spriteA.x >= FlxG.width - spriteA.width )
+			if (spriteA.x >= FlxG.width - spriteA.width)
 			{
 				spriteA.velocity.x = -200;
 				boxA.velocity.x = -150;
@@ -67,14 +75,17 @@ class PlayState extends FlxState
 			spriteA.x = 0;
 			spriteA.velocity.x = 150;
 		}
-		if (boxA.velocity.x < 0)
+		
+		if (boxA.velocity.x < 0 && boxA.x <= FlxG.width / 2 - boxA.width / 2)
 		{
-			if (boxA.x <= FlxG.width / 2 - boxA.width / 2)
-			{
-				boxA.velocity.x = 0;
-				boxA.x = FlxG.width / 2 - boxA.width / 2;
-			}
+			boxA.velocity.x = 0;
+			boxA.x = FlxG.width / 2 - boxA.width / 2;
 		}
+	}
+	
+	private function updateImmovableExample():Void
+	{
+		FlxG.collide(spriteB, boxB);
 		
 		if (spriteB.justTouched(FlxObject.ANY))
 		{
@@ -85,6 +96,5 @@ class PlayState extends FlxState
 			spriteB.velocity.x = 150;
 			spriteB.x = 0;
 		}
-		
 	}
 }

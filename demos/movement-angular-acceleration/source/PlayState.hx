@@ -3,6 +3,7 @@ package;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
+using flixel.util.FlxSpriteUtil;
 
 class PlayState extends FlxState
 {
@@ -14,8 +15,7 @@ class PlayState extends FlxState
 		super.create();
 		
 		sprite = new FlxSprite(AssetPaths.arrow__png);
-		sprite.x = FlxG.width / 2 - sprite.width / 2;
-		sprite.y = FlxG.height / 2 - sprite.height / 2;
+		sprite.screenCenter();
 		add(sprite);
 		
 		sprite.angularAcceleration = 30;
@@ -23,7 +23,6 @@ class PlayState extends FlxState
 
 	override public function update(elapsed:Float):Void
 	{
-		
 		if (Math.abs(sprite.angularVelocity) >= 600)
 			sprite.angularAcceleration *= -1;
 		

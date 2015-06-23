@@ -3,10 +3,10 @@ package;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
+using flixel.util.FlxSpriteUtil;
 
 class PlayState extends FlxState
 {
-	
 	private var sprite:FlxSprite;
 	
 	override public function create():Void
@@ -15,8 +15,7 @@ class PlayState extends FlxState
 		super.create();
 		
 		sprite = new FlxSprite(AssetPaths.arrow__png);
-		sprite.x = FlxG.width / 2 - sprite.width / 2;
-		sprite.y = FlxG.height / 2 - sprite.height / 2;
+		sprite.screenCenter();
 		add(sprite);
 	}
 
@@ -25,6 +24,5 @@ class PlayState extends FlxState
 		super.update(elapsed);
 		
 		sprite.angle += elapsed * 30;
-		
 	}
 }

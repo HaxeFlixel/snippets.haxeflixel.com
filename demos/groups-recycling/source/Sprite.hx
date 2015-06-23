@@ -4,9 +4,8 @@ import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.system.FlxAssets.FlxGraphicAsset;
 
-class MyClass extends FlxSprite
+class Sprite extends FlxSprite
 {
-
 	public function new()
 	{
 		super(AssetPaths.sprite__png);
@@ -27,5 +26,4 @@ class MyClass extends FlxSprite
 			kill();
 		super.update(elapsed);
 	}
-	
 }

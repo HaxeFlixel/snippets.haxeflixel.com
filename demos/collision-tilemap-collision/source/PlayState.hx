@@ -4,6 +4,7 @@ import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.tile.FlxTilemap;
+using flixel.util.FlxSpriteUtil;
 
 class PlayState extends FlxState
 {
@@ -20,12 +21,10 @@ class PlayState extends FlxState
 		add(map);
 		
 		sprite = new FlxSprite(AssetPaths.sprite__png);
-		sprite.x = FlxG.width / 2 - sprite.width / 2;
-		sprite.y = FlxG.height / 2 - sprite.height / 2;
-		add(sprite);
-		
+		sprite.screenCenter();
 		sprite.velocity.set(200, 200);
 		sprite.elasticity = 1;
+		add(sprite);
 	}
 
 	override public function update(elapsed:Float):Void

@@ -6,25 +6,17 @@ import flixel.group.FlxGroup.FlxTypedGroup;
 
 class PlayState extends FlxState
 {
-	private var group:FlxTypedGroup<MyClass>;
-	
 	override public function create():Void
 	{
 		bgColor = 0;
 		super.create();
 		
-		group = new FlxTypedGroup<MyClass>(10);
+		var group = new FlxTypedGroup<Sprite>(10);
 		add(group);
 		
 		for (i in 0...group.maxSize)
 		{
-			group.add(new MyClass());
+			group.add(new Sprite());
 		}
-		
-	}
-
-	override public function update(elapsed:Float):Void
-	{
-		super.update(elapsed);
 	}
 }

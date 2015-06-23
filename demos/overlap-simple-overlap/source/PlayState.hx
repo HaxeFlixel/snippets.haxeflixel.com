@@ -3,6 +3,7 @@ package;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
+using flixel.util.FlxSpriteUtil;
 
 class PlayState extends FlxState
 {
@@ -15,36 +16,24 @@ class PlayState extends FlxState
 		super.create();
 		
 		box = new FlxSprite(AssetPaths.bigbox__png);
-		box.x = FlxG.width / 2 - box.width / 2;
-		box.y = FlxG.height / 2 - box.height / 2;
+		box.screenCenter();
 		add(box);
 		
 		sprite = new FlxSprite(AssetPaths.sprite__png);
 		sprite.y = FlxG.height / 2 - sprite.height / 2;
 		sprite.velocity.x = 100;
 		add(sprite);
-		
 	}
 
 	override public function update(elapsed:Float):Void
 	{
-		
 		if ((sprite.velocity.x > 0 && sprite.x >= FlxG.width - sprite.width) || (sprite.velocity.x < 0 && sprite.x <= 0))
 		{
 			sprite.velocity.x *= -1;
 		}
 		
-		if (FlxG.overlap(sprite, box))
-		{
-			box.alpha = .5;
-		}
-		else
-		{
-			box.alpha = 1;
-		}
+		box.alpha = FlxG.overlap(sprite, box) ? .5 : 1;
 		
 		super.update(elapsed);
-		
-		
 	}
 }
