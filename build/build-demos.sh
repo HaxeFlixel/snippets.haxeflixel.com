@@ -20,6 +20,7 @@ haxelib install nape > /dev/null
 haxelib install task > /dev/null
 haxelib install hscript > /dev/null
 haxelib install poly2trihx > /dev/null
+haxelib install format > /dev/null
 haxelib git spinehaxe https://github.com/bendmorris/spinehaxe > /dev/null
 haxelib git firetongue https://github.com/larsiusprime/firetongue > /dev/null
 haxelib git flixel https://github.com/HaxeFlixel/flixel > /dev/null
