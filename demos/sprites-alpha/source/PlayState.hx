@@ -3,10 +3,10 @@ package;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
+using flixel.util.FlxSpriteUtil;
 
 class PlayState extends FlxState
 {
-	
 	private var alpha:Float = 1;
 	private var sprite:FlxSprite;
 	private var alphaDir:Int = -1;
@@ -17,10 +17,8 @@ class PlayState extends FlxState
 		super.create();
 		
 		sprite = new FlxSprite(AssetPaths.bigbox__png);
-		sprite.x = FlxG.width / 2 - sprite.width / 2;
-		sprite.y = FlxG.height / 2 - sprite.height / 2;
+		sprite.screenCenter();
 		add(sprite);
-		
 	}
 
 	override public function update(elapsed:Float):Void
@@ -30,15 +28,10 @@ class PlayState extends FlxState
 		alpha += .02 * alphaDir;
 		
 		if (alpha > 1)
-		{
 			alphaDir = -1;
-		}
 		else if (alpha < 0)
-		{
 			alphaDir = 1;
-		}
 		
 		sprite.alpha = alpha;
-		
 	}
 }

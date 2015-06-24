@@ -6,7 +6,6 @@ import flixel.FlxState;
 
 class PlayState extends FlxState
 {
-	
 	private var sprite:FlxSprite;
 	
 	override public function create():Void

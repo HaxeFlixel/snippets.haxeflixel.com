@@ -4,10 +4,10 @@ import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.group.FlxGroup;
+import flixel.system.FlxAssets.FlxGraphicAsset;
 
 class PlayState extends FlxState
 {
-	
 	private var groupA:FlxGroup;
 	private var groupB:FlxGroup;
 	
@@ -16,30 +16,21 @@ class PlayState extends FlxState
 		bgColor = 0;
 		super.create();
 		
-		groupA = new FlxGroup();
-		add(groupA);
+		add(groupA = new FlxGroup());
+		add(groupB = new FlxGroup());
 		
-		groupB = new FlxGroup();
-		add(groupB);
-		
-		var spr:FlxSprite;
 		for (i in 0...50)
 		{
-			spr = new FlxSprite(AssetPaths.bigbox__png);
-			spr.x = FlxG.random.int(0, Std.int(FlxG.width - spr.width));
-			spr.y = FlxG.random.int(0, Std.int(FlxG.height - spr.height));
-			groupA.add(spr);
-			
-			spr = new FlxSprite(AssetPaths.sprite__png);
-			spr.x = FlxG.random.int(0, Std.int(FlxG.width - spr.width));
-			spr.y = FlxG.random.int(0, Std.int(FlxG.height - spr.height));
-			groupB.add(spr);
+			groupA.add(createSprite(AssetPaths.bigbox__png));
+			groupB.add(createSprite(AssetPaths.sprite__png));
 		}
-		
 	}
-
-	override public function update(elapsed:Float):Void
+	
+	private function createSprite(graphic:FlxGraphicAsset):FlxSprite
 	{
-		super.update(elapsed);	
+		var sprite = new FlxSprite(graphic);
+		sprite.x = FlxG.random.int(0, Std.int(FlxG.width - sprite.width));
+		sprite.y = FlxG.random.int(0, Std.int(FlxG.height - sprite.height));
+		return sprite;
 	}
 }

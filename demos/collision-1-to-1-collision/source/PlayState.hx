@@ -7,13 +7,11 @@ import flixel.util.FlxColor;
 
 class PlayState extends FlxState
 {
-	
 	private var spriteA:FlxSprite;
 	private var spriteB:FlxSprite;
 	
 	override public function create():Void
 	{
-		
 		bgColor = 0;
 		super.create();
 		
@@ -29,8 +27,6 @@ class PlayState extends FlxState
 		
 		spriteA.velocity.x = 150;
 		spriteB.velocity.x = -150;
-		
-		
 	}
 
 	override public function update(elapsed:Float):Void
@@ -43,7 +39,6 @@ class PlayState extends FlxState
 			spriteA.velocity.x *= -1;
 		if (spriteB.x >= FlxG.width - spriteB.width)
 			spriteB.velocity.x *= -1;
-		
 	}
 	
 	private function collision(spriteA:FlxSprite, spriteB:FlxSprite):Void
