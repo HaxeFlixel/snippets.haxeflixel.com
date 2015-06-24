@@ -1,4 +1,6 @@
-# HaxeFlixel-Mechanics
+![Logo](title-logo/assets/logo.png) HaxeFlixel-Mechanics
+==========================
+
 [![Build Status](https://travis-ci.org/HaxeFlixel/haxeflixel-mechanics.png)](https://travis-ci.org/HaxeFlixel/haxeflixel-mechanics)
 
 This is the source for the HaxeFlixel-Mechanics website. It is built using [Jekyll](http://jekyllrb.com/) and [Bootstrap](http://getbootstrap.com/).
