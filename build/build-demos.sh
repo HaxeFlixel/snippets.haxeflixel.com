@@ -11,20 +11,8 @@ export PATH="${PATH}:${HOME}/haxe"
 export HAXE_STD_PATH="${HOME}/haxe/std"
 mkdir -p ~/haxe/lib
 haxelib setup ~/haxe/lib
-haxelib install munit > /dev/null
 haxelib install lime > /dev/null
 haxelib install openfl > /dev/null
-haxelib install hxcpp > /dev/null
-haxelib install systools > /dev/null
-haxelib install nape > /dev/null
-haxelib install task > /dev/null
-haxelib install hscript > /dev/null
-haxelib install poly2trihx > /dev/null
-haxelib install format > /dev/null
-haxelib git spinehaxe https://github.com/bendmorris/spinehaxe > /dev/null
-haxelib git firetongue https://github.com/larsiusprime/firetongue > /dev/null
 haxelib git flixel https://github.com/HaxeFlixel/flixel > /dev/null
 haxelib git flixel-tools https://github.com/HaxeFlixel/flixel-tools > /dev/null
-haxelib git flixel-addons https://github.com/HaxeFlixel/flixel-addons dev > /dev/null
-haxelib git flixel-ui https://github.com/HaxeFlixel/flixel-ui dev > /dev/null
-haxelib run flixel-tools buildprojects -dir ${HOME}/build/HaxeFlixel/haxeflixel-mechanics/
+haxelib run flixel-tools buildprojects -dir .
