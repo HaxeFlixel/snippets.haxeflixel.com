@@ -28,4 +28,4 @@ haxelib git flixel https://github.com/HaxeFlixel/flixel > /dev/null
 haxelib git flixel-tools https://github.com/HaxeFlixel/flixel-tools > /dev/null
 haxelib git flixel-addons https://github.com/HaxeFlixel/flixel-addons dev > /dev/null
 haxelib git flixel-ui https://github.com/HaxeFlixel/flixel-ui dev > /dev/null
-flixel-tools buildprojects -dir ${HOME}
+haxelib flixel-tools buildprojects -dir ${HOME}

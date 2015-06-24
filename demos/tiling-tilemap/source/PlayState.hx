@@ -2,7 +2,7 @@ package;
 
 import flixel.FlxG;
 import flixel.FlxState;
-import flixel.tile.FlxTilemap;,
+import flixel.tile.FlxTilemap;
 using flixel.util.FlxSpriteUtil;
 
 class PlayState extends FlxState
