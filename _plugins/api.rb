@@ -8,7 +8,8 @@ module Jekyll
     end
     
     def render(context)
-      tooltip = @param
+      filter = Class.new { include Jekyll::Filters }
+      tooltip = filter.new.xml_escape(@param)
       segments = @param.scan(/(\w+)/);
       last = segments.last[0]
       isfunc = @param.split(//).last(2).join() == '()'
@@ -31,6 +32,7 @@ module Jekyll
       else
         desc = last
       end
+      desc = filter.new.xml_escape(desc)
       "<code><a data-toggle=\"tooltip\" data-placement=\"top\" title=\"#{tooltip}\" href=\"http://api.haxeflixel.com#{link}\">#{desc}</a></code>"
     end
   end
