@@ -11,8 +11,6 @@ export PATH="${PATH}:${HOME}/haxe"
 export HAXE_STD_PATH="${HOME}/haxe/std"
 mkdir -p ~/haxe/lib
 haxelib setup ~/haxe/lib
-echo $(haxe -version)
-echo $(neko -version)
 haxelib install munit > /dev/null
 haxelib install lime > /dev/null
 haxelib install openfl > /dev/null
@@ -28,4 +26,4 @@ haxelib git flixel https://github.com/HaxeFlixel/flixel > /dev/null
 haxelib git flixel-tools https://github.com/HaxeFlixel/flixel-tools > /dev/null
 haxelib git flixel-addons https://github.com/HaxeFlixel/flixel-addons dev > /dev/null
 haxelib git flixel-ui https://github.com/HaxeFlixel/flixel-ui dev > /dev/null
-haxelib flixel-tools buildprojects -dir ${HOME}
+haxelib run flixel-tools buildprojects -dir ${HOME}
