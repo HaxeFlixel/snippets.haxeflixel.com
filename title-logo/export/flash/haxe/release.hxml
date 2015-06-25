@@ -1,11 +1,11 @@
 -main ApplicationMain 
--cp T:/HaxeToolkit/haxe/lib/flixel/git
+-cp C:/HaxeToolkit/haxe/lib/flixel/git
 -D flixel=3.3.8
--cp T:/HaxeToolkit/haxe/lib/openfl/3,1,0
+-cp C:/HaxeToolkit/haxe/lib/openfl/3,1,0
 -D openfl=3.1.0
--cp T:/HaxeToolkit/haxe/lib/lime/2,4,4
+-cp C:/HaxeToolkit/haxe/lib/lime/2,4,4
 -D lime=2.4.4
--cp T:/HaxeToolkit/haxe/lib/flixel-addons/git
+-cp C:/HaxeToolkit/haxe/lib/flixel-addons/git
 -D flixel-addons=1.1.0
 -cp source
 -D native-trace
@@ -20,7 +20,6 @@
 -D no-compilation
 -D openfl-flash
 -D FLX_NO_TOUCH
--D fdb
 -D web
 --macro flixel.system.macros.FlxDefines.run()
 -swf-lib export/flash/obj/assets.swf

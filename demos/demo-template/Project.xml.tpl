@@ -9,7 +9,7 @@
 	<window if="mobile" orientation="landscape" fullscreen="true" width="0" height="0" />
 	<set name="BUILD_DIR" value="export" />
 	<classpath name="source" />
-	<assets path="../demo-assets" />
+	<assets path="../../demo-assets" />
 	<haxelib name="flixel"/>
 	<!--haxelib name="flixel-addons" /-->
 	<!--haxelib name="flixel-ui"/-->
