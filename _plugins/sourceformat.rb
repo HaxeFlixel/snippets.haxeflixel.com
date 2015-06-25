@@ -60,7 +60,7 @@ module Jekyll
     <div class=\"panel-heading\" role=\"tab\" id=\"heading-#{slug}\">
       <h4 class=\"panel-title\">
         <a data-toggle=\"collapse\" data-parent=\"#accordion-#{slug}\" href=\"#collapse-#{slug}\" aria-expanded=\"true\" aria-controls=\"collapse-#{slug}\">
-          <span class=\"pull-right\"><i class=\"icon-chevron-right\"></i></span>#{file}
+          <span class=\"pull-right\"><i class=\"source-chevron fa fa-chevron-circle-right fa-lg fa-fw\"></i></span>#{file}
         </a>
       </h4>
     </div>

@@ -8,7 +8,7 @@ layout: default
 
 <div class="panel panel-primary">
   <div class="panel-heading">
-      <h3 class="panel-title"><i class="icon-dashboard"> </i> Demonstration</h3>
+      <h3 class="panel-title"><i class="fa fa-play-circle fa-lg fa-fw"></i> Demonstration</h3>
   </div>
   <div class="panel-body">
     <object  class="demo" width="320" height="240" data="/demos/{{ demopath }}/export/flash/bin/{{ page.title | slugify }}.swf">
@@ -19,9 +19,11 @@ layout: default
   
 </div>
 {% if page.sourcefiles %}
-<div class="panel panel-primary">
+<div class="panel panel-info">
   <div class="panel-heading">
-    <h3 class="panel-title"><i class="icon-file-code"> </i>Source</h3></li>  
+    <div class="pull-right"><a href="https://github.com/HaxeFlixel/haxeflixel-mechanics/tree/master/demos/{{ demopath }}" role="button" class="btn btn-primary"><i class="fa fa-github fa-lg"></i></a></div>
+    <h3 class="panel-title"><i class="fa fa-code fa-lg fa-fw"></i> Source</h3>
+    
   </div>
   <div class="panel-body">
       {% source {{demopath}} {{page.sourcefiles}} %}

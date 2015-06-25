@@ -2,12 +2,6 @@ language: ruby
 sudo: true
 rvm:
 - 2.1
-cache:
-  bundler: true
-  apt: true
-  directories:
-  - $HOME/neko
-  - $HOME/haxe
 install:
 - bundle install --jobs=3 --retry=3
 - sudo apt-get update -qq
@@ -15,6 +9,7 @@ install:
 before_script:
 - chmod +x ./build/*
 - "./build/haxe-setup.sh"
+- bundle update
 script:
 - bundle exec rake deploy
 env:

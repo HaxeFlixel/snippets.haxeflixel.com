@@ -116,12 +116,72 @@ footer:before {
   right:0;
 }
 
+footer div {
+  color: white;
+}
 
-#footer-social {
+footer .social {
   margin-top:15px;
-  float:none;
+  text-align:left;
+}
+
+footer .build-version {
+  margin-top:20px;
+  text-align:right;
+  color: #9d9d9d;
+}
+
+footer .build-version a {
+  text-decoration:none;
+  color: #9d9d9d;
+}
+
+footer .build-version a:visited {
+  color: #9d9d9d;
+}
+
+footer .build-version a:hover {
+  color: white;
+}
+
+footer .build-version a:active {
+  color: white;
+}
+
+
+footer .hf-link {
+  margin-top:10px;
   text-align:center;
-  
+}
+
+footer .hf-link a {
+  font-size:28px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+footer .hf-link  a:visited{
+  color: white;
+  text-decoration: none;
+}
+
+footer .hf-link  a:hover {
+  color: #9d9d9d;
+  text-decoration: none;
+}
+
+
+footer .hf-link  a:active{
+  color: black;
+  text-decoration: none;
+}
+
+
+#footer-logo {
+	width: 32px;
+	height: 32px;
+
+	padding-bottom: 6px;
 }
 
 .search-form{
@@ -132,47 +192,13 @@ footer:before {
   position: absolute:
   right: 0;
 }
-@font-face {
-	font-family: 'glyphs';
-	src:url('../fonts/glyphs.eot?9fe4o2');
-	src:url('../fonts/glyphs.eot?#iefix9fe4o2') format('embedded-opentype'),
-		url('../fonts/glyphs.ttf?9fe4o2') format('truetype'),
-		url('../fonts/glyphs.woff?9fe4o2') format('woff'),
-		url('../fonts/glyphs.svg?9fe4o2#glyphs') format('svg');
-	font-weight: normal;
-	font-style: normal;
+
+h3.panel-title {
+  font-size:24px;
+  line-height:30px;
 }
 
-[class^="icon-"], [class*=" icon-"] {
-	font-family: 'glyphs';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+.fa-li {
+  font-size: 0.66666666em;
+  line-height:20px;
 }
-
-.icon-chevron-down:before {
-	content: "\f0a3";
-}
-.icon-chevron-right:before {
-	content: "\f078";
-}
-.icon-dashboard:before {
-	content: "\f07d";
-}
-.icon-file-code:before {
-	content: "\f010";
-}
-.icon-puzzle:before {
-	content: "\f0c0";
-}
-.icon-tag:before {
-	content: "\f015";
-}
-
