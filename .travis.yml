@@ -11,7 +11,7 @@ before_script:
 - "./build/haxe-setup.sh"
 - bundle update
 script:
-- bundle exec rake deploy
+- bundle exec rake deploy --trace
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
