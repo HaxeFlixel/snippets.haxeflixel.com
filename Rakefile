@@ -27,10 +27,10 @@ task :build_site do
 end
 
 desc "Build the entire site"
-task :deploy => [:clean_demos, :build_demos, :build_site, :html_proof]
+task :deploy => [:build_demos, :build_site, :html_proof]
 
 desc "Serve the site to localhost:4000"
-task :serve => [:clean_demos, :build_demos, :serve_site]
+task :serve => [:build_demos, :serve_site]
 
 desc "Just serves the site, does not rebuild demos"
 task :serve_site do
