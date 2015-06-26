@@ -8,7 +8,7 @@ install:
 - sudo apt-get install -qq libgc1c2
 - chmod +x ./build/* && "./build/haxe-setup.sh"
 before_script: bundle update
-script: bundle exec rake deploy --trace
+script: bundle exec rake deploy
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true

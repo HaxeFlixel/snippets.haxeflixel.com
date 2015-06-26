@@ -16,12 +16,9 @@ task :build_demos => [:clean_demos] do
   puts "Building Demos..."
   FileUtils.rm_r(Dir.glob('_site/demos/**'))
   FileUtils.rm_r(Dir.glob('_site/title-logo'))
-  homedir = ENV["HOME"]
-  File.directory?("#{homedir}/haxe")
-  File.directory?(ENV["HAXE_STD_PATH"])
   results, error, status = Open3.capture3("haxelib", "run", "flixel-tools", "buildprojects", "-dir", ".")
   puts results
-  if !s.success?
+  if !status.success?
     puts "ERROR! - #{error}"
     exit 1
   end
