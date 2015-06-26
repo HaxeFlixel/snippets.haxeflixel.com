@@ -1,6 +1,6 @@
 require 'html/proofer'
-require 'fileutils'
 require 'bundler'
+require 'open3'
 
 task :default => :serve
 
@@ -16,11 +16,11 @@ task :build_demos => [:clean_demos] do
   print "Building Demos..."
   FileUtils.rm_r(Dir.glob('_site/demos/**'))
   FileUtils.rm_r(Dir.glob('_site/title-logo'))
-  if ! system 'haxelib run flixel-tools buildprojects -dir .'
-    print "\nERROR!\n"
-    exit 1
-  end
-  print "Done\n"
+  results, error, status = Open3.capture3("haxelib", "run", "flixel-tools", "buildprojects", "-dir", ".")
+  puts results
+  puts error
+  puts status
+  print "Done\n";
 end
 
 desc "Check HTML::Proofer"
