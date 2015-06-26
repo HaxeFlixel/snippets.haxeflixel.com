@@ -1,6 +1,6 @@
 ---
 title: Text
-order: 3
+order: 4
 tags: [text]
 complexity: 1
 ---
