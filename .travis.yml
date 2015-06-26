@@ -6,12 +6,8 @@ install:
 - bundle install --jobs=3 --retry=3
 - sudo apt-get update -qq
 - sudo apt-get install -qq libgc1c2
-before_script:
-- chmod +x ./build/*
-- "./build/haxe-setup.sh"
-- bundle update
-script:
-- bundle exec rake deploy --trace
+before_script: bundle update
+script: chmod +x ./build/* && "./build/haxe-setup.sh" && bundle exec rake deploy --trace
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
@@ -19,6 +15,5 @@ env:
 branches:
   only:
   - master
-after_success:
-- if [[ "$TRAVIS_REPO_SLUG" == "HaxeFlixel/haxeflixel-mechanics" ]]; then bundle exec
+after_success: if [[ "$TRAVIS_REPO_SLUG" == "HaxeFlixel/haxeflixel-mechanics" ]]; then bundle exec
   ruby ./build/serversync.rb; fi
