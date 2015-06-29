@@ -1,29 +1,61 @@
 body {
   font-family: 'Ubuntu', sans-serif;
-  background-color: #eee;
+  background-image: url(http://www.haxeflixel.com/images/highlight-bg.png), url(http://www.haxeflixel.com/images/site-bg.png);
+  background-repeat: no-repeat, repeat;
+  background-position: center top, left top;
+  color: #1e1e1e;
+  line-height: 1.5;
+  font-size: 16px;
+  padding: 0px;
 }
 
-#wrapper {
-  width: 100%;
-  overflow:auto;
-  padding-bottom:60px;
-  background-color: white;
+.container-main {
+  margin-top: 24px;
+  margin-bottom:100px;
+  background:white;
+  border: 1px solid #d0d0d0;
+  border-radius: 10px;
+  min-height: 820px;
+  padding:16px;
+  overflow:hidden;
+  padding-top:50px;
 }
 
-#page-wrapper {
-  padding: 0 15px;
-  min-height: 568px;
-  background-color: white;
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+  border-color:#101010;
 }
 
-.navbar-top-search {
-  padding-right:30px;
+.search-form {
+  float: right;
+  padding: 10px 15px;
+  border-top:1px solid transparent;
+  border-bottom: 1px solid transparent;
+  margin-top:7px;
+  margin-bottom:7px;
 }
 
-.navbar-static-top {
+.navbar {
+  min-height: 50px;
+  margin-bottom:22px;
+  border: 1px solid transparent;
+  height: 50px;
+  margin: 0 0 20px 0;
+  padding: 0;
+  color: white;
+}
+
+.navbar-fixed-top {
   box-shadow: 0 0 3px 3px rgba(0,0,0,0.3);
-  border:0;
+  top: 0;
+  z-index: 1030;
 
+}
+
+.navbar-fixed-top, .navbar-fixed-bottom {
+  position: fixed;
+  right:0;
+  left: 0;
+  border-width: 0 0 1px;
 }
 
 .navbar-top-links {
@@ -49,54 +81,32 @@ body {
   color:white;
 }
 
-#brand-logo {
-	width: 24px;
-	height: 24px;
-
-	padding-bottom: 3px;
+.navbar-brand:active, .navbar-brand:visited, .navbar-brand:hover {
+  color:white;
 }
 
-.sidebar .sidebar-nav.navbar-collapse {
-  padding-left:0;
-  padding-right:0;
-}
-.sidebar ul li {
-  border-bottom: 1px solid #e7e7e7;
-}
-.sidebar ul li a.active {
-  background-color:#eee;
-}
-.sidebar .arrow {
-  float: right;
+.navbar-brand {
+  padding:10px;
+  float:left;
+  line-height:32px;
+  font-size: 26px;
+  color: white;
 }
 
-.sidebar .fa.arrow:before {
-  content: "\f104";
+
+
+.navbar-brand img {
+  vertical-align: middle;
+  height: 30px;
+  width: 30px;
+  margin-top: -6px;
 }
 
-.sidebar .active > a > .fa.arrow:before {
-  content: "\f107";
-}
-
-.sidebar .nav-second-level li,
-.sidebar .nav-third-level li {
-    border-bottom: none !important;
-}
-
-.sidebar .nav-second-level li a {
-    padding-left: 37px;
-}
-
-.sidebar .nav-third-level li a {
-    padding-left: 52px;
-}
 
 @media(min-width:768px) {
-    .sidebar {
-        z-index: 1;
-        position: absolute;
-        width: 250px;
-        margin-top: 51px;
+
+    .navbar-fixed-top {
+      border-radius: 0;
     }
 
     .navbar-top-links .dropdown-messages,
@@ -110,6 +120,18 @@ body {
       margin: 0 0 0 250px;
       padding: 0 30px;
       border-left: 1px solid #e7e7e7;
+    }
+
+    .navbar-form {
+      width: auto;
+      border: 0;
+      margin-left: 0;
+      margin-right: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      -webkit-box-shadow:none;
+      -moz-box-shadow:none;
+      box-shadow:none;
     }
 }
 
@@ -233,8 +255,65 @@ footer .hf-link  a:active{
 
 }
 
-.container-fluid {
-  padding-top:30px;
+.page-header {
+  border: 0;
+}
 
+.page-header h1:before {
+  background-image: -webkit-linear-gradient(left, #ffdb2d 0, #ffdb2d 20%, #e30019 20%, #e30019 40%, #9cb641 40%, #9cb641 60%, #1a2eef 60%, #1a2eef 80%, #00abf3 80%, #00abf3 100%);
+  background-image: -moz-linear-gradient(left center, #ffdb2d 0, #ffdb2d 20%, #e30019 20%, #e30019 40%, #9cb641 40%, #9cb641 60%, #1a2eef 60%, #1a2eef 80%, #00abf3 80%, #00abf3 100%);
+  content: "";
+  height: 4px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  width:100%;
+  margin-top:45px;
+}
 
+.jumbotron {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+
+}
+
+.sidebar-nav {
+  padding: 9px 0;
+}
+
+.nav-list {
+  padding-right:0;
+}
+
+.nav-list>li>a, .nav-list .nav-header {
+  margin-right: 0;
+}
+
+.nav-list a {
+  word-wrap: break-word;
+  font-size: 14px;
+  text-shadow: none!important;
+  font-weight: bold;
+  line-height:20px;
+}
+
+.nav-header {
+  color: #555;
+  font-weight: bold;
+  line-height:20px;
+}
+
+.nav-list li i.fa, .fa-ul li i.fa {
+  height: 16px;
+  width: 16px;
+  color: rgb(200,200,200);
+  font-weight:normal;
+  font-size:16px;
+}
+
+fa-li {
+  left: -1.5em;
+}
+.nav-list>li>a.nav-item {
+  padding-left: 40px;
 }

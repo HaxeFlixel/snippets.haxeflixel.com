@@ -4,10 +4,10 @@
     <h3 class="panel-title"><i class="fa fa-bookmark fa-lg fa-fw"></i> See Also</h3>
   </div>
   <div class="panel-body">
-    <ul>
+    <ul class="fa-ul">
     {% assign links = page.seealso %}
     {% for link in links %}
-      <li><a href="{% assign linkparts = link | split: '/' %}{% for linkpart in linkparts %}/{{ (linkpart | slugify }}{% endfor %}">{{ link }}</a></li>
+      <li><i class="fa-li fa fa-dot-circle-o"></i ><a href="{% assign linkparts = link | split: '/' %}{% for linkpart in linkparts %}/{{ (linkpart | slugify }}{% endfor %}">{{ link }}</a></li>
     {% endfor %}
     </ul>
   </div>

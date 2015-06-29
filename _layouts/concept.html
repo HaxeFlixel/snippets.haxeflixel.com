@@ -11,14 +11,9 @@ layout: default
     {% assign proofs = (site.proofs | where:"concept", page.title) | sort: 'order' %}
     {% for proof in proofs %}
         <li id="li-{{proof.concept | slugify }}-{{ proof.title | slugify }}">
-          <i class="fa-li fa fa-circle"></i> <a  href="/{{ proof.concept | slugify }}/{{ proof.title | slugify }}">{{ proof.title }}</a>
+          <i class="fa-li fa fa-dot-circle-o"></i> <a  href="/{{ proof.concept | slugify }}/{{ proof.title | slugify }}">{{ proof.title }}</a>
         </li>
     {% endfor %}
     </ul>
   </div>
 </div>
-
-
-
-
-

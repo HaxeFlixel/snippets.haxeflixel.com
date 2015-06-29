@@ -2,10 +2,10 @@
 <html>
   {% include head.html %}
   <body>
-    <div id="wrapper">
 
-      <!-- Navigation -->
-      <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0">
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="margin-bottom: 0">
+      <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
               <span class="sr-only">Toggle navigation</span>
@@ -15,14 +15,11 @@
           </button>
           <a class="navbar-brand" href="/"><span><img id="brand-logo" src="{% asset_path hfm-logo.svg %}" alt="HaxeFlixel Logo"/> HaxeFlixel Mechanics</span></a>
         </div>
-        <!-- /.navbar-header -->
-
-        <ul class="nav navbar-top-links navbar-left">
-          <li {% if page.title == "About" %}class="active"{% endif %}><a href="/about" >About</a></li>
-          <li {% if page.title == "Tutorials" %}class="active"{% endif %}><a href="/tutorials" >Tutorials</a></li>
-        </ul>
-
-        <div class="nav navbar-top-search pull-right">
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-top-links navbar-nav">
+            <li {% if page.title == "About" %}class="active"{% endif %}><a href="/about" >About</a></li>
+            <li {% if page.title == "Tutorials" %}class="active"{% endif %}><a href="/tutorials" >Tutorials</a></li>
+          </ul>
           <form class="navbar-form search-form" role="search" action="http://google.com/search" method="get">
             <div class="form-group">
               <input type="search" name="q" class="form-control" placeholder="Search">
@@ -30,52 +27,50 @@
             </div>
           </form>
         </div>
-
-        <div class="navbar-default sidebar" role="navigation">
-          <div class="sidebar-nav navbar-collapse">
-            <ul class="nav" id="side-menu">
-              {% assign concepts = (site.concepts | sort: 'order') %}
-              {% for concept in concepts %}
-                <li id="li-{{ concept.title | slugify }}"
-                {% if page.type == 'concept' and page.title == concept.title %}
-                class="active"
-                {% endif %}
-                ><a href="/{{ concept.title | slugify }}" >{{ concept.title }}<span class="fa arrow"></span></a><ul id="list-{{ concept.title | slugify }}" class="nav nav-second-level">{% assign proofs = (site.proofs | where:"concept",concept.title) | sort: 'order' %}
-                    {% for proof in proofs %}
-                      <li id="li-{{proof.concept | slugify }}-{{ proof.title | slugify }}"
-                ><a  href="/{{ proof.concept | slugify }}/{{ proof.title | slugify }}">{{ proof.title }}</a></li>
-                    {% endfor %}
-                  </ul>
-                </li>
-              {% endfor %}
-            </ul>
-          </div>
-        </div>
-      </nav>
-
-      <div id="page-wrapper">
-        <div class="row">
-          <div class="col-lg-12">
-            {% if page.title %}
-            {% if page.title <> 'Index' %}
-            <div class="page-header">
-              <h1>{% if page.type != "tag" %}
-              {{ page.title }}
-              {% elsif page.type == "tag" %}
-              {{ page.tag | capitalize }}
-              {% endif %}</h1>
-            </div>
-            {% endif %}
-            {% endif %}
-            {{ content }}
-            {% include seealso.html %}
-            {% include breadcrumb.html %}
-          </div>
-        </div>
       </div>
+    </nav>
+
+    <div class="container navbar-offset">
+      <div class="row-fluid container-main">
+        <div class="col-md-3">
+          <div class="well sidebar-nav" role="navigation">
+            <div class="nav">
+              <ul class="nav nav-list">
+                {% assign concepts = (site.concepts | sort: 'order') %}
+                {% for concept in concepts %}
+                  <li id="li-{{ concept.title | slugify }}" class="{% if page.title == concept.title or page.concept == concept.title %} active{% endif %}"><a href="/{{ concept.title | slugify }}" class="nav-header"><i class="fa fa-arrow-circle-o-{% if page.title == concept.title or page.concept == concept.title %}down{% else %}right{% endif %}"></i> {{ concept.title }}</a>
+                    <ul id="list-{{ concept.title | slugify }}" class="collapse nav nav-list {% if page.title == concept.title or page.concept == concept.title %} in {% endif %}">
+                      {% assign proofs = (site.proofs | where:"concept",concept.title) | sort: 'order' %}
+                      {% for proof in proofs %}
+                      <li id="li-{{proof.concept | slugify }}-{{ proof.title | slugify }}"><a class="nav-item" href="/{{ proof.concept | slugify }}/{{ proof.title | slugify }}"><i class="fa fa-dot-circle-o"></i> {{ proof.title }}</a></li>
+                      {% endfor %}
+                    </ul>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-9">
+          {% if page.title %}
+          {% if page.title <> 'Index' %}
+          <div class="page-header">
+            <h1>{% if page.type != "tag" %}
+            {{ page.title }}
+            {% elsif page.type == "tag" %}
+            {{ page.tag | capitalize }}
+            {% endif %}</h1>
+          </div>
+          {% endif %}
+          {% endif %}
+          {{ content }}
+          {% include seealso.html %}
+          {% include breadcrumb.html %}
+        </div>
     </div>
-    {% include footer.html %}
-  </body>
+  </div>
+  {% include footer.html %}
+
   <!-- scripts -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
