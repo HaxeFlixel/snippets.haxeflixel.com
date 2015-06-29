@@ -16,17 +16,18 @@ layout: default
     alt : test
     </object>
   </div>
-  
+
 </div>
 {% if page.sourcefiles %}
 <div class="panel panel-info">
   <div class="panel-heading">
-    <div class="pull-right"><a href="https://github.com/HaxeFlixel/haxeflixel-mechanics/tree/master/demos/{{ demopath }}" role="button" class="btn btn-primary"><i class="fa fa-github fa-lg"></i></a></div>
     <h3 class="panel-title"><i class="fa fa-code fa-lg fa-fw"></i> Source</h3>
-    
   </div>
   <div class="panel-body">
       {% source {{demopath}} {{page.sourcefiles}} %}
+  </div>
+  <div class="panel-footer text-right">
+    <a href="https://github.com/HaxeFlixel/haxeflixel-mechanics/tree/master/demos/{{ demopath }}" role="button" class="btn btn-social btn-github"><i class="fa fa-github"></i> View Source on GitHub</a>
   </div>
 </div>
 {% endif %}
