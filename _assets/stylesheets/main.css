@@ -11,7 +11,7 @@ body {
 
 .container-main {
   margin-top: 24px;
-  margin-bottom:100px;
+  margin-bottom:15px;
   background:white;
   border: 1px solid #d0d0d0;
   border-radius: 10px;
@@ -154,16 +154,7 @@ object.demo {
 
 footer {
   display:block;
-  margin-top:-60px;
-  background:#515151;
-  min-height:60px;
-  text-shadow:none;
-  position:relative;
-  bottom:0;
-  width:100%;
-  height:60px;
-  z-index:2000;
-  clear:both;
+  color: white;
 }
 
 footer:before {
@@ -177,8 +168,11 @@ footer:before {
   right:0;
 }
 
-footer div {
-  color: white;
+.footer-main {
+  margin-top: 15px;
+  background: url("/images/footer-shadow.png") repeat-x scroll 0 0 #515151;
+  min-height: 60px;
+  text-shadow: none;
 }
 
 footer .social {
