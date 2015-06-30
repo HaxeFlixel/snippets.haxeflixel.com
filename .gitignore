@@ -7,3 +7,4 @@ credentials.yaml
 .ssh/*
 demos/*/export/*
 title-logo/export/*
+*/export/*
