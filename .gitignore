@@ -5,4 +5,5 @@ bin
 *.lock
 credentials.yaml
 .ssh/*
-demos/*/export
+demos/*/export/*
+title-logo/export/*
