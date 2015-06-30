@@ -4,5 +4,5 @@ bin
 *.db
 *.lock
 credentials.yaml
-*/export/*
+*/export
 .ssh/*
