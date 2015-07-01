@@ -1,3 +1,8 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   font-family: 'Ubuntu', sans-serif;
   background-image: url(http://www.haxeflixel.com/images/highlight-bg.png), url(http://www.haxeflixel.com/images/site-bg.png);
@@ -6,7 +11,8 @@ body {
   color: #1e1e1e;
   line-height: 1.5;
   font-size: 16px;
-  padding: 0px;
+  height: 100%;
+  margin-bottom: 60px;
 }
 
 .container-main {
@@ -15,7 +21,6 @@ body {
   background:white;
   border: 1px solid #d0d0d0;
   border-radius: 10px;
-  min-height: 820px;
   padding:16px;
   overflow:hidden;
   padding-top:50px;
@@ -115,13 +120,6 @@ body {
         margin-left: auto;
     }
 
-    #page-wrapper {
-      position: inherit;
-      margin: 0 0 0 250px;
-      padding: 0 30px;
-      border-left: 1px solid #e7e7e7;
-    }
-
     .navbar-form {
       width: auto;
       border: 0;
@@ -155,21 +153,24 @@ object.demo {
 footer {
   display:block;
   color: white;
+  position: absolute;
+  bottom:0;
+  width:100%;
+  height:60px;
+
 }
 
 footer:before {
   background-image: -webkit-linear-gradient(left, #ffdb2d 0, #ffdb2d 20%, #e30019 20%, #e30019 40%, #9cb641 40%, #9cb641 60%, #1a2eef 60%, #1a2eef 80%, #00abf3 80%, #00abf3 100%);
   background-image: -moz-linear-gradient(left center, #ffdb2d 0, #ffdb2d 20%, #e30019 20%, #e30019 40%, #9cb641 40%, #9cb641 60%, #1a2eef 60%, #1a2eef 80%, #00abf3 80%, #00abf3 100%);
-  top:1;
   content:"";
   height:4px;
+  position: absolute;
   left:0;
-  position:absolute;
   right:0;
 }
 
 .footer-main {
-  margin-top: 15px;
   background: url("/images/footer-shadow.png") repeat-x scroll 0 0 #515151;
   min-height: 60px;
   text-shadow: none;
