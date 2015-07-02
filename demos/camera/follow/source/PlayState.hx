@@ -74,23 +74,18 @@ class PlayState extends FlxState
 			{
 				case 0:
 					currentStyle = FlxCameraFollowStyle.LOCKON;
-					txtStatus.text = "LOCKON";
 				case 1:
 					currentStyle = FlxCameraFollowStyle.NO_DEAD_ZONE;
-					txtStatus.text = "NO_DEAD_ZONE";
 				case 2:
 					currentStyle = FlxCameraFollowStyle.PLATFORMER;
-					txtStatus.text = "PLATFORMER";
 				case 3:
 					currentStyle = FlxCameraFollowStyle.SCREEN_BY_SCREEN;
-					txtStatus.text = "SCREEN_BY_SCREEN";
 				case 4:
 					currentStyle = FlxCameraFollowStyle.TOPDOWN;
-					txtStatus.text = "TOPDOWN";
 				case 5:
 					currentStyle = FlxCameraFollowStyle.TOPDOWN_TIGHT;
-					txtStatus.text = "TOPDOWN_TIGHT";
 			}
+			txtStatus.text = Std.string(currentStyle);
 			FlxG.camera.follow(sprite, currentStyle);
 		}
 		
