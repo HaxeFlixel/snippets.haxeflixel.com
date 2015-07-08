@@ -4,7 +4,6 @@ import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.tile.FlxTilemap;
-using flixel.util.FlxSpriteUtil;
 
 class PlayState extends FlxState
 {

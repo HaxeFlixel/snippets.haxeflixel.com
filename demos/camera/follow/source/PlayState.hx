@@ -7,8 +7,8 @@ import flixel.FlxState;
 import flixel.text.FlxText;
 import flixel.tile.FlxTileblock;
 import flixel.tile.FlxTilemap;
+import flixel.util.FlxAxes;
 import flixel.util.FlxColor;
-using flixel.util.FlxSpriteUtil;
 
 class PlayState extends FlxState
 {
@@ -50,7 +50,7 @@ class PlayState extends FlxState
 		txtStatus.color = FlxColor.WHITE;
 		txtStatus.setBorderStyle(FlxTextBorderStyle.SHADOW, FlxColor.BLACK, 2, 1);
 		txtStatus.alignment = FlxTextAlign.CENTER;
-		txtStatus.screenCenter(true, false);
+		txtStatus.screenCenter(FlxAxes.X);
 		txtStatus.y = 8;
 		txtStatus.scrollFactor.set();
 		add(txtStatus);

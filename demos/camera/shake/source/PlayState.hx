@@ -1,17 +1,16 @@
 package;
 
-import flixel.FlxCamera.FlxCameraShakeDirection;
 import flixel.FlxG;
 import flixel.FlxState;
 import flixel.tile.FlxTilemap;
-using flixel.util.FlxSpriteUtil;
+import flixel.util.FlxAxes;
 
 class PlayState extends FlxState
 {
 	
 	private var timer:Float = 0;
 	private var styleNo:Int = -1;
-	private var style:FlxCameraShakeDirection;
+	private var style:FlxAxes;
 	
 	override public function create():Void
 	{
@@ -20,13 +19,12 @@ class PlayState extends FlxState
 		
 		var map = new FlxTilemap();
 		map.loadMapFromCSV(AssetPaths.map__csv, AssetPaths.tiles__png, 16, 16);
-		map.screenCenter(true, true);
+		map.screenCenter();
 		add(map);
 	}
 
 	override public function update(elapsed:Float):Void
 	{
-		
 		timer -= elapsed;
 		if (timer <= 0)
 		{
@@ -34,14 +32,11 @@ class PlayState extends FlxState
 			styleNo++;
 			if (styleNo >= 3)
 				styleNo = 0;
-			switch (styleNo) 
+			style = switch (styleNo) 
 			{
-				case 0:
-					style = FlxCameraShakeDirection.BOTH_AXES;
-				case 1:
-					style = FlxCameraShakeDirection.X_AXIS;
-				case 2:
-					style = FlxCameraShakeDirection.Y_AXIS;
+				case 0: FlxAxes.XY;
+				case 1: FlxAxes.X;
+				case _: FlxAxes.Y;
 			}
 			
 			FlxG.camera.shake(0.05, 0.5, null, true, style);

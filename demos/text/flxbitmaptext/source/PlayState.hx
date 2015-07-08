@@ -5,7 +5,6 @@ import flixel.FlxState;
 import flixel.graphics.frames.FlxBitmapFont;
 import flixel.math.FlxPoint;
 import flixel.text.FlxBitmapText;
-using flixel.util.FlxSpriteUtil;
 
 class PlayState extends FlxState
 {
