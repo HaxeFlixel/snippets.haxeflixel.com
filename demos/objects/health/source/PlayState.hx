@@ -4,6 +4,7 @@ import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.text.FlxText;
+import flixel.util.FlxAxes;
 import flixel.util.FlxColor;
 
 class PlayState extends FlxState
@@ -18,7 +19,7 @@ class PlayState extends FlxState
 		super.create();
 		
 		sprite = new FlxSprite(AssetPaths.sprite__png);
-		sprite.screenCenter(true, true);
+		sprite.screenCenter();
 		add(sprite);
 		
 		sprite.health = 5;
@@ -32,15 +33,13 @@ class PlayState extends FlxState
 		txtHealth.color = FlxColor.WHITE;
 		txtHealth.setBorderStyle(FlxTextBorderStyle.SHADOW, FlxColor.BLACK, 2, 1);
 		txtHealth.alignment = FlxTextAlign.CENTER;
-		txtHealth.screenCenter(true, false);
+		txtHealth.screenCenter(FlxAxes.X);
 		txtHealth.y = 8;
 		add(txtHealth);
-		
 	}
 
 	override public function update(elapsed:Float):Void
 	{
-		
 		if (sprite.health < -1)
 		{
 			sprite.health = 5;
