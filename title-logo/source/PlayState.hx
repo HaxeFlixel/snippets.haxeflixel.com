@@ -1,33 +1,35 @@
 package;
 
-import flixel.addons.effects.FlxGlitchSprite;
-import flixel.addons.effects.FlxOutline;
-import flixel.addons.effects.FlxRainbowSprite;
-import flixel.addons.effects.FlxWaveSprite;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
+import flixel.addons.effects.chainable.FlxEffectSprite;
+import flixel.addons.effects.chainable.FlxGlitchEffect;
+import flixel.addons.effects.chainable.FlxRainbowEffect;
+import flixel.addons.effects.chainable.FlxWaveEffect;
+import flixel.addons.effects.chainable.IFlxEffect;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.text.FlxText;
 import flixel.tweens.FlxTween;
-import flixel.util.FlxColor;
 import flixel.util.FlxDestroyUtil;
 import openfl.geom.Point;
 
 class PlayState extends FlxState
 {
-	
 	private var sprites:Array<FlxSprite> = [];
 	private var strText:String = "HaxeFlixel Mechanics";
-	private var _glitch:FlxGlitchSprite;
-	private var _wave:FlxWaveSprite;
+	private var _glitchSprite:FlxEffectSprite;
+	private var _glitchEffect:FlxGlitchEffect;
+	private var _waveSprite:FlxEffectSprite;
+	private var _waveEffect:FlxWaveEffect;
 	private var _timer:Float = -4;
-	private var _color:FlxRainbowSprite;
+	private var _colorSprite:FlxEffectSprite;
+	private var _colorEffect:FlxRainbowEffect;
 	private var doingEffect:Bool = false;
 	private var whichEffect:Int = -1;
 	private var target:Int = -1;
 	private var baseline:Float = -1;
-	private var fullRainbow:FlxTypedGroup<FlxRainbowSprite>;
+	private var fullRainbow:FlxTypedGroup<FlxEffectSprite>;
 	
 	override public function create():Void
 	{
@@ -68,7 +70,7 @@ class PlayState extends FlxState
 			add(sprites[sNo]);
 		}
 		sprites[0].y -= 4;
-		fullRainbow = new FlxTypedGroup<FlxRainbowSprite>();
+		fullRainbow = new FlxTypedGroup<FlxEffectSprite>();
 		add(fullRainbow);
 	}
 
@@ -126,9 +128,7 @@ class PlayState extends FlxState
 			case 4:
 				endFullRainbow();
 			default:
-				
-		}
-		
+		}	
 	}
 	
 	private function startEffect():Void
@@ -149,7 +149,6 @@ class PlayState extends FlxState
 			case 4:
 				startFullRainbow();
 			default:
-				
 		}
 	}
 	
@@ -158,10 +157,11 @@ class PlayState extends FlxState
 		var totals:Int = sprites.length;
 		var eachAmt:Int = Std.int(360 / totals);
 		var amt:Int = 0;
-		var c:FlxRainbowSprite;
+		var c:FlxEffectSprite;
 		for (s in 0...sprites.length)
 		{
-			c = new FlxRainbowSprite(sprites[s], amt);
+			var effect = new FlxRainbowEffect(amt);
+			c = createEffectSprite(sprites[s], [effect]);
 			fullRainbow.add(c);
 			c.alpha = 0;
 			amt += eachAmt;
@@ -208,11 +208,12 @@ class PlayState extends FlxState
 	
 	private function startRainbow():Void
 	{
-		_color = new FlxRainbowSprite(sprites[target]);
-		_color.alpha = 0;
-		add(_color);
+		_colorEffect = new FlxRainbowEffect();
+		_colorSprite = createEffectSprite(sprites[target], [_colorEffect]);
+		_colorSprite.alpha = 0;
+		add(_colorSprite);
 		FlxTween.num(0, 1, .25, { type:FlxTween.ONESHOT }, function(Value:Float) {
-			_color.alpha = Value;
+			_colorSprite.alpha = Value;
 			//sprites[target].alpha = 1 - Value;
 		});
 	}
@@ -220,11 +221,11 @@ class PlayState extends FlxState
 	private function endRainbow():Void
 	{
 		FlxTween.num(1, 0, 0.25, { type:FlxTween.ONESHOT, onComplete: function(_) {
-			_color.kill();
-			remove(_color);
-			_color = FlxDestroyUtil.destroy(_color);
+			_colorSprite.kill();
+			remove(_colorSprite);
+			_colorSprite = FlxDestroyUtil.destroy(_colorSprite);
 		}}, function(Value:Float) {
-			_color.alpha = Value;
+			_colorSprite.alpha = Value;
 			//sprites[target].alpha = 1 - Value;
 		});
 	}
@@ -232,48 +233,56 @@ class PlayState extends FlxState
 	private function startWave():Void
 	{
 		sprites[target].visible = false;
-		_wave = new FlxWaveSprite(sprites[target], FlxWaveMode.ALL, 0, -1, 3);
-		add(_wave);
-		_wave.visible = true;
+		_waveEffect = new FlxWaveEffect(FlxWaveMode.ALL, 0, -1, 3);
+		_waveSprite = createEffectSprite(sprites[target], [_waveEffect]);
+		add(_waveSprite);
+		_waveSprite.visible = true;
 		FlxTween.num(0, 5, 1, { type:FlxTween.ONESHOT }, function(Value:Float) {
-			_wave.strength = 4 * Math.floor(Value);
+			_waveEffect.strength = 4 * Math.floor(Value);
 		});
 	}
 	
 	private function endWave():Void
 	{
 		FlxTween.num(5, 0, 1, { type:FlxTween.ONESHOT, onComplete: function(_) {
-			_wave.visible = false;
+			_waveSprite.visible = false;
 			sprites[target].visible = true;
-			_wave.kill();
-			remove(_wave);
-			_wave = FlxDestroyUtil.destroy(_wave);
+			_waveSprite.kill();
+			remove(_waveSprite);
+			_waveSprite = FlxDestroyUtil.destroy(_waveSprite);
 		}}, function(Value:Float) {
-			_wave.strength = 4 * Math.floor(Value);
+			_waveEffect.strength = 4 * Math.floor(Value);
 		});
 	}
 	
 	private function startGlitch():Void
 	{
 		sprites[target].visible = false;
-		_glitch = new FlxGlitchSprite(sprites[target], 0, 1, 0.05, FlxGlitchDirection.HORIZONTAL);
-		add(_glitch);
+		_glitchEffect = new FlxGlitchEffect(0, 1, 0.05, FlxGlitchDirection.HORIZONTAL);
+		_glitchSprite = createEffectSprite(sprites[target], [_glitchEffect]);
+		add(_glitchSprite);
 		FlxTween.num(0, 2, .5, { type:FlxTween.ONESHOT }, function(Value:Float) {
-			_glitch.strength = Math.floor(Value);
+			_glitchEffect.strength = Math.floor(Value);
 		});
 	}
 	
 	private function endGlitch():Void
 	{
 		FlxTween.num(2, 0, .5, { type:FlxTween.ONESHOT, onComplete: function(_) {
-			_glitch.visible = false;
+			_glitchSprite.visible = false;
 			sprites[target].visible = true;
-			_glitch.kill();
-			remove(_glitch);
-			_glitch = FlxDestroyUtil.destroy(_glitch);
+			_glitchSprite.kill();
+			remove(_glitchSprite);
+			_glitchSprite = FlxDestroyUtil.destroy(_glitchSprite);
 		}}, function(Value:Float) {
-			_glitch.strength = Math.floor(Value);
+			_glitchEffect.strength = Math.floor(Value);
 		});
 	}
 	
+	private function createEffectSprite(target:FlxSprite, effects:Array<IFlxEffect>):FlxEffectSprite
+	{
+		var sprite = new FlxEffectSprite(target, effects);
+		sprite.setPosition(target.x, target.y);
+		return sprite;
+	}
 }
