@@ -1,4 +1,3 @@
-require 'html/proofer'
 require 'bundler'
 require 'open3'
 
@@ -25,18 +24,13 @@ task :build_demos => [:clean_demos] do
   puts "Done";
 end
 
-desc "Check HTML::Proofer"
-task :html_proof do
-  HTML::Proofer.new("./_site").run
-end
-
 desc "Build the site with Jekyll"
 task :build_site do
   jekyll('build')
 end
 
 desc "Build the entire site"
-task :deploy => [:build_demos, :build_site, :html_proof]
+task :deploy => [:build_demos, :build_site]
 
 desc "Serve the site to localhost:4000"
 task :serve => [:build_demos, :serve_site]
