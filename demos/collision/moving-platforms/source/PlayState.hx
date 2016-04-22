@@ -27,7 +27,6 @@ class PlayState extends FlxState
 		platform = new FlxSprite();
 		platform.loadGraphic(AssetPaths.bigbox__png);
 		platform.velocity.set(100, 0);
-		platform.moves = true;
 		platform.immovable = true;
 		platform.screenCenter(FlxAxes.X);
 		platform.y = 16 * 8;
@@ -41,15 +40,14 @@ class PlayState extends FlxState
 		
 		pad = new FlxVirtualPad(FlxDPadMode.LEFT_RIGHT, FlxActionMode.NONE);
 		add(pad);
-		
 	}
 
 	override public function update(elapsed:Float):Void
 	{
-		
 		super.update(elapsed);
 		
-		FlxG.overlap(map, platform, platformTouchedWall, FlxObject.updateTouchingFlags);
+		if (map.overlaps(platform))
+			platform.velocity.x *= -1;
 		FlxG.collide(map, sprite);
 		
 		FlxG.collide(platform, sprite);
@@ -68,18 +66,6 @@ class PlayState extends FlxState
 			sprite.velocity.x = 100;
 		else 
 			sprite.velocity.x = 0;
-		
-		
-	}
-	
-	private function platformTouchedWall(ObjectA:FlxTilemap, ObjectB:FlxSprite):Void
-	{
-		if (ObjectB.justTouched(FlxObject.WALL))
-		{
-			ObjectB.x = ObjectB.last.x;
-			ObjectB.velocity.x *= -1;
-			
-		}
 	}
 	
 	private function resetSprite():Void
