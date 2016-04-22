@@ -67,21 +67,21 @@ body {
   margin-right:0;
 }
 
-.navbar-top-links li {
+.navbar-top-links>li {
   display:inline-block;
 }
 
-.navbar-top-links li:first-child {
+.navbar-top-links>li:first-child {
   margin-left: 15px;
 }
 
-.navbar-top-links li a {
+.navbar-top-links>li>a {
   padding:15px;
   min-height:50px;
   color: #9d9d9d;
 }
 
-.navbar-top-links li a:hover, .navbar-top-links li a.active  {
+.navbar-top-links>li>a:hover, .navbar-top-links>li>a.active  {
   background-color: black;
   color:white;
 }
@@ -108,6 +108,7 @@ body {
 }
 
 
+
 @media(min-width:768px) {
 
     .navbar-fixed-top {
@@ -131,6 +132,24 @@ body {
       -moz-box-shadow:none;
       box-shadow:none;
     }
+}
+
+.inverse-dropdown {
+  background-color: #222 !important;
+  border-color: #080808 !important;
+
+}
+
+.inverse-dropdown.divider {
+  background-color: #000 !important;
+}
+
+.inverse-dropdown>li>a {
+  color: #9d9d9d !important;
+}
+.inverse-dropdown>li>a:hover {
+  color: #fff !important;
+  background-color: #000 !important;
 }
 
 canvas.demo-back {
@@ -171,7 +190,7 @@ footer:before {
 }
 
 .footer-main {
-  background: url("/images/footer-shadow.png") repeat-x scroll 0 0 #515151;
+  background: url("http://www.haxeflixel.com/images/footer-shadow.png") repeat-x scroll 0 0 #515151;
   min-height: 60px;
   text-shadow: none;
 }

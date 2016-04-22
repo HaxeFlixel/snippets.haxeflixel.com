@@ -1,0 +1,90 @@
+package;
+
+import flixel.FlxG;
+import flixel.FlxObject;
+import flixel.FlxSprite;
+import flixel.FlxState;
+import flixel.tile.FlxTilemap;
+import flixel.ui.FlxVirtualPad;
+import flixel.util.FlxAxes;
+
+class PlayState extends FlxState
+{
+	private var map:FlxTilemap;
+	private var platform:FlxSprite;
+	private var sprite:FlxSprite;
+	private var pad:FlxVirtualPad;
+
+	override public function create():Void
+	{
+		bgColor = 0;
+		super.create();
+		
+		map = new FlxTilemap();
+		map.loadMapFromCSV(AssetPaths.platform__csv, AssetPaths.tiles__png, 16, 16);
+		add(map);
+		
+		platform = new FlxSprite();
+		platform.loadGraphic(AssetPaths.bigbox__png);
+		platform.velocity.set(100, 0);
+		platform.moves = true;
+		platform.immovable = true;
+		platform.screenCenter(FlxAxes.X);
+		platform.y = 16 * 8;
+		add(platform);
+		
+		sprite = new FlxSprite();
+		sprite.loadGraphic(AssetPaths.sprite__png);
+		resetSprite();
+		sprite.acceleration.y = 600;
+		add(sprite);
+		
+		pad = new FlxVirtualPad(FlxDPadMode.LEFT_RIGHT, FlxActionMode.NONE);
+		add(pad);
+		
+	}
+
+	override public function update(elapsed:Float):Void
+	{
+		
+		super.update(elapsed);
+		
+		FlxG.overlap(map, platform, platformTouchedWall, FlxObject.updateTouchingFlags);
+		FlxG.collide(map, sprite);
+		
+		FlxG.collide(platform, sprite);
+		
+		if (sprite.y >= FlxG.height - (16 * 3))
+			resetSprite();
+		
+		var left:Bool = pad.buttonLeft.pressed || FlxG.keys.anyPressed([A, LEFT]);
+		var right:Bool = pad.buttonRight.pressed || FlxG.keys.anyPressed([D, RIGHT]);
+		
+		if (left && right)
+			left = right = false;
+		if (left)
+			sprite.velocity.x  = -100;
+		else if (right)
+			sprite.velocity.x = 100;
+		else 
+			sprite.velocity.x = 0;
+		
+		
+	}
+	
+	private function platformTouchedWall(ObjectA:FlxTilemap, ObjectB:FlxSprite):Void
+	{
+		if (ObjectB.justTouched(FlxObject.WALL))
+		{
+			ObjectB.x = ObjectB.last.x;
+			ObjectB.velocity.x *= -1;
+			
+		}
+	}
+	
+	private function resetSprite():Void
+	{
+		sprite.x = platform.x + (platform.width / 2) - (sprite.width / 2);
+		sprite.y = platform.y - sprite.height;
+	}
+}
