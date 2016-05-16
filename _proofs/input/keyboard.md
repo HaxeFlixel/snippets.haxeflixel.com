@@ -1,7 +1,7 @@
 ---
 title: Keyboard
 concept: Input
-order: 1
+order: 2
 complexity: 1
 tags: [input, keyboard]
 ---
