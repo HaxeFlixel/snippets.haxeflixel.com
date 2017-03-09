@@ -21,5 +21,5 @@ env:
 branches:
   only:
   - master
-after_success: if [[ "$TRAVIS_REPO_SLUG" == "HaxeFlixel/haxeflixel-mechanics" ]]; then bundle exec
+after_success: if [[ "$TRAVIS_REPO_SLUG" == "HaxeFlixel/haxeflixel-mechanics" && "$TRAVIS_PULL_REQUEST" == false ]]; then bundle exec
   ruby ./build/serversync.rb; fi

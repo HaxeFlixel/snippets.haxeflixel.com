@@ -5,13 +5,12 @@ google-analytics-id: "UA-63717309-1"
 assets:
     js_compressor: yui
 
-gems: 
+gems:
 - jekyll-assets
 - jekyll-sitemap
-- jekyll-autolink_email
 - jekyll_version_plugin
 
-collections: 
+collections:
   concepts:
     output: true
     permalink: /:title/
@@ -19,7 +18,7 @@ collections:
   proofs:
     output: true
     permalink: /:path/
-    
+
 defaults:
     -
         scope:
@@ -38,9 +37,9 @@ defaults:
             type: proof
             tags: [untagged]
             sourcefiles: source/PlayState.hx
-            
 
-    
+
+
 exclude: [vendor, .gitignore, Gemfile, Gemfile.lock, README.md, Rakefile, credentials.yaml, .travis.yml, build, key, key.enc]
 
 tag_page_layout: tag_page
