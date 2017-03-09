@@ -1,0 +1,56 @@
+/* poor man's dark+ theme :( */
+
+pre {
+  background-color: #202020;
+}
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  font-family: "Consolas";
+  font-size: 12px;
+}
+
+.hljs-keyword, .hljs-selector-tag, .hljs-literal, .hljs-section, .hljs-link {
+  color: #569cd6;
+}
+
+.hljs-keyword, .hljs-built_in {
+  color: #569cd6;
+}
+
+.hljs, .hljs-subst {
+  color: #f8f8f2;
+}
+
+.hljs-string {
+  color: #ce9178;
+}
+
+.hljs-name, .hljs-attribute, .hljs-symbol, .hljs-bullet, .hljs-addition, .hljs-template-tag, .hljs-template-variable {
+  color: #9cdcfe;
+}
+
+.hljs-variable, .hljs-attr {
+  color: #9cdcfe;
+}
+
+.hljs-function, .hljs-title {
+  color: #DCDCAA;
+}
+
+.hljs-type {
+  color: #4EC9B0;
+}
+
+.hljs-comment, .hljs-quote, .hljs-deletion {
+  color: #608b4e;
+}
+
+.hljs-meta {
+  color: #808080;
+}
+
+.hljs-number {
+  color: #b5cea8;
+}

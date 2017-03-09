@@ -1,8 +1,8 @@
 module Jekyll
   class SourceFormat < Liquid::Tag
-  
+
     VARIABLE_SYNTAX = /(?<variable>[^{]*\{\{\s*(?<name>[\w\-\.]+)\s*(\|.*)?\}\}[^\s}]*)(?<params>.*)/
-  
+
     def initialize(tag_name, params, tokens)
       super
         @params = params.split(' ', 2)
@@ -19,21 +19,21 @@ module Jekyll
           @files = @params[1].strip
         end
     end
-    
+
     def render_path_variable(context)
       if @path.match(VARIABLE_SYNTAX)
         partial = Liquid::Template.parse(@path)
         partial.render!(context)
       end
     end
-    
+
     def render_files_variable(context)
       if @files.match(VARIABLE_SYNTAX)
         partial = Liquid::Template.parse(@files)
         partial.render!(context)
       end
     end
-    
+
     def render(context)
       sources = ''
       path = render_path_variable(context) || @path
@@ -52,7 +52,7 @@ module Jekyll
           filetype = 'desktop'
         end
         filter = Class.new { include Jekyll::Filters }
-        
+
         contents = filter.new.xml_escape(IO.binread("demos/#{path}/#{file}"))
         slug = Utils.slugify(file)
         sources << "<div class=\"panel-group\" id=\"accordion-#{slug}\" role=\"tablist\" aria-multiselectable=\"true\">
@@ -65,7 +65,7 @@ module Jekyll
       </h4>
     </div>
     <div id=\"collapse-#{slug}\" class=\"source-body panel-collapse collapse\" role=\"tabpanel\" aria-labelledby=\"heading-#{slug}\">
-      <pre class=\"sh_#{filetype}\"><code>#{contents}</code></pre></li>
+      <pre class=\"highlight\"><code class=\"hljs #{filetype}\">#{contents}</code></pre></li>
     </div>
   </div>
 </div>"

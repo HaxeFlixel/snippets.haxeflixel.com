@@ -45,7 +45,7 @@ $(document).ready(function() {
       element.addClass('active');
   }
 
-  sh_highlightDocument();
+  hljs.initHighlightingOnLoad();
 
   makePattern();
 
