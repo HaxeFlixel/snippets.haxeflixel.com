@@ -61,10 +61,10 @@ class PlayState extends FlxState
 		if (left && right)
 			left = right = false;
 		if (left)
-			sprite.velocity.x  = -100;
+			sprite.velocity.x = -100;
 		else if (right)
 			sprite.velocity.x = 100;
-		else 
+		else
 			sprite.velocity.x = 0;
 	}
 	
