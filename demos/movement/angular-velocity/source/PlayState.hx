@@ -6,9 +6,9 @@ import flixel.FlxState;
 
 class PlayState extends FlxState
 {
-	private var sprite:FlxSprite;
-	private var timer:Float = 0;
-	private var speed:Int = 1;
+	var sprite:FlxSprite;
+	var timer:Float = 0;
+	var speed:Int = 1;
 	
 	override public function create():Void
 	{

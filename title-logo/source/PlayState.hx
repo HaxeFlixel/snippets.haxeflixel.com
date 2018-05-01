@@ -16,20 +16,20 @@ import openfl.geom.Point;
 
 class PlayState extends FlxState
 {
-	private var sprites:Array<FlxSprite> = [];
-	private var strText:String = "HaxeFlixel Mechanics";
-	private var _glitchSprite:FlxEffectSprite;
-	private var _glitchEffect:FlxGlitchEffect;
-	private var _waveSprite:FlxEffectSprite;
-	private var _waveEffect:FlxWaveEffect;
-	private var _timer:Float = -4;
-	private var _colorSprite:FlxEffectSprite;
-	private var _colorEffect:FlxRainbowEffect;
-	private var doingEffect:Bool = false;
-	private var whichEffect:Int = -1;
-	private var target:Int = -1;
-	private var baseline:Float = -1;
-	private var fullRainbow:FlxTypedGroup<FlxEffectSprite>;
+	var sprites:Array<FlxSprite> = [];
+	var strText:String = "HaxeFlixel Mechanics";
+	var _glitchSprite:FlxEffectSprite;
+	var _glitchEffect:FlxGlitchEffect;
+	var _waveSprite:FlxEffectSprite;
+	var _waveEffect:FlxWaveEffect;
+	var _timer:Float = -4;
+	var _colorSprite:FlxEffectSprite;
+	var _colorEffect:FlxRainbowEffect;
+	var doingEffect:Bool = false;
+	var whichEffect:Int = -1;
+	var target:Int = -1;
+	var baseline:Float = -1;
+	var fullRainbow:FlxTypedGroup<FlxEffectSprite>;
 	
 	override public function create():Void
 	{
@@ -111,7 +111,7 @@ class PlayState extends FlxState
 		
 	}
 	
-	private function endEffect():Void
+	function endEffect():Void
 	{
 		doingEffect = false;
 		
@@ -131,7 +131,7 @@ class PlayState extends FlxState
 		}	
 	}
 	
-	private function startEffect():Void
+	function startEffect():Void
 	{
 		doingEffect = true;
 		whichEffect = FlxG.random.int(0, 5, [whichEffect]);
@@ -152,7 +152,7 @@ class PlayState extends FlxState
 		}
 	}
 	
-	private function startFullRainbow():Void
+	function startFullRainbow():Void
 	{
 		var totals:Int = sprites.length;
 		var eachAmt:Int = Std.int(360 / totals);
@@ -174,7 +174,7 @@ class PlayState extends FlxState
 		});
 	}
 	
-	private function endFullRainbow():Void
+	function endFullRainbow():Void
 	{		
 		FlxTween.num(1, 0, 1, { type:FlxTween.ONESHOT, onComplete:function(_){
 			for (c in fullRainbow.members)
@@ -191,14 +191,14 @@ class PlayState extends FlxState
 		});
 	}
 	
-	private function endJump():Void
+	function endJump():Void
 	{
 		sprites[target].velocity.y = 0;
 		sprites[target].acceleration.y = 0;
 		sprites[target].y = baseline - sprites[target].height;
 	}
 	
-	private function startJump():Void
+	function startJump():Void
 	{
 		baseline = sprites[target].y+sprites[target].height;
 		sprites[target].acceleration.y = 1600;
@@ -206,7 +206,7 @@ class PlayState extends FlxState
 		
 	}
 	
-	private function startRainbow():Void
+	function startRainbow():Void
 	{
 		_colorEffect = new FlxRainbowEffect();
 		_colorSprite = createEffectSprite(sprites[target], [_colorEffect]);
@@ -218,7 +218,7 @@ class PlayState extends FlxState
 		});
 	}
 	
-	private function endRainbow():Void
+	function endRainbow():Void
 	{
 		FlxTween.num(1, 0, 0.25, { type:FlxTween.ONESHOT, onComplete: function(_) {
 			_colorSprite.kill();
@@ -230,7 +230,7 @@ class PlayState extends FlxState
 		});
 	}
 	
-	private function startWave():Void
+	function startWave():Void
 	{
 		sprites[target].visible = false;
 		_waveEffect = new FlxWaveEffect(FlxWaveMode.ALL, 0, -1, 3);
@@ -242,7 +242,7 @@ class PlayState extends FlxState
 		});
 	}
 	
-	private function endWave():Void
+	function endWave():Void
 	{
 		FlxTween.num(5, 0, 1, { type:FlxTween.ONESHOT, onComplete: function(_) {
 			_waveSprite.visible = false;
@@ -255,7 +255,7 @@ class PlayState extends FlxState
 		});
 	}
 	
-	private function startGlitch():Void
+	function startGlitch():Void
 	{
 		sprites[target].visible = false;
 		_glitchEffect = new FlxGlitchEffect(0, 1, 0.05, FlxGlitchDirection.HORIZONTAL);
@@ -266,7 +266,7 @@ class PlayState extends FlxState
 		});
 	}
 	
-	private function endGlitch():Void
+	function endGlitch():Void
 	{
 		FlxTween.num(2, 0, .5, { type:FlxTween.ONESHOT, onComplete: function(_) {
 			_glitchSprite.visible = false;
@@ -279,7 +279,7 @@ class PlayState extends FlxState
 		});
 	}
 	
-	private function createEffectSprite(target:FlxSprite, effects:Array<IFlxEffect>):FlxEffectSprite
+	function createEffectSprite(target:FlxSprite, effects:Array<IFlxEffect>):FlxEffectSprite
 	{
 		var sprite = new FlxEffectSprite(target, effects);
 		sprite.setPosition(target.x, target.y);

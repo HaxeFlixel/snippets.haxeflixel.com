@@ -12,14 +12,14 @@ import flixel.util.FlxColor;
 
 class PlayState extends FlxState
 {
-	private var sprite:FlxSprite;
-	private var back:FlxTileblock;
-	private var walls:FlxTilemap;
-	private var txtStatus:FlxText;
+	var sprite:FlxSprite;
+	var back:FlxTileblock;
+	var walls:FlxTilemap;
+	var txtStatus:FlxText;
 	
-	private var timer:Float = 10;
-	private var styleNo:Int = 0;
-	private var currentStyle:FlxCameraFollowStyle = FlxCameraFollowStyle.LOCKON;
+	var timer:Float = 10;
+	var styleNo:Int = 0;
+	var currentStyle:FlxCameraFollowStyle = FlxCameraFollowStyle.LOCKON;
 	
 	override public function create():Void
 	{
@@ -57,12 +57,10 @@ class PlayState extends FlxState
 		
 		FlxG.camera.setScrollBoundsRect(0, 0, walls.width, walls.height, true);
 		FlxG.camera.follow(sprite, currentStyle);
-		
 	}
 
 	override public function update(elapsed:Float):Void
 	{
-
 		timer -= elapsed;
 		if (timer <= 0)
 		{
@@ -92,6 +90,5 @@ class PlayState extends FlxState
 		super.update(elapsed);
 		
 		FlxG.collide(walls, sprite);
-		
 	}
 }

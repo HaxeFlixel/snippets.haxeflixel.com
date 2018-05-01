@@ -7,8 +7,8 @@ import flixel.util.FlxColor;
 
 class PlayState extends FlxState
 {
-	private var hue:Float = 0;
-	private var sprite:FlxSprite;
+	var hue:Float = 0;
+	var sprite:FlxSprite;
 	
 	override public function create():Void
 	{

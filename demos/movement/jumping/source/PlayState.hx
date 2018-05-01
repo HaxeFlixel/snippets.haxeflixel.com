@@ -8,12 +8,12 @@ import flixel.ui.FlxVirtualPad;
 
 class PlayState extends FlxState
 {
-	private var sprite:FlxSprite;
-	private var box:FlxSprite;
-	private var pad:FlxVirtualPad;
+	var sprite:FlxSprite;
+	var box:FlxSprite;
+	var pad:FlxVirtualPad;
 	
-	private var jump:Float = 0;
-	private var jumped:Bool = false;
+	var jump:Float = 0;
+	var jumped:Bool = false;
 	
 	override public function create():Void
 	{

@@ -6,9 +6,9 @@ import flixel.FlxState;
 
 class PlayState extends FlxState
 {
-	private var sprite:FlxSprite;
-	private var box:FlxSprite;
-	private var overlaps:Bool;
+	var sprite:FlxSprite;
+	var box:FlxSprite;
+	var overlaps:Bool;
 	
 	override public function create():Void
 	{
@@ -40,12 +40,12 @@ class PlayState extends FlxState
 		super.update(elapsed);
 	}
 	
-	private function doOverlap(objectA:FlxSprite, objectB:FlxSprite):Void
+	function doOverlap(objectA:FlxSprite, objectB:FlxSprite):Void
 	{
 		overlaps = true;
 	}
 	
-	private function doOverlapCheck(objectA:FlxSprite, objectB:FlxSprite):Bool
+	function doOverlapCheck(objectA:FlxSprite, objectB:FlxSprite):Bool
 	{
 		return objectA.velocity.x > 0;
 	}

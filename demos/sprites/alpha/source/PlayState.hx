@@ -6,9 +6,9 @@ import flixel.FlxState;
 
 class PlayState extends FlxState
 {
-	private var alpha:Float = 1;
-	private var sprite:FlxSprite;
-	private var alphaDir:Int = -1;
+	var alpha:Float = 1;
+	var sprite:FlxSprite;
+	var alphaDir:Int = -1;
 	
 	override public function create():Void
 	{

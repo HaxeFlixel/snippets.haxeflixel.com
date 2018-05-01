@@ -19,7 +19,7 @@ class PlayState extends FlxState
 		add(soundBox);
 	}
 
-	private function playSound():Void
+	function playSound():Void
 	{
 		FlxG.sound.play(AssetPaths.just_a_breath__mp3);
 	}

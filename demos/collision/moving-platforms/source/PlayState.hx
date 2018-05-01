@@ -10,10 +10,10 @@ import flixel.util.FlxAxes;
 
 class PlayState extends FlxState
 {
-	private var map:FlxTilemap;
-	private var platform:FlxSprite;
-	private var sprite:FlxSprite;
-	private var pad:FlxVirtualPad;
+	var map:FlxTilemap;
+	var platform:FlxSprite;
+	var sprite:FlxSprite;
+	var pad:FlxVirtualPad;
 
 	override public function create():Void
 	{
@@ -68,7 +68,7 @@ class PlayState extends FlxState
 			sprite.velocity.x = 0;
 	}
 	
-	private function resetSprite():Void
+	function resetSprite():Void
 	{
 		sprite.x = platform.x + (platform.width / 2) - (sprite.width / 2);
 		sprite.y = platform.y - sprite.height;

@@ -6,8 +6,8 @@ import flixel.FlxState;
 
 class PlayState extends FlxState
 {
-	private var sprite:FlxSprite;
-	private var scaleDir:Int = 1;
+	var sprite:FlxSprite;
+	var scaleDir:Int = 1;
 	
 	override public function create():Void
 	{

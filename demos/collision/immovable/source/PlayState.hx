@@ -7,11 +7,11 @@ import flixel.FlxState;
 
 class PlayState extends FlxState
 {
-	private var spriteA:FlxSprite;
-	private var boxA:FlxSprite;
+	var spriteA:FlxSprite;
+	var boxA:FlxSprite;
 	
-	private var spriteB:FlxSprite;
-	private var boxB:FlxSprite;
+	var spriteB:FlxSprite;
+	var boxB:FlxSprite;
 	
 	override public function create():Void
 	{
@@ -27,7 +27,7 @@ class PlayState extends FlxState
 		boxB.immovable = true;
 	}
 	
-	private function createBox(xFactor:Float):FlxSprite
+	function createBox(xFactor:Float):FlxSprite
 	{
 		var box = new FlxSprite(AssetPaths.bigbox__png);
 		box.x = FlxG.width / 2 - box.width / 2;
@@ -36,7 +36,7 @@ class PlayState extends FlxState
 		return box;
 	}
 	
-	private function createSprite(xFactor:Float):FlxSprite
+	function createSprite(xFactor:Float):FlxSprite
 	{
 		var sprite = new FlxSprite(AssetPaths.sprite__png);
 		sprite.x = 16;
@@ -54,7 +54,7 @@ class PlayState extends FlxState
 		updateImmovableExample();
 	}
 	
-	private function updateMovableExample():Void
+	function updateMovableExample():Void
 	{
 		FlxG.collide(spriteA, boxA);
 		
@@ -83,7 +83,7 @@ class PlayState extends FlxState
 		}
 	}
 	
-	private function updateImmovableExample():Void
+	function updateImmovableExample():Void
 	{
 		FlxG.collide(spriteB, boxB);
 		

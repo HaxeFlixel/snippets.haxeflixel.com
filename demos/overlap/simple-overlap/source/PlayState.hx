@@ -6,8 +6,8 @@ import flixel.FlxState;
 
 class PlayState extends FlxState
 {
-	private var sprite:FlxSprite;
-	private var box:FlxSprite;
+	var sprite:FlxSprite;
+	var box:FlxSprite;
 	
 	override public function create():Void
 	{

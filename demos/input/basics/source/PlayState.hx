@@ -8,9 +8,9 @@ import flixel.ui.FlxVirtualPad;
 class PlayState extends FlxState
 {
 	
-	private var status:FlxText;
-	private var pad:FlxVirtualPad;
-	private var lastInput:Int = -1;
+	var status:FlxText;
+	var pad:FlxVirtualPad;
+	var lastInput:Int = -1;
 	
 	override public function create():Void
 	{

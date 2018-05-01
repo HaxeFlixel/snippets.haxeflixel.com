@@ -6,8 +6,8 @@ import flixel.group.FlxGroup.FlxTypedGroup;
 
 class PlayState extends FlxState
 {
-	private var group:FlxTypedGroup<Sprite>;
-	private var spawnTimer:Float = 0;
+	var group:FlxTypedGroup<Sprite>;
+	var spawnTimer:Float = 0;
 	
 	override public function create():Void
 	{

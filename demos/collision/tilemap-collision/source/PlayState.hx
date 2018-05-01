@@ -7,8 +7,8 @@ import flixel.tile.FlxTilemap;
 
 class PlayState extends FlxState
 {
-	private var map:FlxTilemap;
-	private var sprite:FlxSprite;
+	var map:FlxTilemap;
+	var sprite:FlxSprite;
 	
 	override public function create():Void
 	{

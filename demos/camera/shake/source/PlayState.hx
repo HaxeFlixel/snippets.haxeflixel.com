@@ -8,9 +8,9 @@ import flixel.util.FlxAxes;
 class PlayState extends FlxState
 {
 	
-	private var timer:Float = 0;
-	private var styleNo:Int = -1;
-	private var style:FlxAxes;
+	var timer:Float = 0;
+	var styleNo:Int = -1;
+	var style:FlxAxes;
 	
 	override public function create():Void
 	{

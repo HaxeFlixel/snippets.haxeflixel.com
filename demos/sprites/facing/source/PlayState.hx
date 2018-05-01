@@ -7,8 +7,8 @@ import flixel.FlxState;
 
 class PlayState extends FlxState
 {	
-	private var sprite:FlxSprite;
-	private var flipTimer:Float = 1;
+	var sprite:FlxSprite;
+	var flipTimer:Float = 1;
 	
 	override public function create():Void
 	{

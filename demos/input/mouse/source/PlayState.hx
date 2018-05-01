@@ -8,9 +8,9 @@ import flixel.util.FlxColor;
 class PlayState extends FlxState
 {
 	
-	private var h:FlxSprite;
-	private var v:FlxSprite;
-	private var center:FlxSprite;
+	var h:FlxSprite;
+	var v:FlxSprite;
+	var center:FlxSprite;
 	
 	
 	override public function create():Void

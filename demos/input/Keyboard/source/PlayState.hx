@@ -7,9 +7,8 @@ import flixel.ui.FlxVirtualPad;
 
 class PlayState extends FlxState
 {
-	
-	private var sprite:FlxSprite;
-	private var pad:FlxVirtualPad;
+	var sprite:FlxSprite;
+	var pad:FlxVirtualPad;
 	
 	override public function create():Void
 	{
@@ -22,7 +21,6 @@ class PlayState extends FlxState
 		
 		pad = new FlxVirtualPad(FlxDPadMode.FULL, FlxActionMode.NONE);
 		add(pad);
-		
 	}
 
 	override public function update(elapsed:Float):Void

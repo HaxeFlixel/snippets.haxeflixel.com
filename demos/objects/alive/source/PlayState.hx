@@ -9,10 +9,10 @@ import flixel.util.FlxColor;
 
 class PlayState extends FlxState
 {
-	private var sprite:FlxSprite;
-	private var txtHealth:FlxText;
+	var sprite:FlxSprite;
+	var txtHealth:FlxText;
 	
-	private var time:Float=1;
+	var time:Float=1;
 	
 	override public function create():Void
 	{

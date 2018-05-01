@@ -7,9 +7,9 @@ import flixel.util.FlxColor;
 class PlayState extends FlxState
 {
 	
-	private var timer:Float = 0;
-	private var direction:Bool = false;
-	private var color:FlxColor;
+	var timer:Float = 0;
+	var direction:Bool = false;
+	var color:FlxColor;
 	
 	override public function create():Void
 	{

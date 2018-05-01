@@ -8,8 +8,8 @@ import flixel.system.FlxAssets.FlxGraphicAsset;
 
 class PlayState extends FlxState
 {
-	private var groupA:FlxGroup;
-	private var groupB:FlxGroup;
+	var groupA:FlxGroup;
+	var groupB:FlxGroup;
 	
 	override public function create():Void
 	{
@@ -26,7 +26,7 @@ class PlayState extends FlxState
 		}
 	}
 	
-	private function createSprite(graphic:FlxGraphicAsset):FlxSprite
+	function createSprite(graphic:FlxGraphicAsset):FlxSprite
 	{
 		var sprite = new FlxSprite(graphic);
 		sprite.x = FlxG.random.int(0, Std.int(FlxG.width - sprite.width));
