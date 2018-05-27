@@ -166,7 +166,7 @@ class PlayState extends FlxState
 			c.alpha = 0;
 			amt += eachAmt;
 		}
-		FlxTween.num(0, 1, 1, { type:FlxTween.ONESHOT }, function(Value:Float) {
+		FlxTween.num(0, 1, 1, null, function(Value:Float) {
 			for (c in fullRainbow.members)
 				c.alpha = Value;
 			//for (s in sprites)
@@ -176,7 +176,7 @@ class PlayState extends FlxState
 	
 	function endFullRainbow():Void
 	{		
-		FlxTween.num(1, 0, 1, { type:FlxTween.ONESHOT, onComplete:function(_){
+		FlxTween.num(1, 0, 1, { onComplete:function(_){
 			for (c in fullRainbow.members)
 			{
 				c.kill();
@@ -212,7 +212,7 @@ class PlayState extends FlxState
 		_colorSprite = createEffectSprite(sprites[target], [_colorEffect]);
 		_colorSprite.alpha = 0;
 		add(_colorSprite);
-		FlxTween.num(0, 1, .25, { type:FlxTween.ONESHOT }, function(Value:Float) {
+		FlxTween.num(0, 1, .25, null, function(Value:Float) {
 			_colorSprite.alpha = Value;
 			//sprites[target].alpha = 1 - Value;
 		});
@@ -220,7 +220,7 @@ class PlayState extends FlxState
 	
 	function endRainbow():Void
 	{
-		FlxTween.num(1, 0, 0.25, { type:FlxTween.ONESHOT, onComplete: function(_) {
+		FlxTween.num(1, 0, 0.25, { onComplete: function(_) {
 			_colorSprite.kill();
 			remove(_colorSprite);
 			_colorSprite = FlxDestroyUtil.destroy(_colorSprite);
@@ -237,14 +237,14 @@ class PlayState extends FlxState
 		_waveSprite = createEffectSprite(sprites[target], [_waveEffect]);
 		add(_waveSprite);
 		_waveSprite.visible = true;
-		FlxTween.num(0, 5, 1, { type:FlxTween.ONESHOT }, function(Value:Float) {
+		FlxTween.num(0, 5, 1, null, function(Value:Float) {
 			_waveEffect.strength = 4 * Math.floor(Value);
 		});
 	}
 	
 	function endWave():Void
 	{
-		FlxTween.num(5, 0, 1, { type:FlxTween.ONESHOT, onComplete: function(_) {
+		FlxTween.num(5, 0, 1, { onComplete: function(_) {
 			_waveSprite.visible = false;
 			sprites[target].visible = true;
 			_waveSprite.kill();
@@ -261,14 +261,14 @@ class PlayState extends FlxState
 		_glitchEffect = new FlxGlitchEffect(0, 1, 0.05, FlxGlitchDirection.HORIZONTAL);
 		_glitchSprite = createEffectSprite(sprites[target], [_glitchEffect]);
 		add(_glitchSprite);
-		FlxTween.num(0, 2, .5, { type:FlxTween.ONESHOT }, function(Value:Float) {
+		FlxTween.num(0, 2, .5, null, function(Value:Float) {
 			_glitchEffect.strength = Math.floor(Value);
 		});
 	}
 	
 	function endGlitch():Void
 	{
-		FlxTween.num(2, 0, .5, { type:FlxTween.ONESHOT, onComplete: function(_) {
+		FlxTween.num(2, 0, .5, { onComplete: function(_) {
 			_glitchSprite.visible = false;
 			sprites[target].visible = true;
 			_glitchSprite.kill();
