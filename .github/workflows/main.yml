@@ -21,3 +21,10 @@ jobs:
         gem install bundler
         bundle install --jobs=3 --retry=3
         bundle exec rake deploy
+    - uses: JamesIves/github-pages-deploy-action@3.4.3
+      with:
+        ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
+        BRANCH: gh-pages
+        FOLDER: _site
+        SINGLE_COMMIT: true
+      if: github.event_name == 'push' && github.ref == 'master'
