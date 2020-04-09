@@ -12,6 +12,8 @@ jobs:
         ruby-version: '2.7'
     - uses: krdlab/setup-haxe@v1
     - run: |
+        haxelib install lime
+        haxelib install openfl
         haxelib install flixel
         haxelib install flixel-addons
         haxelib install flixel-tools
