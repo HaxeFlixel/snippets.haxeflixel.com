@@ -27,4 +27,4 @@ jobs:
         BRANCH: gh-pages
         FOLDER: _site
         SINGLE_COMMIT: true
-      if: github.event_name == 'push' && github.ref == 'master'
+      if: github.event_name == 'push' && github.ref == 'refs/heads/master'
