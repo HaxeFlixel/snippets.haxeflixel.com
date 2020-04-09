@@ -11,10 +11,7 @@ layout: default
       <h3 class="panel-title"><i class="fa fa-play-circle fa-lg fa-fw"></i> Demonstration</h3>
   </div>
   <div class="panel-body">
-    <object  class="demo" width="320" height="240" data="/demos/{{ demopath }}/export/flash/bin/{{ page.title | slugify }}.swf">
-      <param name="wmode" value="transparent">
-    alt : test
-    </object>
+    <iframe src="/demos/{{ demopath }}/export/html5/bin" width="320" height="240"></iframe>
   </div>
 
 </div>

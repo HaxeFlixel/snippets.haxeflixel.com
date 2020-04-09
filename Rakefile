@@ -15,7 +15,7 @@ task :build_demos => [:clean_demos] do
   puts "Building Demos..."
   FileUtils.rm_r(Dir.glob('_site/demos/**'))
   FileUtils.rm_r(Dir.glob('_site/title-logo'))
-  results, error, status = Open3.capture3("haxelib", "run", "flixel-tools", "buildprojects", "-dir", ".")
+  results, error, status = Open3.capture3("haxelib", "run", "flixel-tools", "buildprojects", "html5", "-dir", ".")
   puts results
   if !status.success?
     puts "ERROR! - #{error}"
