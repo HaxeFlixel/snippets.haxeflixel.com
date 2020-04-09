@@ -45,11 +45,11 @@
           <div class="well sidebar-nav" role="navigation">
             <div class="nav">
               <ul class="nav nav-list">
-                {% assign concepts = (site.concepts | sort: 'order') %}
+                {% assign concepts = site.concepts | sort: 'order' %}
                 {% for concept in concepts %}
                   <li id="li-{{ concept.title | slugify }}" class="{% if page.title == concept.title or page.concept == concept.title %} active{% endif %}"><a href="/{{ concept.title | slugify }}" class="nav-header"><i class="fa fa-arrow-circle-o-{% if page.title == concept.title or page.concept == concept.title %}down{% else %}right{% endif %}"></i> {{ concept.title }}</a>
                     <ul id="list-{{ concept.title | slugify }}" class="collapse nav nav-list {% if page.title == concept.title or page.concept == concept.title %} in {% endif %}">
-                      {% assign proofs = (site.proofs | where:"concept",concept.title) | sort: 'order' %}
+                      {% assign proofs = site.proofs | where:"concept",concept.title | sort: 'order' %}
                       {% for proof in proofs %}
                       <li id="li-{{proof.concept | slugify }}-{{ proof.title | slugify }}"><a class="nav-item" href="/{{ proof.concept | slugify }}/{{ proof.title | slugify }}"><i class="fa fa-dot-circle-o"></i> {{ proof.title }}</a></li>
                       {% endfor %}
