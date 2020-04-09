@@ -1,7 +1,5 @@
 language: ruby
 sudo: true
-rvm:
-- 2.2.5
 install:
 - bundle install --jobs=3 --retry=3
 - sudo apt-get update -qq
