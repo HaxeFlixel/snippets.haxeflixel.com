@@ -7,4 +7,3 @@ credentials.yaml
 .ssh/*
 **/export
 export
-.vscode

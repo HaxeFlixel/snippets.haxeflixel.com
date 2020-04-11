@@ -47,6 +47,7 @@ class PlayState extends FlxState
 		}
 		else
 			sprite.hurt(elapsed);
+
 		if (sprite.health > 0)
 			txtHealth.text = "Health: " + Std.string(Math.ceil(sprite.health));
 		else
