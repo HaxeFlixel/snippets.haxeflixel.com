@@ -13,12 +13,7 @@ class PlayState extends FlxState
 	{
 		super.create();
 
-		group = new FlxTypedGroup<Sprite>(20);
-		for (i in 0...group.maxSize)
-		{
-			group.add(new Sprite());
-		}
-		add(group);
+		add(group = new FlxTypedGroup<Sprite>(20));
 	}
 
 	override public function update(elapsed:Float)
@@ -27,7 +22,7 @@ class PlayState extends FlxState
 		if (spawnTimer > 1)
 		{
 			spawnTimer--;
-			group.add(group.recycle());
+			group.add(group.recycle(Sprite.new));
 		}
 
 		super.update(elapsed);
