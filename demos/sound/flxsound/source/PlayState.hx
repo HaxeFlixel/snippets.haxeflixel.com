@@ -9,7 +9,7 @@ import flixel.math.FlxMath;
 
 class PlayState extends FlxState
 {
-	override public function create():Void
+	override public function create()
 	{
 		bgColor = 0;
 		super.create();
@@ -19,8 +19,8 @@ class PlayState extends FlxState
 		add(soundBox);
 	}
 
-	function playSound():Void
+	function playSound()
 	{
-		FlxG.sound.play(AssetPaths.just_a_breath__mp3);
+		FlxG.sound.play("assets/just-a-breath.mp3");
 	}
 }

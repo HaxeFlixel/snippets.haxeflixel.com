@@ -9,7 +9,7 @@ class PlayState extends FlxState
 	var group:FlxTypedGroup<Sprite>;
 	var spawnTimer:Float = 0;
 	
-	override public function create():Void
+	override public function create()
 	{
 		bgColor = 0;
 		super.create();
@@ -22,7 +22,7 @@ class PlayState extends FlxState
 		add(group);
 	}
 
-	override public function update(elapsed:Float):Void
+	override public function update(elapsed:Float)
 	{
 		spawnTimer += elapsed * 5;
 		if (spawnTimer > 1)

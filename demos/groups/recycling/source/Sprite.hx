@@ -8,11 +8,11 @@ class Sprite extends FlxSprite
 {
 	public function new()
 	{
-		super(AssetPaths.sprite__png);
+		super("assets/sprite.png");
 		kill();
 	}
 	
-	override public function revive():Void 
+	override public function revive() 
 	{
 		x = -width;
 		y = FlxG.random.int(0, Std.int(FlxG.height - height));
@@ -20,7 +20,7 @@ class Sprite extends FlxSprite
 		super.revive();
 	}
 	
-	override public function update(elapsed:Float):Void 
+	override public function update(elapsed:Float) 
 	{
 		if (x > FlxG.width)
 			kill();

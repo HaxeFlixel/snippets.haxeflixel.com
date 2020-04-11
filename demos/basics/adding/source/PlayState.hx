@@ -6,15 +6,15 @@ import flixel.FlxState;
 
 class PlayState extends FlxState
 {
-	override public function create():Void
+	override public function create()
 	{
 		bgColor = 0;
 		super.create();
 		
-		var box = new FlxSprite(AssetPaths.bigbox__png);
+		var box = new FlxSprite("assets/bigbox.png");
 		box.screenCenter();
 		
-		var sprite = new FlxSprite(AssetPaths.sprite__png);
+		var sprite = new FlxSprite("assets/sprite.png");
 		sprite.screenCenter();
 		
 		add(box);

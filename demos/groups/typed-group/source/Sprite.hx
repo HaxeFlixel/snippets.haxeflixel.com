@@ -8,7 +8,7 @@ class Sprite extends FlxSprite
 {
 	public function new() 
 	{
-		super(AssetPaths.sprite__png);
+		super("assets/sprite.png");
 		setPosition(
 			FlxG.random.int(0, Std.int(FlxG.width - width)),
 			FlxG.random.int(0, Std.int(FlxG.height - height)));
@@ -17,7 +17,7 @@ class Sprite extends FlxSprite
 			FlxG.random.int(50, 200) * FlxG.random.sign());
 	}
 	
-	override public function update(elapsed:Float):Void 
+	override public function update(elapsed:Float) 
 	{
 		if ((velocity.x > 0 && x + width >= FlxG.width) ||
 			(velocity.x < 0 && x <= 0))

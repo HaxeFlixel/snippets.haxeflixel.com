@@ -15,17 +15,17 @@ class PlayState extends FlxState
 	var sprite:FlxSprite;
 	var pad:FlxVirtualPad;
 
-	override public function create():Void
+	override public function create()
 	{
 		bgColor = 0;
 		super.create();
 		
 		map = new FlxTilemap();
-		map.loadMapFromCSV(AssetPaths.platform__csv, AssetPaths.tiles__png, 16, 16);
+		map.loadMapFromCSV("assets/platform.csv", "assets/tiles.png", 16, 16);
 		add(map);
 		
 		platform = new FlxSprite();
-		platform.loadGraphic(AssetPaths.bigbox__png);
+		platform.loadGraphic("assets/bigbox.png");
 		platform.velocity.set(100, 0);
 		platform.immovable = true;
 		platform.screenCenter(FlxAxes.X);
@@ -33,7 +33,7 @@ class PlayState extends FlxState
 		add(platform);
 		
 		sprite = new FlxSprite();
-		sprite.loadGraphic(AssetPaths.sprite__png);
+		sprite.loadGraphic("assets/sprite.png");
 		resetSprite();
 		sprite.acceleration.y = 600;
 		add(sprite);
@@ -42,7 +42,7 @@ class PlayState extends FlxState
 		add(pad);
 	}
 
-	override public function update(elapsed:Float):Void
+	override public function update(elapsed:Float)
 	{
 		super.update(elapsed);
 		
@@ -68,7 +68,7 @@ class PlayState extends FlxState
 			sprite.velocity.x = 0;
 	}
 	
-	function resetSprite():Void
+	function resetSprite()
 	{
 		sprite.x = platform.x + (platform.width / 2) - (sprite.width / 2);
 		sprite.y = platform.y - sprite.height;

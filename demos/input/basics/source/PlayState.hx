@@ -12,7 +12,7 @@ class PlayState extends FlxState
 	var pad:FlxVirtualPad;
 	var lastInput:Int = -1;
 	
-	override public function create():Void
+	override public function create()
 	{
 		bgColor = 0;
 		super.create();
@@ -29,7 +29,7 @@ class PlayState extends FlxState
 		
 	}
 
-	override public function update(elapsed:Float):Void
+	override public function update(elapsed:Float)
 	{
 		super.update(elapsed);
 		

@@ -10,12 +10,12 @@ class PlayState extends FlxState
 	var sprite:FlxSprite;
 	var pad:FlxVirtualPad;
 	
-	override public function create():Void
+	override public function create()
 	{
 		bgColor = 0;
 		super.create();
 		
-		sprite = new FlxSprite(AssetPaths.sprite__png);
+		sprite = new FlxSprite("assets/sprite.png");
 		sprite.screenCenter();
 		add(sprite);
 		
@@ -23,7 +23,7 @@ class PlayState extends FlxState
 		add(pad);
 	}
 
-	override public function update(elapsed:Float):Void
+	override public function update(elapsed:Float)
 	{
 		super.update(elapsed);
 		

@@ -10,21 +10,21 @@ class PlayState extends FlxState
 	var sprite:FlxSprite;
 	var alphaDir:Int = -1;
 	
-	override public function create():Void
+	override public function create()
 	{
 		bgColor = 0;
 		super.create();
 		
-		sprite = new FlxSprite(AssetPaths.bigbox__png);
+		sprite = new FlxSprite("assets/bigbox.png");
 		sprite.screenCenter();
 		add(sprite);
 	}
 
-	override public function update(elapsed:Float):Void
+	override public function update(elapsed:Float)
 	{
 		super.update(elapsed);
 		
-		alpha += .02 * alphaDir;
+		alpha += 0.02 * alphaDir;
 		
 		if (alpha > 1)
 			alphaDir = -1;

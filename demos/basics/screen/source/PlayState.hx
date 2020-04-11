@@ -6,7 +6,7 @@ import flixel.text.FlxText;
 
 class PlayState extends FlxState
 {
-	override public function create():Void
+	override public function create()
 	{
 		bgColor = 0;
 		super.create();

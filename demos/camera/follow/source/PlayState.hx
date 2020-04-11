@@ -21,20 +21,20 @@ class PlayState extends FlxState
 	var styleNo:Int = 0;
 	var currentStyle:FlxCameraFollowStyle = FlxCameraFollowStyle.LOCKON;
 	
-	override public function create():Void
+	override public function create()
 	{
 		bgColor = 0;
 		super.create();
 		
 		back = new FlxTileblock(0, 0, FlxG.width * 2, FlxG.height * 2);
-		back.loadTiles(AssetPaths.back_tile__png, 16, 16, 0);
+		back.loadTiles("assets/back-tile.png", 16, 16, 0);
 		add(back);
 		
 		walls = new FlxTilemap();
-		walls.loadMapFromCSV(AssetPaths.big_room_map__csv, AssetPaths.tiles__png, 16, 16);
+		walls.loadMapFromCSV("assets/big-room-map.csv", "assets/tiles.png", 16, 16);
 		add(walls);
 		
-		sprite = new FlxSprite(AssetPaths.sprite__png);
+		sprite = new FlxSprite("assets/sprite.png");
 		sprite.x = walls.width / 2 - sprite.width / 2;
 		sprite.y = walls.height / 2 - sprite.height / 2;
 		sprite.velocity.set(160, 160);
@@ -59,7 +59,7 @@ class PlayState extends FlxState
 		FlxG.camera.follow(sprite, currentStyle);
 	}
 
-	override public function update(elapsed:Float):Void
+	override public function update(elapsed:Float)
 	{
 		timer -= elapsed;
 		if (timer <= 0)

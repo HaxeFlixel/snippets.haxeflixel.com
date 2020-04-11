@@ -10,17 +10,17 @@ class PlayState extends FlxState
 	var hue:Float = 0;
 	var sprite:FlxSprite;
 	
-	override public function create():Void
+	override public function create()
 	{
 		bgColor = 0;
 		super.create();
 		
-		sprite = new FlxSprite(AssetPaths.bigbox__png);
+		sprite = new FlxSprite("assets/bigbox.png");
 		sprite.screenCenter();
 		add(sprite);
 	}
 
-	override public function update(elapsed:Float):Void
+	override public function update(elapsed:Float)
 	{
 		hue += elapsed * 50;
 		if (hue > 360)

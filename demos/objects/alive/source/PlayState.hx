@@ -14,12 +14,12 @@ class PlayState extends FlxState
 	
 	var time:Float=1;
 	
-	override public function create():Void
+	override public function create()
 	{
 		bgColor = 0;
 		super.create();
 		
-		sprite = new FlxSprite(AssetPaths.sprite__png);
+		sprite = new FlxSprite("assets/sprite.png");
 		sprite.screenCenter();
 		add(sprite);
 		
@@ -37,7 +37,7 @@ class PlayState extends FlxState
 		add(txtHealth);
 	}
 
-	override public function update(elapsed:Float):Void
+	override public function update(elapsed:Float)
 	{
 		time -= elapsed;
 		if (time <= 0)

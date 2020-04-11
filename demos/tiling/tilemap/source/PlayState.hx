@@ -6,13 +6,13 @@ import flixel.tile.FlxTilemap;
 
 class PlayState extends FlxState
 {
-	override public function create():Void
+	override public function create()
 	{
 		bgColor = 0;
 		super.create();
 		
 		var map = new FlxTilemap();
-		map.loadMapFromCSV(AssetPaths.map__csv, AssetPaths.tiles__png);
+		map.loadMapFromCSV("assets/map.csv", "assets/tiles.png");
 		map.screenCenter();
 		add(map);
 	}

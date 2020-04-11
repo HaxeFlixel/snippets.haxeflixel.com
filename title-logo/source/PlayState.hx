@@ -31,7 +31,7 @@ class PlayState extends FlxState
 	var baseline:Float = -1;
 	var fullRainbow:FlxTypedGroup<FlxEffectSprite>;
 	
-	override public function create():Void
+	override public function create()
 	{
 		bgColor = 0;
 		super.create();
@@ -74,7 +74,7 @@ class PlayState extends FlxState
 		add(fullRainbow);
 	}
 
-	override public function update(elapsed:Float):Void
+	override public function update(elapsed:Float)
 	{
 		_timer += elapsed;
 		if (_timer > 4)
@@ -95,7 +95,7 @@ class PlayState extends FlxState
 		{
 			if (sprites[target].y + sprites[target].height > baseline)
 			{
-				sprites[target].velocity.y *= -.66;
+				sprites[target].velocity.y *= -0.66;
 				if (Math.abs(sprites[target].velocity.y) < 32)
 				{
 					sprites[target].velocity.y = 0;
@@ -111,7 +111,7 @@ class PlayState extends FlxState
 		
 	}
 	
-	function endEffect():Void
+	function endEffect()
 	{
 		doingEffect = false;
 		
@@ -131,7 +131,7 @@ class PlayState extends FlxState
 		}	
 	}
 	
-	function startEffect():Void
+	function startEffect()
 	{
 		doingEffect = true;
 		whichEffect = FlxG.random.int(0, 5, [whichEffect]);
@@ -152,7 +152,7 @@ class PlayState extends FlxState
 		}
 	}
 	
-	function startFullRainbow():Void
+	function startFullRainbow()
 	{
 		var totals:Int = sprites.length;
 		var eachAmt:Int = Std.int(360 / totals);
@@ -174,7 +174,7 @@ class PlayState extends FlxState
 		});
 	}
 	
-	function endFullRainbow():Void
+	function endFullRainbow()
 	{		
 		FlxTween.num(1, 0, 1, { onComplete:function(_){
 			for (c in fullRainbow.members)
@@ -191,14 +191,14 @@ class PlayState extends FlxState
 		});
 	}
 	
-	function endJump():Void
+	function endJump()
 	{
 		sprites[target].velocity.y = 0;
 		sprites[target].acceleration.y = 0;
 		sprites[target].y = baseline - sprites[target].height;
 	}
 	
-	function startJump():Void
+	function startJump()
 	{
 		baseline = sprites[target].y+sprites[target].height;
 		sprites[target].acceleration.y = 1600;
@@ -206,19 +206,19 @@ class PlayState extends FlxState
 		
 	}
 	
-	function startRainbow():Void
+	function startRainbow()
 	{
 		_colorEffect = new FlxRainbowEffect();
 		_colorSprite = createEffectSprite(sprites[target], [_colorEffect]);
 		_colorSprite.alpha = 0;
 		add(_colorSprite);
-		FlxTween.num(0, 1, .25, null, function(Value:Float) {
+		FlxTween.num(0, 1, 0.25, null, function(Value:Float) {
 			_colorSprite.alpha = Value;
 			//sprites[target].alpha = 1 - Value;
 		});
 	}
 	
-	function endRainbow():Void
+	function endRainbow()
 	{
 		FlxTween.num(1, 0, 0.25, { onComplete: function(_) {
 			_colorSprite.kill();
@@ -230,7 +230,7 @@ class PlayState extends FlxState
 		});
 	}
 	
-	function startWave():Void
+	function startWave()
 	{
 		sprites[target].visible = false;
 		_waveEffect = new FlxWaveEffect(FlxWaveMode.ALL, 0, -1, 3);
@@ -242,7 +242,7 @@ class PlayState extends FlxState
 		});
 	}
 	
-	function endWave():Void
+	function endWave()
 	{
 		FlxTween.num(5, 0, 1, { onComplete: function(_) {
 			_waveSprite.visible = false;
@@ -255,20 +255,20 @@ class PlayState extends FlxState
 		});
 	}
 	
-	function startGlitch():Void
+	function startGlitch()
 	{
 		sprites[target].visible = false;
 		_glitchEffect = new FlxGlitchEffect(0, 1, 0.05, FlxGlitchDirection.HORIZONTAL);
 		_glitchSprite = createEffectSprite(sprites[target], [_glitchEffect]);
 		add(_glitchSprite);
-		FlxTween.num(0, 2, .5, null, function(Value:Float) {
+		FlxTween.num(0, 2, 0.5, null, function(Value:Float) {
 			_glitchEffect.strength = Math.floor(Value);
 		});
 	}
 	
-	function endGlitch():Void
+	function endGlitch()
 	{
-		FlxTween.num(2, 0, .5, { onComplete: function(_) {
+		FlxTween.num(2, 0, 0.5, { onComplete: function(_) {
 			_glitchSprite.visible = false;
 			sprites[target].visible = true;
 			_glitchSprite.kill();

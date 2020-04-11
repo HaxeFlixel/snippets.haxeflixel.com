@@ -10,19 +10,19 @@ class PlayState extends FlxState
 	var timer:Float = 0;
 	var speed:Int = 1;
 	
-	override public function create():Void
+	override public function create()
 	{
 		bgColor = 0;
 		super.create();
 		
-		sprite = new FlxSprite(AssetPaths.arrow__png);
+		sprite = new FlxSprite("assets/arrow.png");
 		sprite.screenCenter();
 		add(sprite);
 		
 		sprite.angularVelocity = 30;
 	}
 
-	override public function update(elapsed:Float):Void
+	override public function update(elapsed:Float)
 	{
 		timer += elapsed;
 		if (timer >= 2)

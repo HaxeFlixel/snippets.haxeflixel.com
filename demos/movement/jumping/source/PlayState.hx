@@ -15,20 +15,20 @@ class PlayState extends FlxState
 	var jump:Float = 0;
 	var jumped:Bool = false;
 	
-	override public function create():Void
+	override public function create()
 	{
 		bgColor = 0;
 		super.create();
 		
-		sprite = new FlxSprite(AssetPaths.sprite__png);
+		sprite = new FlxSprite("assets/sprite.png");
 		sprite.x = FlxG.width / 2 - sprite.width / 2;
 		sprite.acceleration.y = 600;
 		sprite.maxVelocity.y = 300;
 		add(sprite);
 		
-		box = new FlxSprite(AssetPaths.bigbox__png);
+		box = new FlxSprite("assets/bigbox.png");
 		box.x = FlxG.width / 2 - box.width / 2;
-		box.y = FlxG.height * .75 - box.height / 2;
+		box.y = FlxG.height * 0.75 - box.height / 2;
 		box.immovable = true;
 		add(box);
 		
@@ -36,7 +36,7 @@ class PlayState extends FlxState
 		add(pad);
 	}
 
-	override public function update(elapsed:Float):Void
+	override public function update(elapsed:Float)
 	{
 		super.update(elapsed);
 		

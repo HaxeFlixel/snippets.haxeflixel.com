@@ -10,12 +10,12 @@ class PlayState extends FlxState
 	var sprite:FlxSprite;
 	var flipTimer:Float = 1;
 	
-	override public function create():Void
+	override public function create()
 	{
 		bgColor = 0;
 		super.create();
 		
-		sprite = new FlxSprite(AssetPaths.arrow__png);
+		sprite = new FlxSprite("assets/arrow.png");
 		sprite.screenCenter();
 		sprite.facing = FlxObject.RIGHT;
 		sprite.setFacingFlip(FlxObject.RIGHT, false, false);
@@ -23,7 +23,7 @@ class PlayState extends FlxState
 		add(sprite);
 	}
 
-	override public function update(elapsed:Float):Void
+	override public function update(elapsed:Float)
 	{
 		flipTimer -= elapsed;
 		if (flipTimer <= 0)

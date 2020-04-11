@@ -10,23 +10,23 @@ class PlayState extends FlxState
 	var map:FlxTilemap;
 	var sprite:FlxSprite;
 	
-	override public function create():Void
+	override public function create()
 	{
 		bgColor = 0;
 		super.create();
 		
 		map = new FlxTilemap();
-		map.loadMapFromCSV(AssetPaths.room_map__csv, AssetPaths.tiles__png, 16, 16);
+		map.loadMapFromCSV("assets/room-map.csv", "assets/tiles.png", 16, 16);
 		add(map);
 		
-		sprite = new FlxSprite(AssetPaths.sprite__png);
+		sprite = new FlxSprite("assets/sprite.png");
 		sprite.screenCenter();
 		sprite.velocity.set(200, 200);
 		sprite.elasticity = 1;
 		add(sprite);
 	}
 
-	override public function update(elapsed:Float):Void
+	override public function update(elapsed:Float)
 	{
 		super.update(elapsed);
 		

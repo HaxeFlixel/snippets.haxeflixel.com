@@ -13,7 +13,7 @@ class PlayState extends FlxState
 	var center:FlxSprite;
 	
 	
-	override public function create():Void
+	override public function create()
 	{
 		bgColor = 0;
 		super.create();
@@ -31,7 +31,7 @@ class PlayState extends FlxState
 		add(center);
 	}
 
-	override public function update(elapsed:Float):Void
+	override public function update(elapsed:Float)
 	{
 		super.update(elapsed);
 		
@@ -40,6 +40,6 @@ class PlayState extends FlxState
 		center.x = h.x-1;
 		center.y = v.y-1;
 		if (FlxG.mouse.justReleased)
-			FlxG.camera.flash(FlxColor.WHITE, .33);
+			FlxG.camera.flash(FlxColor.WHITE, 0.33);
 	}
 }

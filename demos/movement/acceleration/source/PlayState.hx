@@ -8,19 +8,19 @@ class PlayState extends FlxState
 {
 	var sprite:FlxSprite;
 	
-	override public function create():Void
+	override public function create()
 	{
 		bgColor = 0;
 		super.create();
 		
-		sprite = new FlxSprite(AssetPaths.sprite__png);
+		sprite = new FlxSprite("assets/sprite.png");
 		sprite.y = FlxG.height / 2 - sprite.height / 2;
 		add(sprite);
 		
 		sprite.acceleration.x = 400;
 	}
 
-	override public function update(elapsed:Float):Void
+	override public function update(elapsed:Float)
 	{
 		if (sprite.velocity.x > 0 && sprite.x >= FlxG.width - sprite.width)
 		{

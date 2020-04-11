@@ -10,17 +10,17 @@ class PlayState extends FlxState
 	var spriteA:FlxSprite;
 	var spriteB:FlxSprite;
 	
-	override public function create():Void
+	override public function create()
 	{
 		bgColor = 0;
 		super.create();
 		
-		spriteA = new FlxSprite(AssetPaths.sprite__png);
+		spriteA = new FlxSprite("assets/sprite.png");
 		spriteA.x = 24;
 		spriteA.y = FlxG.height / 2 - spriteA.height / 2;
 		add(spriteA);
 		
-		spriteB = new FlxSprite(AssetPaths.sprite__png);
+		spriteB = new FlxSprite("assets/sprite.png");
 		spriteB.x = FlxG.width - 24 - spriteB.width;
 		spriteB.y = FlxG.height / 2 - spriteB.height / 2;
 		add(spriteB);
@@ -29,7 +29,7 @@ class PlayState extends FlxState
 		spriteB.velocity.x = -150;
 	}
 
-	override public function update(elapsed:Float):Void
+	override public function update(elapsed:Float)
 	{
 		super.update(elapsed);
 		
@@ -41,7 +41,7 @@ class PlayState extends FlxState
 			spriteB.velocity.x *= -1;
 	}
 	
-	function collision(spriteA:FlxSprite, spriteB:FlxSprite):Void
+	function collision(spriteA:FlxSprite, spriteB:FlxSprite)
 	{
 		spriteA.velocity.x = -150;
 		spriteB.velocity.x = 150;

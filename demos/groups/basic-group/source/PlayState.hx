@@ -11,7 +11,7 @@ class PlayState extends FlxState
 	var groupA:FlxGroup;
 	var groupB:FlxGroup;
 	
-	override public function create():Void
+	override public function create()
 	{
 		bgColor = 0;
 		super.create();
@@ -21,8 +21,8 @@ class PlayState extends FlxState
 		
 		for (i in 0...50)
 		{
-			groupA.add(createSprite(AssetPaths.bigbox__png));
-			groupB.add(createSprite(AssetPaths.sprite__png));
+			groupA.add(createSprite("assets/bigbox.png"));
+			groupB.add(createSprite("assets/sprite.png"));
 		}
 	}
 	

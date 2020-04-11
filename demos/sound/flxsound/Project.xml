@@ -32,7 +32,7 @@
 
 	<set name="BUILD_DIR" value="export" />
 	<classpath name="source" />
-	<assets path="../../demo-assets" />
+	<assets path="../../demo-assets" rename="assets" />
 
 	<!-- _______________________________ Libraries ______________________________ -->
 

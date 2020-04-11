@@ -12,18 +12,18 @@ class PlayState extends FlxState
 	var styleNo:Int = -1;
 	var style:FlxAxes;
 	
-	override public function create():Void
+	override public function create()
 	{
 		bgColor = 0;
 		super.create();
 		
 		var map = new FlxTilemap();
-		map.loadMapFromCSV(AssetPaths.map__csv, AssetPaths.tiles__png, 16, 16);
+		map.loadMapFromCSV("assets/map.csv", "assets/tiles.png", 16, 16);
 		map.screenCenter();
 		add(map);
 	}
 
-	override public function update(elapsed:Float):Void
+	override public function update(elapsed:Float)
 	{
 		timer -= elapsed;
 		if (timer <= 0)

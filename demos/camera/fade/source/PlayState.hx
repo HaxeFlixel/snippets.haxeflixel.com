@@ -11,13 +11,13 @@ class PlayState extends FlxState
 	var direction:Bool = false;
 	var color:FlxColor;
 	
-	override public function create():Void
+	override public function create()
 	{
 		bgColor = 0;
 		super.create();
 	}
 
-	override public function update(elapsed:Float):Void
+	override public function update(elapsed:Float)
 	{
 		
 		timer -= elapsed;
