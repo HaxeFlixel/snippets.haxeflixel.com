@@ -4,6 +4,7 @@ concept: Groups
 complexity: 2
 order: 3
 tags: [groups]
+sourcefiles: source/PlayState.hx source/Sprite.hx
 ---
 One of the more powerful aspects of groups is {% api flixel.group.FlxTypedGroup.recycle() %}.
 
