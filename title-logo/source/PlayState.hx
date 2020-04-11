@@ -47,7 +47,8 @@ class PlayState extends FlxState
 			text.color = 0xff000000;
 			text.font = "Ubuntu Medium";
 			spr = new FlxSprite();
-			spr.makeGraphic(Math.ceil(text.width), Math.ceil(text.height), 0x0, true, 'letter' + letter);
+			spr.makeGraphic(Math.ceil(text.width), Math.ceil(text.height), 0x0, true,
+				'letter' + letter);
 			spr.pixels.copyPixels(text.pixels, text.pixels.rect, pt);
 			spr.dirty = true;
 			sprites.push(spr);

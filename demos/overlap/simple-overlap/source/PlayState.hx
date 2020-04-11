@@ -25,7 +25,8 @@ class PlayState extends FlxState
 
 	override public function update(elapsed:Float)
 	{
-		if ((sprite.velocity.x > 0 && sprite.x >= FlxG.width - sprite.width) || (sprite.velocity.x < 0 && sprite.x <= 0))
+		if ((sprite.velocity.x > 0 && sprite.x >= FlxG.width - sprite.width)
+			|| (sprite.velocity.x < 0 && sprite.x <= 0))
 		{
 			sprite.velocity.x *= -1;
 		}
