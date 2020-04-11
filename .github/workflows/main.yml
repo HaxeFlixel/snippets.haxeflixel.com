@@ -14,7 +14,7 @@ jobs:
     - run: |
         haxelib install lime
         haxelib install openfl
-        haxelib install flixel
+        haxelib git flixel https://github.com/HaxeFlixel/flixel
         haxelib install flixel-addons
         haxelib install flixel-tools
     - run: |
