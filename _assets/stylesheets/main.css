@@ -5,7 +5,7 @@ html {
 
 body {
   font-family: 'Ubuntu', sans-serif;
-  background-image: url(https://www.haxeflixel.com/images/highlight-bg.png), url(https://www.haxeflixel.com/images/site-bg.png);
+  background-image: url(https://haxeflixel.com/images/highlight-bg.png), url(https://haxeflixel.com/images/site-bg.png);
   background-repeat: no-repeat, repeat;
   background-position: center top, left top;
   color: #1e1e1e;
@@ -193,7 +193,7 @@ footer:before {
 }
 
 .footer-main {
-  background: url("https://www.haxeflixel.com/images/footer-shadow.png") repeat-x scroll 0 0 #515151;
+  background: url("https://haxeflixel.com/images/footer-shadow.png") repeat-x scroll 0 0 #515151;
   min-height: 60px;
   text-shadow: none;
 }
@@ -263,7 +263,7 @@ footer .hf-link  a:active{
 }
 
 .source-button {
-  position: absolute:
+  position: absolute;
   right: 0;
 }
 
