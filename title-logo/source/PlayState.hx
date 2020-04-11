@@ -17,7 +17,7 @@ import openfl.geom.Point;
 class PlayState extends FlxState
 {
 	var sprites:Array<FlxSprite> = [];
-	var strText:String = "HaxeFlixel Mechanics";
+	var strText:String = "HaxeFlixel Snippets";
 	var _glitchSprite:FlxEffectSprite;
 	var _glitchEffect:FlxGlitchEffect;
 	var _waveSprite:FlxEffectSprite;
