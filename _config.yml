@@ -8,7 +8,6 @@ assets:
 gems:
 - jekyll-assets
 - jekyll-sitemap
-- jekyll_version_plugin
 
 collections:
   concepts:
