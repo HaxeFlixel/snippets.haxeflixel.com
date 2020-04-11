@@ -10,7 +10,7 @@ import flixel.util.FlxColor;
 class PlayState extends FlxState
 {
 	var sprite:FlxSprite;
-	var txtHealth:FlxText;
+	var healthText:FlxText;
 
 	var time:Float = 1;
 
@@ -22,18 +22,18 @@ class PlayState extends FlxState
 		sprite.screenCenter();
 		add(sprite);
 
-		txtHealth = new FlxText();
-		txtHealth.size = 16;
-		txtHealth.text = "Alive";
-		txtHealth.autoSize = false;
-		txtHealth.wordWrap = false;
-		txtHealth.fieldWidth = FlxG.width;
-		txtHealth.color = FlxColor.WHITE;
-		txtHealth.setBorderStyle(FlxTextBorderStyle.SHADOW, FlxColor.BLACK, 2, 1);
-		txtHealth.alignment = FlxTextAlign.CENTER;
-		txtHealth.screenCenter(FlxAxes.X);
-		txtHealth.y = 8;
-		add(txtHealth);
+		healthText = new FlxText();
+		healthText.size = 16;
+		healthText.text = "Alive";
+		healthText.autoSize = false;
+		healthText.wordWrap = false;
+		healthText.fieldWidth = FlxG.width;
+		healthText.color = FlxColor.WHITE;
+		healthText.setBorderStyle(FlxTextBorderStyle.SHADOW, FlxColor.BLACK, 2, 1);
+		healthText.alignment = FlxTextAlign.CENTER;
+		healthText.screenCenter(FlxAxes.X);
+		healthText.y = 8;
+		add(healthText);
 	}
 
 	override public function update(elapsed:Float)
@@ -45,12 +45,12 @@ class PlayState extends FlxState
 			if (sprite.alive)
 			{
 				sprite.kill();
-				txtHealth.text = "Dead";
+				healthText.text = "Dead";
 			}
 			else
 			{
 				sprite.revive();
-				txtHealth.text = "Alive";
+				healthText.text = "Alive";
 			}
 		}
 		super.update(elapsed);

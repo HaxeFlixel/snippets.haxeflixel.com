@@ -38,17 +38,17 @@ class PlayState extends FlxState
 
 		sprites.push(new FlxSprite(0, 0, AssetPaths.logo__png));
 
-		var txt:FlxText;
+		var text:FlxText;
 		var spr:FlxSprite;
 		var pt:Point = new Point();
 		for (letter in strText.split(""))
 		{
-			txt = new FlxText(0, 0, 0, letter, 63, true);
-			txt.color = 0xff000000;
-			txt.font = "Ubuntu Medium";
+			text = new FlxText(0, 0, 0, letter, 63, true);
+			text.color = 0xff000000;
+			text.font = "Ubuntu Medium";
 			spr = new FlxSprite();
-			spr.makeGraphic(Math.ceil(txt.width), Math.ceil(txt.height), 0x0, true, 'letter' + letter);
-			spr.pixels.copyPixels(txt.pixels, txt.pixels.rect, pt);
+			spr.makeGraphic(Math.ceil(text.width), Math.ceil(text.height), 0x0, true, 'letter' + letter);
+			spr.pixels.copyPixels(text.pixels, text.pixels.rect, pt);
 			spr.dirty = true;
 			sprites.push(spr);
 		}

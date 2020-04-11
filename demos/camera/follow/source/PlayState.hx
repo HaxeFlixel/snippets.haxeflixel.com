@@ -15,7 +15,7 @@ class PlayState extends FlxState
 	var sprite:FlxSprite;
 	var back:FlxTileblock;
 	var walls:FlxTilemap;
-	var txtStatus:FlxText;
+	var statusText:FlxText;
 
 	var timer:Float = 10;
 	var styleNo:Int = 0;
@@ -40,19 +40,19 @@ class PlayState extends FlxState
 		sprite.elasticity = 1;
 		add(sprite);
 
-		txtStatus = new FlxText();
-		txtStatus.size = 16;
-		txtStatus.text = "LOCKON";
-		txtStatus.autoSize = false;
-		txtStatus.wordWrap = false;
-		txtStatus.fieldWidth = FlxG.width;
-		txtStatus.color = FlxColor.WHITE;
-		txtStatus.setBorderStyle(FlxTextBorderStyle.SHADOW, FlxColor.BLACK, 2, 1);
-		txtStatus.alignment = FlxTextAlign.CENTER;
-		txtStatus.screenCenter(FlxAxes.X);
-		txtStatus.y = 8;
-		txtStatus.scrollFactor.set();
-		add(txtStatus);
+		statusText = new FlxText();
+		statusText.size = 16;
+		statusText.text = "LOCKON";
+		statusText.autoSize = false;
+		statusText.wordWrap = false;
+		statusText.fieldWidth = FlxG.width;
+		statusText.color = FlxColor.WHITE;
+		statusText.setBorderStyle(FlxTextBorderStyle.SHADOW, FlxColor.BLACK, 2, 1);
+		statusText.alignment = FlxTextAlign.CENTER;
+		statusText.screenCenter(FlxAxes.X);
+		statusText.y = 8;
+		statusText.scrollFactor.set();
+		add(statusText);
 
 		FlxG.camera.setScrollBoundsRect(0, 0, walls.width, walls.height, true);
 		FlxG.camera.follow(sprite, currentStyle);
@@ -82,7 +82,7 @@ class PlayState extends FlxState
 				case 5:
 					currentStyle = FlxCameraFollowStyle.TOPDOWN_TIGHT;
 			}
-			txtStatus.text = Std.string(currentStyle);
+			statusText.text = Std.string(currentStyle);
 			FlxG.camera.follow(sprite, currentStyle);
 		}
 
