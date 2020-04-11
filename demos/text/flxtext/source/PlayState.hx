@@ -15,7 +15,6 @@ class PlayState extends FlxState
 		text.text = "Hello, World!";
 		text.color = FlxColor.CYAN;
 		text.size = 32;
-		text.alignment = FlxTextAlign.CENTER;
 		text.setBorderStyle(FlxTextBorderStyle.SHADOW, FlxColor.BLUE, 4);
 		text.screenCenter();
 		add(text);
