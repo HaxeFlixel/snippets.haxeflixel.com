@@ -33,7 +33,7 @@ module Jekyll
         desc = last
       end
       desc = filter.new.xml_escape(desc)
-      "<code><a data-toggle=\"tooltip\" data-placement=\"top\" title=\"#{tooltip}\" href=\"http://api.haxeflixel.com#{link}\">#{desc}</a></code>"
+      "<code><a data-toggle=\"tooltip\" data-placement=\"top\" title=\"#{tooltip}\" href=\"https://api.haxeflixel.com#{link}\">#{desc}</a></code>"
     end
   end
 end
