@@ -4,6 +4,6 @@ type: tag
 ---
 <ul>
 {% for post in page.posts %}
-  <li><a href="{{ post.url }}">{% if post.type == 'proof' %}{{ post.concept }} / {% endif %}{{ post.title }}</a> (Tags: {{ post.tags }})</li>
+  <li><a href="{{ post.url }}">{% if post.type == 'proof' %}{{ post.concept }} / {% endif %}{{ post.title }}</a></li>
 {% endfor %}
 </ul>
