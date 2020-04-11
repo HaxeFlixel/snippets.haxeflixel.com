@@ -23,7 +23,6 @@ class PlayState extends FlxState
 
 	override public function create()
 	{
-		bgColor = 0;
 		super.create();
 
 		back = new FlxTileblock(0, 0, FlxG.width * 2, FlxG.height * 2);

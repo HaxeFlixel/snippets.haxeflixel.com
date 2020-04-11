@@ -11,7 +11,6 @@ class PlayState extends FlxState
 
 	override public function create()
 	{
-		bgColor = 0;
 		super.create();
 
 		group = new FlxTypedGroup<Sprite>(20);

@@ -10,7 +10,6 @@ class PlayState extends FlxState
 {
 	override public function create()
 	{
-		bgColor = 0;
 		super.create();
 
 		var text = new FlxBitmapText(FlxBitmapFont.fromMonospace("assets/tiny-font.png", FlxBitmapFont.DEFAULT_CHARS, FlxPoint.get(8, 8)));

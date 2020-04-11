@@ -9,7 +9,7 @@ tags: [groups]
 
 ```haxe
 // create a FlxGroup called group, limiting it to 50 objects
-var group:FlxGroup = new FlxGroup(50);
+var group = new FlxGroup(50);
 
 // add sprite to group
 group.add(sprite);

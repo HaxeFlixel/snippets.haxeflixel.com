@@ -11,7 +11,6 @@ class PlayState extends FlxState
 {
 	override public function create()
 	{
-		bgColor = 0;
 		super.create();
 
 		var soundBox:FlxButton = new FlxButton(0, 0, "Play Sound", playSound);
