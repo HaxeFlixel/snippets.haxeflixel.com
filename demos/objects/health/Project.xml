@@ -3,8 +3,6 @@
 	<app title="health" file="health" main="Main" version="0.0.1" company="HaxeFlixel" />
 	<set name="SWF_VERSION" value="11.8" />
 	<window width="320" height="240" fps="60" hardware="true" vsync="false" />
-	<window if="html5" background="#202020" />
-	<window if="web" orientation="portrait"  />
 	<window if="desktop" orientation="landscape" fullscreen="false" resizable="true" />
 	<window if="mobile" orientation="landscape" fullscreen="true" width="0" height="0" />
 	<set name="BUILD_DIR" value="export" />
