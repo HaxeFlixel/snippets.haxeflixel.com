@@ -15,30 +15,30 @@ FlxG.collide(box, sprite);
 var jumpPressed:Bool = pad.buttonA.pressed;
 
 if (jumped && !jumpPressed)
-  jumped = false;
+	jumped = false;
 
 if (sprite.isTouching(FlxObject.DOWN) && !jumped)
-  jump = 0;
+	jump = 0;
 
 if (jump >= 0 && jumpPressed)
 {
-  jumped = true;
-  jump += elapsed;
-  if (jump > 0.33)
-    jump = -1;
+	jumped = true;
+	jump += elapsed;
+	if (jump > 0.33)
+		jump = -1;
 }
 else
-  jump = -1;
+	jump = -1;
 
 if (jump > 0)
 {
-  if (jump < 0.065)
-    sprite.velocity.y = -360;
-  else
-    sprite.acceleration.y = 10;
+	if (jump < 0.065)
+		sprite.velocity.y = -360;
+	else
+		sprite.acceleration.y = 10;
 }
 else
 {
-  sprite.velocity.y = 600;
+	sprite.velocity.y = 600;
 }
 ```

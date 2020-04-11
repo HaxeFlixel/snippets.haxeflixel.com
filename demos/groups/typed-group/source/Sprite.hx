@@ -9,8 +9,10 @@ class Sprite extends FlxSprite
 	public function new()
 	{
 		super("assets/sprite.png");
-		setPosition(FlxG.random.int(0, Std.int(FlxG.width - width)), FlxG.random.int(0, Std.int(FlxG.height - height)));
-		velocity.set(FlxG.random.int(50, 200) * FlxG.random.sign(), FlxG.random.int(50, 200) * FlxG.random.sign());
+		setPosition(FlxG.random.int(0, Std.int(FlxG.width - width)),
+			FlxG.random.int(0, Std.int(FlxG.height - height)));
+		velocity.set(FlxG.random.int(50, 200) * FlxG.random.sign(),
+			FlxG.random.int(50, 200) * FlxG.random.sign());
 	}
 
 	override public function update(elapsed:Float)

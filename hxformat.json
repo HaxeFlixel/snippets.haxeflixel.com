@@ -1,4 +1,7 @@
 {
+	"wrapping": {
+		"maxLineLength": 100
+	},
 	"lineEnds": {
 		"leftCurly": "both",
 		"rightCurly": "both",

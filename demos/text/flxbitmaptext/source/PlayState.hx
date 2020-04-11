@@ -12,7 +12,8 @@ class PlayState extends FlxState
 	{
 		super.create();
 
-		var text = new FlxBitmapText(FlxBitmapFont.fromMonospace("assets/tiny-font.png", FlxBitmapFont.DEFAULT_CHARS, FlxPoint.get(8, 8)));
+		var text = new FlxBitmapText(FlxBitmapFont.fromMonospace("assets/tiny-font.png",
+			FlxBitmapFont.DEFAULT_CHARS, FlxPoint.get(8, 8)));
 		text.text = "Hello, World!";
 		text.scale.set(2, 2);
 		text.screenCenter();

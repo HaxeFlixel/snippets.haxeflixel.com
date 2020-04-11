@@ -11,6 +11,6 @@ tags: [input, keyboard]
 ```haxe
 if (FlxG.keys.anyPressed([UP]))
 {
-  sprite.velocity.y = -100;
+	sprite.velocity.y = -100;
 }
 ```

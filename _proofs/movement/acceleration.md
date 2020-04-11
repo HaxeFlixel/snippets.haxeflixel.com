@@ -13,8 +13,8 @@ Use {% api flixel.FlxObject.acceleration %} to change the {% api flixel.FlxObjec
 object.acceleration.x = 250;
 
 // if the object starts at velocity.x = 0:
-// at  .5 seconds, velocity.x = 125
-// at 1   seconds, velocity.x = 250
-// at 2   seconds, velocity.x = 500
+// at 0.5 seconds, velocity.x = 125
+// at 1.0 seconds, velocity.x = 250
+// at 2.0 seconds, velocity.x = 500
 // etc.
 ```

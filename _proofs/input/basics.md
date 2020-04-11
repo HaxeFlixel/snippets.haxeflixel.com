@@ -12,6 +12,6 @@ Each input has 4 states: `justPressed`, `pressed`, `justReleased`, and `released
 ```haxe
 if (FlxG.keys.pressed.X)
 {
-  jump();
+	jump();
 }
 ```

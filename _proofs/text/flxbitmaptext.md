@@ -9,7 +9,8 @@ You can use Bitmap Fonts with the {% api flixel.text.FlxBitmapText %} object. Yo
 
 ```haxe
 // creates a new FlxBitmapText, using a monospace 8x8px font.
-text = new FlxBitmapText(FlxBitmapFont.fromMonospace("path/to/font.png", FlxBitmapFont.DEFAULT_CHARS, FlxPoint.get( 8, 8)));
+text = new FlxBitmapText(FlxBitmapFont.fromMonospace("assets/tiny-font.png",
+	FlxBitmapFont.DEFAULT_CHARS, FlxPoint.get(8, 8)));
 
 // set the text's text to "Hello, World!"
 text.text = "Hello, World!";

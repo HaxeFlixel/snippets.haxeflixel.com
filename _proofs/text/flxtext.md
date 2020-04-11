@@ -11,9 +11,9 @@ The most basic object to display text is a {% api flixel.text.FlxText %}. You ca
 ```haxe
 // create a new FlxText
 text = new FlxText();
-text.text = "Hello, World!";          // set text's text to say "Hello, World!"
-text.color = FlxColor.CYAN;          // set the color to cyan
-text.size = 32;                       // set the text's size to 32px
+text.text = "Hello, World!"; // set text's text to say "Hello, World!"
+text.color = FlxColor.CYAN; // set the color to cyan
+text.size = 32; // set the text's size to 32px
 text.alignment = FlxTextAlign.CENTER; // center the text
-text.setBorderStyle(FlxTextBorderStyle.SHADOW, FlxColor.BLUE, 4);   // give the text a 4-pixel deep, blue shadow
+text.setBorderStyle(FlxTextBorderStyle.SHADOW, FlxColor.BLUE, 4); // give the text a 4-pixel deep, blue shadow
 ```

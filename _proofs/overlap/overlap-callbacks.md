@@ -20,6 +20,6 @@ FlxG.overlap(objectA, objectB, doOverlap, doOverlapCheck);
 // doOverlapCheck will return true only if objectA is moving to the right when an overlap is detected
 private function doOverlapCheck(objectA:FlxObject, objectB:FlxObject):Bool
 {
-  return objectA.velocity.x > 0;
+	return objectA.velocity.x > 0;
 }
 ```
