@@ -8,16 +8,16 @@ class PlayState extends FlxState
 {
 	var sprite:FlxSprite;
 	var box:FlxSprite;
-	
+
 	override public function create()
 	{
 		bgColor = 0;
 		super.create();
-		
+
 		box = new FlxSprite("assets/bigbox.png");
 		box.screenCenter();
 		add(box);
-		
+
 		sprite = new FlxSprite("assets/sprite.png");
 		sprite.y = FlxG.height / 2 - sprite.height / 2;
 		sprite.velocity.x = 100;
@@ -30,9 +30,9 @@ class PlayState extends FlxState
 		{
 			sprite.velocity.x *= -1;
 		}
-		
+
 		box.alpha = FlxG.overlap(sprite, box) ? 0.5 : 1;
-		
+
 		super.update(elapsed);
 	}
 }

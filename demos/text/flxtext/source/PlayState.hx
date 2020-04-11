@@ -11,7 +11,7 @@ class PlayState extends FlxState
 	{
 		bgColor = 0;
 		super.create();
-		
+
 		var text = new FlxText();
 		text.text = "Hello, World!";
 		text.color = FlxColor.CYAN;

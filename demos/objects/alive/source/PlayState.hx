@@ -11,18 +11,18 @@ class PlayState extends FlxState
 {
 	var sprite:FlxSprite;
 	var txtHealth:FlxText;
-	
-	var time:Float=1;
-	
+
+	var time:Float = 1;
+
 	override public function create()
 	{
 		bgColor = 0;
 		super.create();
-		
+
 		sprite = new FlxSprite("assets/sprite.png");
 		sprite.screenCenter();
 		add(sprite);
-		
+
 		txtHealth = new FlxText();
 		txtHealth.size = 16;
 		txtHealth.text = "Alive";
@@ -53,7 +53,6 @@ class PlayState extends FlxState
 				sprite.revive();
 				txtHealth.text = "Alive";
 			}
-			
 		}
 		super.update(elapsed);
 	}

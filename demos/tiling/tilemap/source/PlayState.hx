@@ -10,7 +10,7 @@ class PlayState extends FlxState
 	{
 		bgColor = 0;
 		super.create();
-		
+
 		var map = new FlxTilemap();
 		map.loadMapFromCSV("assets/map.csv", "assets/tiles.png");
 		map.screenCenter();

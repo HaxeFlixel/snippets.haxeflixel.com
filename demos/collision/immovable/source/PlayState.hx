@@ -9,24 +9,24 @@ class PlayState extends FlxState
 {
 	var spriteA:FlxSprite;
 	var boxA:FlxSprite;
-	
+
 	var spriteB:FlxSprite;
 	var boxB:FlxSprite;
-	
+
 	override public function create()
 	{
 		bgColor = 0;
 		super.create();
-		
+
 		boxA = createBox(0.25);
 		boxB = createBox(0.75);
-		
+
 		spriteA = createSprite(0.25);
 		spriteB = createSprite(0.75);
-		
+
 		boxB.immovable = true;
 	}
-	
+
 	function createBox(xFactor:Float):FlxSprite
 	{
 		var box = new FlxSprite("assets/bigbox.png");
@@ -35,7 +35,7 @@ class PlayState extends FlxState
 		add(box);
 		return box;
 	}
-	
+
 	function createSprite(xFactor:Float):FlxSprite
 	{
 		var sprite = new FlxSprite("assets/sprite.png");
@@ -49,15 +49,15 @@ class PlayState extends FlxState
 	override public function update(elapsed:Float)
 	{
 		super.update(elapsed);
-		
+
 		updateMovableExample();
 		updateImmovableExample();
 	}
-	
+
 	function updateMovableExample()
 	{
 		FlxG.collide(spriteA, boxA);
-		
+
 		if (spriteA.velocity.x > 0)
 		{
 			if (spriteA.x >= FlxG.width - spriteA.width)
@@ -75,18 +75,18 @@ class PlayState extends FlxState
 			spriteA.x = 0;
 			spriteA.velocity.x = 150;
 		}
-		
+
 		if (boxA.velocity.x < 0 && boxA.x <= FlxG.width / 2 - boxA.width / 2)
 		{
 			boxA.velocity.x = 0;
 			boxA.x = FlxG.width / 2 - boxA.width / 2;
 		}
 	}
-	
+
 	function updateImmovableExample()
 	{
 		FlxG.collide(spriteB, boxB);
-		
+
 		if (spriteB.justTouched(FlxObject.ANY))
 		{
 			spriteB.velocity.x = -100;

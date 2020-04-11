@@ -11,16 +11,16 @@ class Sprite extends FlxSprite
 		super("assets/sprite.png");
 		kill();
 	}
-	
-	override public function revive() 
+
+	override public function revive()
 	{
 		x = -width;
 		y = FlxG.random.int(0, Std.int(FlxG.height - height));
 		velocity.x = 200;
 		super.revive();
 	}
-	
-	override public function update(elapsed:Float) 
+
+	override public function update(elapsed:Float)
 	{
 		if (x > FlxG.width)
 			kill();

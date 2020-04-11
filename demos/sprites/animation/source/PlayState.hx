@@ -10,7 +10,7 @@ class PlayState extends FlxState
 	{
 		bgColor = 0;
 		super.create();
-		
+
 		var sprite = new FlxSprite();
 		sprite.loadGraphic("assets/anim-sprite.png", true, 24, 24);
 		sprite.screenCenter();

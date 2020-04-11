@@ -10,20 +10,20 @@ import flixel.util.FlxColor;
 class PlayState extends FlxState
 {
 	var sprite:FlxSprite;
-	
+
 	var txtHealth:FlxText;
-	
+
 	override public function create()
 	{
 		bgColor = 0;
 		super.create();
-		
+
 		sprite = new FlxSprite("assets/sprite.png");
 		sprite.screenCenter();
 		add(sprite);
-		
+
 		sprite.health = 5;
-		
+
 		txtHealth = new FlxText();
 		txtHealth.size = 16;
 		txtHealth.text = "Health: 5";
@@ -45,13 +45,13 @@ class PlayState extends FlxState
 			sprite.health = 5;
 			sprite.revive();
 		}
-		else 
+		else
 			sprite.hurt(elapsed);
 		if (sprite.health > 0)
 			txtHealth.text = "Health: " + Std.string(Math.ceil(sprite.health));
 		else
 			txtHealth.text = "DEAD!";
-		
+
 		super.update(elapsed);
 	}
 }

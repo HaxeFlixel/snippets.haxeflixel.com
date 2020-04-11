@@ -9,16 +9,16 @@ class PlayState extends FlxState
 	var sprite:FlxSprite;
 	var timer:Float = 0;
 	var speed:Int = 1;
-	
+
 	override public function create()
 	{
 		bgColor = 0;
 		super.create();
-		
+
 		sprite = new FlxSprite("assets/arrow.png");
 		sprite.screenCenter();
 		add(sprite);
-		
+
 		sprite.angularVelocity = 30;
 	}
 
@@ -33,7 +33,7 @@ class PlayState extends FlxState
 				speed = 1;
 			sprite.angularVelocity = speed * 100;
 		}
-		
+
 		super.update(elapsed);
 	}
 }

@@ -8,12 +8,12 @@ class PlayState extends FlxState
 {
 	var group:FlxTypedGroup<Sprite>;
 	var spawnTimer:Float = 0;
-	
+
 	override public function create()
 	{
 		bgColor = 0;
 		super.create();
-		
+
 		group = new FlxTypedGroup<Sprite>(20);
 		for (i in 0...group.maxSize)
 		{
@@ -30,7 +30,7 @@ class PlayState extends FlxState
 			spawnTimer--;
 			group.add(group.recycle());
 		}
-		
+
 		super.update(elapsed);
 	}
 }

@@ -6,15 +6,15 @@ import flixel.FlxSprite;
 import flixel.FlxState;
 
 class PlayState extends FlxState
-{	
+{
 	var sprite:FlxSprite;
 	var flipTimer:Float = 1;
-	
+
 	override public function create()
 	{
 		bgColor = 0;
 		super.create();
-		
+
 		sprite = new FlxSprite("assets/arrow.png");
 		sprite.screenCenter();
 		sprite.facing = FlxObject.RIGHT;
@@ -32,7 +32,7 @@ class PlayState extends FlxState
 				sprite.facing = FlxObject.LEFT;
 			else
 				sprite.facing = FlxObject.RIGHT;
-			
+
 			flipTimer++;
 		}
 		super.update(elapsed);

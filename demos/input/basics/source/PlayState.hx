@@ -7,32 +7,29 @@ import flixel.ui.FlxVirtualPad;
 
 class PlayState extends FlxState
 {
-	
 	var status:FlxText;
 	var pad:FlxVirtualPad;
 	var lastInput:Int = -1;
-	
+
 	override public function create()
 	{
 		bgColor = 0;
 		super.create();
-		
-		status = new FlxText(0,12,FlxG.width,"",12);
+
+		status = new FlxText(0, 12, FlxG.width, "", 12);
 		status.alignment = FlxTextAlign.CENTER;
 		status.setBorderStyle(FlxTextBorderStyle.SHADOW, 0xff333333);
 		status.text = "Released";
 		add(status);
-		
+
 		pad = new FlxVirtualPad(FlxDPadMode.NONE, FlxActionMode.A);
 		add(pad);
-		
-		
 	}
 
 	override public function update(elapsed:Float)
 	{
 		super.update(elapsed);
-		
+
 		if (pad.buttonA.justPressed || FlxG.keys.justPressed.X)
 		{
 			if (lastInput != 0)
@@ -69,6 +66,5 @@ class PlayState extends FlxState
 		{
 			status.y = FlxG.height - status.height;
 		}
-		
 	}
 }
