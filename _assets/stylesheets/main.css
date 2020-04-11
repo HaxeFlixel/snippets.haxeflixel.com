@@ -339,3 +339,7 @@ fa-li {
 .nav-list>li>a.nav-item {
   padding-left: 40px;
 }
+
+.nav-list>li>a.nav-item.active {
+  background: #9090902e;
+}
