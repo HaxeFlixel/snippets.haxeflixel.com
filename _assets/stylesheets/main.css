@@ -160,6 +160,11 @@ canvas.demo-back {
   box-shadow: 0 1px 1px rgba(0,0,0,.05);
 }
 
+.title-logo {
+  border: none;
+  margin: 0 auto;
+}
+
 .demo {
   position:relative;
   top:4px;
@@ -170,6 +175,7 @@ canvas.demo-back {
   border: none;
   margin: 0 auto;
   display: block;
+  background: rgb(32,32,32);
 }
 
 footer {
