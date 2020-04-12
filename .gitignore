@@ -7,3 +7,4 @@ credentials.yaml
 .ssh/*
 **/export
 export
+.jekyll-cache
