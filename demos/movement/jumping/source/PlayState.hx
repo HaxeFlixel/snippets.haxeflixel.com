@@ -12,8 +12,8 @@ class PlayState extends FlxState
 	var box:FlxSprite;
 	var pad:FlxVirtualPad;
 
-	var jump:Float = 0;
-	var jumped:Bool = false;
+	var jumpTimer:Float = 0;
+	var jumping:Bool = false;
 
 	override public function create()
 	{
@@ -43,22 +43,23 @@ class PlayState extends FlxState
 
 		var jumpPressed:Bool = pad.buttonA.pressed;
 
-		if (jumped && !jumpPressed)
-			jumped = false;
+		if (jumping && !jumpPressed)
+			jumping = false;
 
+		// reset jumpTimer when touching the floor
 		if (sprite.isTouching(FlxObject.DOWN) && !jumped)
-			jump = 0;
+			jumpTimer = 0;
 
-		if (jump >= 0 && jumpPressed)
+		if (jumpTimer >= 0 && jumpPressed)
 		{
-			jumped = true;
-			jump += elapsed;
+			jumping = true;
+			jumpTimer += elapsed;
 		}
 		else
-			jump = -1;
+			jumpTimer = -1;
 
 		// hold button to jump higher (up to 0.25s)
-		if (jump > 0 && jump < 0.25)
+		if (jumpTimer > 0 && jumpTimer < 0.25)
 			sprite.velocity.y = -300;
 	}
 }
