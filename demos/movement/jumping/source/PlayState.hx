@@ -47,7 +47,7 @@ class PlayState extends FlxState
 			jumping = false;
 
 		// reset jumpTimer when touching the floor
-		if (sprite.isTouching(FlxObject.DOWN) && !jumped)
+		if (sprite.isTouching(FlxObject.DOWN) && !jumping)
 			jumpTimer = 0;
 
 		if (jumpTimer >= 0 && jumpPressed)
