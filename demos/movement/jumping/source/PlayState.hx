@@ -12,8 +12,8 @@ class PlayState extends FlxState
 	var box:FlxSprite;
 	var pad:FlxVirtualPad;
 
-	var jump:Float = 0;
-	var jumped:Bool = false;
+	var jumpTimer:Float = 0;
+	var jumping:Bool = false;
 
 	override public function create()
 	{
@@ -21,7 +21,7 @@ class PlayState extends FlxState
 
 		sprite = new FlxSprite("assets/sprite.png");
 		sprite.x = FlxG.width / 2 - sprite.width / 2;
-		sprite.acceleration.y = 600;
+		sprite.acceleration.y = 900;
 		sprite.maxVelocity.y = 300;
 		add(sprite);
 
@@ -43,32 +43,23 @@ class PlayState extends FlxState
 
 		var jumpPressed:Bool = pad.buttonA.pressed;
 
-		if (jumped && !jumpPressed)
-			jumped = false;
+		if (jumping && !jumpPressed)
+			jumping = false;
 
-		if (sprite.isTouching(FlxObject.DOWN) && !jumped)
-			jump = 0;
+		// reset jumpTimer when touching the floor
+		if (sprite.isTouching(FlxObject.DOWN) && !jumping)
+			jumpTimer = 0;
 
-		if (jump >= 0 && jumpPressed)
+		if (jumpTimer >= 0 && jumpPressed)
 		{
-			jumped = true;
-			jump += elapsed;
-			if (jump > 0.33)
-				jump = -1;
+			jumping = true;
+			jumpTimer += elapsed;
 		}
 		else
-			jump = -1;
+			jumpTimer = -1;
 
-		if (jump > 0)
-		{
-			if (jump < 0.065)
-				sprite.velocity.y = -360;
-			else
-				sprite.acceleration.y = 10;
-		}
-		else
-		{
-			sprite.velocity.y = 600;
-		}
+		// hold button to jump higher (up to 0.25s)
+		if (jumpTimer > 0 && jumpTimer < 0.25)
+			sprite.velocity.y = -300;
 	}
 }

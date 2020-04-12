@@ -14,31 +14,22 @@ FlxG.collide(box, sprite);
 
 var jumpPressed:Bool = pad.buttonA.pressed;
 
-if (jumped && !jumpPressed)
-	jumped = false;
+if (jumping && !jumpPressed)
+	jumping = false;
 
-if (sprite.isTouching(FlxObject.DOWN) && !jumped)
-	jump = 0;
+// reset jumpTimer when touching the floor
+if (sprite.isTouching(FlxObject.DOWN) && !jumping)
+	jumpTimer = 0;
 
-if (jump >= 0 && jumpPressed)
+if (jumpTimer >= 0 && jumpPressed)
 {
-	jumped = true;
-	jump += elapsed;
-	if (jump > 0.33)
-		jump = -1;
+	jumping = true;
+	jumpTimer += elapsed;
 }
 else
-	jump = -1;
+	jumpTimer = -1;
 
-if (jump > 0)
-{
-	if (jump < 0.065)
-		sprite.velocity.y = -360;
-	else
-		sprite.acceleration.y = 10;
-}
-else
-{
-	sprite.velocity.y = 600;
-}
+// hold button to jump higher (up to 0.25s)
+if (jumpTimer > 0 && jumpTimer < 0.25)
+	sprite.velocity.y = -300;
 ```
