@@ -7,7 +7,7 @@ pre {
 .hljs {
   display: block;
   overflow-x: auto;
-  font-family: "Consolas";
+  font-family: 'Monaco,Menlo,Consolas,"Courier New",monospace';
   font-size: 12px;
 }
 
