@@ -7,13 +7,11 @@ import flixel.util.FlxColor;
 
 class PlayState extends FlxState
 {
-	var button:FlxButton;
-
 	override public function create()
 	{
 		super.create();
 
-		button = new FlxButton("Click me", onButtonClicked);
+		var button = new FlxButton("Click me", onButtonClicked);
 		button.screenCenter();
 		add(button);
 	}
