@@ -8,3 +8,4 @@ credentials.yaml
 **/export
 export
 .jekyll-cache
+**/.vscode
