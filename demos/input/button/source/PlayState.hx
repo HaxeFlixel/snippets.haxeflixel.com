@@ -11,7 +11,7 @@ class PlayState extends FlxState
 	{
 		super.create();
 
-		var button = new FlxButton("Click me", onButtonClicked);
+		var button = new FlxButton(0, 0, "Click me", onButtonClicked);
 		button.screenCenter();
 		add(button);
 	}
