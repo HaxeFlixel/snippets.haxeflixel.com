@@ -9,5 +9,5 @@ For a simple button use a {% api flixel.ui.FlxButton %}. You can call a function
 
 ```haxe
 // create a button that calls onButtonClick when its clicked
-button = new FlxButton(120, 110, "Click me", onButtonClicked);
+button = new FlxButton("Click me", onButtonClicked);
 ```
