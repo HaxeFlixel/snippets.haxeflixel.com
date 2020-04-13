@@ -1,8 +1,8 @@
 package;
 
-import flixel.ui.FlxButton;
 import flixel.FlxG;
 import flixel.FlxState;
+import flixel.ui.FlxButton;
 import flixel.util.FlxColor;
 
 class PlayState extends FlxState
@@ -17,7 +17,8 @@ class PlayState extends FlxState
 		add(button);
 	}
 
-	function onButtonClicked() {
+	function onButtonClicked()
+	{
 		FlxG.camera.flash(FlxColor.WHITE, 0.33);
 	}
 }
