@@ -1,6 +1,6 @@
 name: CI
 
-on: [push, pull_request]
+on: [push, pull_request, repository_dispatch]
 
 jobs:
   build:
@@ -27,4 +27,4 @@ jobs:
         BRANCH: gh-pages
         FOLDER: _site
         SINGLE_COMMIT: true
-      if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      if: github.ref == 'refs/heads/master'
