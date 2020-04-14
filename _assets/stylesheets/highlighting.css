@@ -1,5 +1,10 @@
 pre {
-	background-color: #1E1E1E;
+  background-color: #1E1E1E;
+  display: block;
+  overflow-x: auto;
+  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+  font-size: 14px;
+  color: #FFFFFF;
 }
 .highlighted .mtk1 { color: #FFFFFF; }
 .highlighted .mtk2 { color: #FFFFFF; }
@@ -22,9 +27,3 @@ pre {
 .highlighted .mtki { font-style: italic; }
 .highlighted .mtkb { font-weight: bold; }
 .highlighted .mtku { text-decoration: underline; }
-.highlighted {
-	display: block;
-	overflow-x: auto;
-	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
-	font-size: 12px;
-}
