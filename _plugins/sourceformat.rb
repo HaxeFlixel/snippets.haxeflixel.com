@@ -65,7 +65,7 @@ module Jekyll
       </h4>
     </div>
     <div id=\"collapse-#{slug}\" class=\"source-body panel-collapse collapse\" role=\"tabpanel\" aria-labelledby=\"heading-#{slug}\">
-      <pre class=\"highlight\"><code class=\"hljs #{filetype}\">#{contents}</code></pre></li>
+      <pre class=\"highlight\"><code class=\"#{filetype}\">#{contents}</code></pre></li>
     </div>
   </div>
 </div>"
