@@ -45,8 +45,6 @@ $(document).ready(function() {
       element.addClass('active');
   }
 
-  hljs.initHighlightingOnLoad();
-
   makePattern();
 
   $('[data-toggle="tooltip"]').tooltip();
