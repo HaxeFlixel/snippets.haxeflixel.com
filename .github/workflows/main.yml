@@ -10,18 +10,31 @@ jobs:
     - uses: actions/setup-ruby@v1
       with:
         ruby-version: '2.7'
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
     - uses: krdlab/setup-haxe@v1
-    - run: |
+    - name: Install Haxe Dependencies
+      run: |
         haxelib install lime
         haxelib install openfl
         haxelib git flixel https://github.com/HaxeFlixel/flixel
         haxelib install flixel-addons
         haxelib install flixel-tools
-    - run: |
+    - name: Build Site
+      run: |
         gem install bundler
         bundle install --jobs=3 --retry=3
         bundle exec rake deploy
-    - uses: JamesIves/github-pages-deploy-action@3.4.3
+    - name: Highlighting
+      run: |
+        git clone --recursive https://github.com/Gama11/Highlighter
+        cd Highlighter
+        npm install
+        node bin/highlighter.js ../_site
+        cd ..
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@3.4.3
       with:
         ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
         BRANCH: gh-pages
