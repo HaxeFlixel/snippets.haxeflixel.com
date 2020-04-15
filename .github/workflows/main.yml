@@ -13,14 +13,12 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: '10.x'
-    - uses: krdlab/setup-haxe@v1
-    - name: Install Haxe Dependencies
-      run: |
-        haxelib install lime
-        haxelib install openfl
-        haxelib git flixel https://github.com/HaxeFlixel/flixel
-        haxelib install flixel-addons
-        haxelib install flixel-tools
+    - uses: lix-pm/setup-lix@master
+    - uses: HaxeFlixel/setup-flixel@master
+      with:
+        haxe-version: stable
+        flixel-versions: dev
+        target: html5
     - name: Build Site
       run: |
         gem install bundler
