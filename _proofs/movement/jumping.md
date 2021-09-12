@@ -18,7 +18,7 @@ if (jumping && !jumpPressed)
 	jumping = false;
 
 // reset jumpTimer when touching the floor
-if (sprite.isTouching(FlxObject.DOWN) && !jumping)
+if (sprite.isTouching(DOWN) && !jumping)
 	jumpTimer = 0;
 
 if (jumpTimer >= 0 && jumpPressed)

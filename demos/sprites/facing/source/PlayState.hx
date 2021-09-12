@@ -1,7 +1,6 @@
 package;
 
 import flixel.FlxG;
-import flixel.FlxObject;
 import flixel.FlxSprite;
 import flixel.FlxState;
 
@@ -16,9 +15,9 @@ class PlayState extends FlxState
 
 		sprite = new FlxSprite("assets/arrow.png");
 		sprite.screenCenter();
-		sprite.facing = FlxObject.RIGHT;
-		sprite.setFacingFlip(FlxObject.RIGHT, false, false);
-		sprite.setFacingFlip(FlxObject.LEFT, true, false);
+		sprite.facing = RIGHT;
+		sprite.setFacingFlip(RIGHT, false, false);
+		sprite.setFacingFlip(LEFT, true, false);
 		add(sprite);
 	}
 
@@ -27,10 +26,10 @@ class PlayState extends FlxState
 		flipTimer -= elapsed;
 		if (flipTimer <= 0)
 		{
-			if (sprite.facing == FlxObject.RIGHT)
-				sprite.facing = FlxObject.LEFT;
+			if (sprite.facing == RIGHT)
+				sprite.facing = LEFT;
 			else
-				sprite.facing = FlxObject.RIGHT;
+				sprite.facing = RIGHT;
 
 			flipTimer++;
 		}

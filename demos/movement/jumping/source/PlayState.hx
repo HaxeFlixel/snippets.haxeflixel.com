@@ -1,7 +1,6 @@
 package;
 
 import flixel.FlxG;
-import flixel.FlxObject;
 import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.ui.FlxVirtualPad;
@@ -47,7 +46,7 @@ class PlayState extends FlxState
 			jumping = false;
 
 		// reset jumpTimer when touching the floor
-		if (sprite.isTouching(FlxObject.DOWN) && !jumping)
+		if (sprite.isTouching(DOWN) && !jumping)
 			jumpTimer = 0;
 
 		if (jumpTimer >= 0 && jumpPressed)

@@ -86,7 +86,7 @@ class PlayState extends FlxState
 	{
 		FlxG.collide(spriteB, boxB);
 
-		if (spriteB.justTouched(FlxObject.ANY))
+		if (spriteB.justTouched(ANY))
 		{
 			spriteB.velocity.x = -100;
 		}
