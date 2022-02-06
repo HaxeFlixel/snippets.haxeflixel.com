@@ -2,12 +2,9 @@ safe: false
 permalink: pretty
 google-analytics-id: "UA-63717309-1"
 
-assets:
-    js_compressor: yui
-
 gems:
-- jekyll-assets
-- jekyll-sitemap
+    - jekyll-sitemap
+    - jekyll-minifier
 
 collections:
   concepts:
