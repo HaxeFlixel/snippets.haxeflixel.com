@@ -12,3 +12,4 @@ export
 node_modules
 package.json
 package-lock.json
+.jekyll-metadata
