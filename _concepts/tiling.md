@@ -1,7 +1,6 @@
 ---
 title: Tiling
 order: 7
-tags: [tiling, tilemaps]
 complexity: 1
 ---
 Tiling is a great way to build levels and maps, backgrounds, and scenery in your game. They are especially great for retro-style games, but can be utilized in other games, as well.

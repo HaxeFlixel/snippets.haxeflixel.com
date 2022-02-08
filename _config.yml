@@ -1,6 +1,7 @@
 safe: false
 permalink: pretty
 google-analytics-id: "UA-63717309-1"
+url: https://snippets.haxeflixel.com/
 
 gems:
     - jekyll-sitemap
@@ -8,7 +9,7 @@ gems:
 
 collections:
   concepts:
-    output: true
+    output: false
     permalink: /:title/
 
   proofs:
@@ -21,9 +22,9 @@ defaults:
             path: ""
             type: "concepts"
         values:
-            layout: concept
+            layout: 
             type: concept
-            tags: [untagged]
+            tags: 
     -
         scope:
             path: ""
@@ -36,7 +37,7 @@ defaults:
 
 
 
-exclude: [vendor, .gitignore, Gemfile, Gemfile.lock, README.md, Rakefile, credentials.yaml, .travis.yml, build, key, key.enc, package.json, package-lock.json]
+exclude: [vendor, .gitignore, Gemfile, Gemfile.lock, README.md, Rakefile, credentials.yaml, .travis.yml, build, key, key.enc, package.json, package-lock.json, "*/*.hxproj", "*/Project.xml", "*/export/html5/haxe", "*/export/html5/obj"]
 
 tag_page_layout: tag_page
 tag_page_dir: tags

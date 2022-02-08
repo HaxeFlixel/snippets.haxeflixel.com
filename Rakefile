@@ -38,9 +38,8 @@ task :serve => [:build_demos, :serve_site]
 
 desc "Just serves the site, does not rebuild demos"
 task :serve_site do
-  jekyll('serve --force-polling')
+  jekyll('serve --incremental --force_polling')
 end
-
 
 def jekyll(opts = '')
   sh 'jekyll ' + opts

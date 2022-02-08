@@ -1,10 +1,10 @@
-<div id="tags" class="panel panel-info">
-  <div class="panel-heading">
-    <h3 class="panel-title"><i class="fa fa-tags fa-lg fa-fw"></i> <a href="/tags">Tags</a></h3>
+<div id="tags" class="card border border-info">
+  <div class="card-header bg-info ">
+    <h3 class="card-title text-primary fs-6 m-0"><i class="fa fa-tags fa-lg fa-fw"></i> <a href="/tags">Tags</a></h3>
   </div>
-    <div class="panel-body">
+    <div class="card-body">
         {% for tag in page.tags %}
-        <a href="/tags/{{ tag | link_to_tag: tag }}"><span class="label label-primary">{{ tag }}</span></a>
+        <a href="/tags/{{ tag | link_to_tag: tag }}"><span class="badge bg-primary">{{ tag }}</span></a>
         {% endfor %}
     </div>
 </div>

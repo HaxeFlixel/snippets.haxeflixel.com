@@ -55,17 +55,17 @@ module Jekyll
 
         contents = filter.new.xml_escape(IO.binread("demos/#{path}/#{file}"))
         slug = Utils.slugify(file)
-        sources << "<div class=\"panel-group\" id=\"accordion-#{slug}\" role=\"tablist\" aria-multiselectable=\"true\">
-  <div class=\"panel panel-default\">
-    <div class=\"panel-heading\" role=\"tab\" id=\"heading-#{slug}\">
-      <h4 class=\"panel-title\">
-        <a data-toggle=\"collapse\" data-parent=\"#accordion-#{slug}\" href=\"#collapse-#{slug}\" aria-expanded=\"true\" aria-controls=\"collapse-#{slug}\">
-          <span class=\"pull-right\"><i class=\"source-chevron fa fa-chevron-circle-right fa-lg fa-fw\"></i></span>#{file}
-        </a>
-      </h4>
-    </div>
-    <div id=\"collapse-#{slug}\" class=\"source-body panel-collapse collapse\" role=\"tabpanel\" aria-labelledby=\"heading-#{slug}\">
-      <pre class=\"highlight\"><code class=\"#{filetype}\">#{contents}</code></pre></li>
+        sources << "<div class=\"accordion\" id=\"accordion-#{slug}\" >
+  <div class=\"accordion-item\">
+    <h2 class=\"accordion-header\" id=\"heading-#{slug}\">
+      <button class=\"accordion-button\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#collapse-#{slug}\" aria-expanded=\"false\" aria-controls=\"collapse-#{slug}\">
+        <span class=\"pull-right\"><i class=\"source-chevron fa fa-chevron-circle-right fa-lg fa-fw\"></i></span>#{file}
+      </button>
+    </h2>
+    <div id=\"collapse-#{slug}\" class=\"accordion-collapse collapse\" aria-labelledby=\"heading-#{slug}\" data-bs-parent=\"#accordion-#{slug}\">
+      <div class=\"accordion-body\">
+        <pre class=\"highlight\"><code class=\"#{filetype}\">#{contents}</code></pre></li>
+      </div>
     </div>
   </div>
 </div>"

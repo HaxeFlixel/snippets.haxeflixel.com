@@ -5,6 +5,8 @@ pre {
   font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
   font-size: 14px;
   color: #FFFFFF;
+  padding: 1rem;
+  border-radius: 4px;
 }
 .highlighted .mtk1 { color: #FFFFFF; }
 .highlighted .mtk2 { color: #FFFFFF; }
