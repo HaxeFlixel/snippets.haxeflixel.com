@@ -7,9 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-ruby@v1
+    - uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '3.0.1'
+        ruby-version: '3.0'
     - uses: actions/setup-node@v1
       with:
         node-version: '10.x'
