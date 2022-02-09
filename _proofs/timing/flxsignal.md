@@ -1,9 +1,9 @@
 ---
 title: FlxSignal
-concept: timing
+concept: Timing
 order: 2
 tags: [timing, flxsignal]
-complexity: 2
+complexity: 1
 ---
 
 You can use {% api flixel.util.FlxSignal %} to create a signal that can be triggered by anything.
