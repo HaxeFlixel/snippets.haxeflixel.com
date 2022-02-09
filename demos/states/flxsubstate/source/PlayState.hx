@@ -34,7 +34,9 @@ class PlayState extends FlxState
 		button.y = text.y + text.height + 16;
 		add(button);
 
-		super.create();
+		bgColor = 0;
+
+super.create();
 	}
 
 	private function openSub():Void
@@ -87,7 +89,9 @@ class OtherState extends FlxSubState
 		add(text);
 		add(button);
 
-		super.create();
+		bgColor = 0;
+
+super.create();
 	}
 
 	private function closeSub():Void

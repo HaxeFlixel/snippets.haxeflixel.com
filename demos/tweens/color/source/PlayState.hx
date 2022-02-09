@@ -17,9 +17,11 @@ class PlayState extends FlxState
 		sprite.screenCenter();
 		add(sprite);
 
+		bgColor = 0;
+
 		super.create();
 
-		FlxTween.color(sprite, 1 , FlxColor.RED, FlxColor.CYAN,
+		FlxTween.color(sprite, 1, FlxColor.RED, FlxColor.CYAN,
 			{type: FlxTweenType.PINGPONG, ease: FlxEase.sineInOut});
 	}
 }

@@ -1,40 +1,40 @@
-function makePattern() {
+// function makePattern() {
 
-  var checkSize = 32;
-  var demoWidth = 320;
-  var demoHeight = 240;
+//   var checkSize = 32;
+//   var demoWidth = 320;
+//   var demoHeight = 240;
 
-  var pattern = document.createElement('canvas');
-  pattern.width = checkSize * 2;
-  pattern.height = checkSize * 2;
-  var pctx = pattern.getContext('2d');
+//   var pattern = document.createElement('canvas');
+//   pattern.width = checkSize * 2;
+//   pattern.height = checkSize * 2;
+//   var pctx = pattern.getContext('2d');
 
-  pctx.fillStyle = "rgb(60,60,60)";
-  pctx.fillRect(0, 0, checkSize * 2, checkSize * 2);
-  pctx.fillStyle = "rgb(135, 135, 135)";
-  pctx.fillRect(0, 0, checkSize, checkSize);
-  pctx.fillRect(checkSize, checkSize, checkSize, checkSize);
+//   pctx.fillStyle = "rgb(60,60,60)";
+//   pctx.fillRect(0, 0, checkSize * 2, checkSize * 2);
+//   pctx.fillStyle = "rgb(135, 135, 135)";
+//   pctx.fillRect(0, 0, checkSize, checkSize);
+//   pctx.fillRect(checkSize, checkSize, checkSize, checkSize);
 
-  var demos = document.querySelectorAll('object.demo');
+//   var demos = document.querySelectorAll('object.demo');
 
-  for (var demo of demos) {
+//   for (var demo of demos) {
 
-    demoWidth = demo.width();
-    demoHeight = demo.height();
+//     demoWidth = demo.width();
+//     demoHeight = demo.height();
 
-    var can = $('<canvas width="' + demoWidth + '" height="' + demoHeight + '" class="demo-back">')[0];
-    var ctx = can.getContext('2d');
+//     var can = $('<canvas width="' + demoWidth + '" height="' + demoHeight + '" class="demo-back">')[0];
+//     var ctx = can.getContext('2d');
 
-    var p = ctx.createPattern(pattern, "repeat");
-    ctx.rect(0, 0, demoWidth, demoHeight);
-    ctx.fillStyle = p;
-    ctx.fill();
+//     var p = ctx.createPattern(pattern, "repeat");
+//     ctx.rect(0, 0, demoWidth, demoHeight);
+//     ctx.fillStyle = p;
+//     ctx.fill();
 
-    demo.before(can);
+//     demo.before(can);
 
-  }
+//   }
 
-}
+// }
 
 document.addEventListener("DOMContentLoaded", function (event) {
 
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   //     element.addClass('active');
   // }
 
-  makePattern();
+  //makePattern();
 
   var tooltips = document.querySelectorAll('[data-toggle="tooltip"]');
 

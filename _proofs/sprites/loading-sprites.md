@@ -5,6 +5,7 @@ order: 2
 tags: [sprites, graphics]
 complexity: 1
 ---
+
 You can use {% api flixel.FlxSprite.loadGraphic() %} to load an image file and set it to be the graphic of your {% api flixel.FlxSprite %}.
 
 ```haxe

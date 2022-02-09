@@ -22,6 +22,8 @@ class PlayState extends FlxState
 		spriteB.y = FlxG.height - spriteB.height - 50;
 		add(spriteB);
 
+		bgColor = 0;
+
 		super.create();
 
 		moveA();

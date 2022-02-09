@@ -24,13 +24,6 @@ jobs:
         gem install bundler
         bundle install --jobs=3 --retry=3
         bundle exec rake deploy
-    - name: Highlighting
-      run: |
-        git clone --recursive https://github.com/Gama11/Highlighter
-        cd Highlighter
-        npm install
-        node bin/highlighter.js ../_site
-        cd ..
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:

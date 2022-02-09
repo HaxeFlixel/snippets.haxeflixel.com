@@ -34,6 +34,13 @@ module Jekyll
       end
     end
 
+    def render_rouge(filetype, code)
+      require "rouge"
+      formatter = ::Rouge::Formatters::HTML.new
+      lexer = ::Rouge::Lexer.find_fancy(filetype, code) || Rouge::Lexers::PlainText
+      formatter.format(lexer.lex(code))
+    end
+
     def render(context)
       sources = ''
       path = render_path_variable(context) || @path
@@ -51,9 +58,20 @@ module Jekyll
         else
           filetype = 'desktop'
         end
-        filter = Class.new { include Jekyll::Filters }
 
-        contents = filter.new.xml_escape(IO.binread("demos/#{path}/#{file}"))
+        code = IO.binread("demos/#{path}/#{file}")
+
+        #filter = Class.new { include Jekyll::Filters }
+
+        #contents = filter.new.xml_escape(IO.binread("demos/#{path}/#{file}"))
+        #code = "<div class="language-haxe highlighter-rouge"><div class="highlight"><pre class="highlight"><code>" + code + "</code></pre></div></div>"
+
+        contents = render_rouge(filetype, code)
+
+
+        # <pre ><code class=\"language-#{filetype}\">#{contents}</code></pre>
+
+
         slug = Utils.slugify(file)
         sources << "<div class=\"accordion\" id=\"accordion-#{slug}\" >
   <div class=\"accordion-item\">
@@ -64,7 +82,7 @@ module Jekyll
     </h2>
     <div id=\"collapse-#{slug}\" class=\"accordion-collapse collapse\" aria-labelledby=\"heading-#{slug}\" data-bs-parent=\"#accordion-#{slug}\">
       <div class=\"accordion-body\">
-        <pre class=\"highlight\"><code class=\"#{filetype}\">#{contents}</code></pre></li>
+        <div class=\"language-#{filetype} highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>#{contents}</code></pre></div></div>
       </div>
     </div>
   </div>
@@ -74,5 +92,7 @@ module Jekyll
     end
   end
 end
+
+
 
 Liquid::Template.register_tag('source', Jekyll::SourceFormat)

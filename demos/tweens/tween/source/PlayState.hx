@@ -16,6 +16,8 @@ class PlayState extends FlxState
 		sprite.x = sprite.y = 50;
 		add(sprite);
 
+		bgColor = 0;
+
 		super.create();
 
 		FlxTween.tween(sprite,

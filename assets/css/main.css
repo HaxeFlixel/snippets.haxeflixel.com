@@ -162,6 +162,7 @@ canvas.demo-back {
   border: none;
   margin: 0 auto;
   display: block;
+  background: url(/demos/demo-assets/back-tile.png);
 }
 
 .sidebar-nav {
@@ -319,5 +320,4 @@ footer .social {
   margin-top: 0px;
   border: 0;
 }
-
 

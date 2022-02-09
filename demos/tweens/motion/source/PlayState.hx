@@ -14,6 +14,8 @@ class PlayState extends FlxState
 		linearSprite.x = linearSprite.y = 50;
 		add(linearSprite);
 
+		bgColor = 0;
+
 		super.create();
 
 		FlxTween.linearMotion(linearSprite, 50, 50, FlxG.width - linearSprite.width - 50,

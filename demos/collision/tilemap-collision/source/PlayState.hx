@@ -12,7 +12,9 @@ class PlayState extends FlxState
 
 	override public function create()
 	{
-		super.create();
+		bgColor = 0;
+
+super.create();
 
 		map = new FlxTilemap();
 		map.loadMapFromCSV("assets/room-map.csv", "assets/tiles.png", 16, 16);

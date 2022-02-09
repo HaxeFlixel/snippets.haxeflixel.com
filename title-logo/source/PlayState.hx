@@ -34,6 +34,8 @@ class PlayState extends FlxState
 	override public function create()
 	{
 		bgColor = 0;
+		bgColor = 0;
+
 		super.create();
 
 		sprites.push(new FlxSprite(0, 0, AssetPaths.logo__png));

@@ -24,7 +24,9 @@ class PlayState extends FlxState
 		button.y = text.y + text.height + 16;
 		add(button);
 
-		super.create();
+		bgColor = 0;
+
+super.create();
 	}
 
 	private function switchState():Void
@@ -50,7 +52,9 @@ class OtherState extends FlxState
 		button.y = text.y + text.height + 16;
 		add(button);
 
-		super.create();
+		bgColor = 0;
+
+super.create();
 	}
 
 	private function switchState():Void

@@ -15,8 +15,10 @@ class PlayState extends FlxState
 		sprite.screenCenter();
 		add(sprite);
 
+		bgColor = 0;
+
 		super.create();
 
-		FlxTween.angle( sprite, 0, 180, 1, {type: FlxTweenType.PINGPONG, ease: FlxEase.backInOut});
+		FlxTween.angle(sprite, 0, 180, 1, {type: FlxTweenType.PINGPONG, ease: FlxEase.backInOut});
 	}
 }

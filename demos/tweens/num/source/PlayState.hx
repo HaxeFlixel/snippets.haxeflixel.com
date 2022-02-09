@@ -22,6 +22,8 @@ class PlayState extends FlxState
 		text.screenCenter();
 		add(text);
 
+		bgColor = 0;
+
 		super.create();
 
 		FlxTween.num(0, 100, 10, {type: FlxTweenType.PINGPONG, ease: FlxEase.quintIn}, updateValue);

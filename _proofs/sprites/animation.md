@@ -17,3 +17,9 @@ sprite.animation.add('run', [0, 1, 2, 1]);
 // play the 'run' animation
 sprite.animation.play('run');
 ```
+
+In the Demonstration, we are loading this image:
+<figure class="figure">
+    <img src="/demos/demo-assets/anim-sprite.png" class="figure-img" alt="Animated Sprite">
+    <figcaption class="figure-caption">This image contains 7 frames of animation for a 24x24 pixel sprite.</figcaption>
+</figure>
