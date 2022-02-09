@@ -1,5 +1,5 @@
 ---
 title: Groups
-complexity: 2
+complexity: 1
 order: 6
 ---
