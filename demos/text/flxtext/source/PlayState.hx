@@ -9,7 +9,9 @@ class PlayState extends FlxState
 {
 	override public function create()
 	{
-		super.create();
+		bgColor = 0;
+
+super.create();
 
 		var text = new FlxText();
 		text.text = "Hello, World!";

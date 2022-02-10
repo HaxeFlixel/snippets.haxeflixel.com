@@ -10,7 +10,9 @@ class PlayState extends FlxState
 
 	override public function create()
 	{
-		super.create();
+		bgColor = 0;
+
+super.create();
 
 		sprite = new FlxSprite("assets/sprite.png");
 		sprite.y = FlxG.height / 2 - sprite.height / 2;

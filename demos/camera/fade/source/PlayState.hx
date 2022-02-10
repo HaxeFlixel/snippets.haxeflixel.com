@@ -12,7 +12,9 @@ class PlayState extends FlxState
 
 	override public function create()
 	{
-		super.create();
+		bgColor = 0;
+
+super.create();
 	}
 
 	override public function update(elapsed:Float)

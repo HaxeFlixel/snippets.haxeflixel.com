@@ -9,3 +9,8 @@ credentials.yaml
 export
 .jekyll-cache
 **/.vscode
+node_modules
+package.json
+package-lock.json
+.jekyll-metadata
+Highlighter

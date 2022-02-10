@@ -1,6 +1,5 @@
 ---
 title: Input
-tags: [input]
-complexity: 2
+complexity: 1
 order: 11
 ---

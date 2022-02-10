@@ -10,7 +10,9 @@ class PlayState extends FlxState
 
 	override public function create()
 	{
-		super.create();
+		bgColor = 0;
+
+super.create();
 
 		sprite = new FlxSprite();
 		sprite.loadRotatedGraphic("assets/arrow.png", 16);

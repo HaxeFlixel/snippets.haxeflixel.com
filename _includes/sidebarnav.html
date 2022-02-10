@@ -1,0 +1,23 @@
+    <aside class="sidebar-nav p-3 me-4 ">
+        <ul class="list-unstyled ps-0" role="navigation">
+            {% assign concepts = site.concepts | sort: 'order' %}
+            {% for concept in concepts %}
+            <li id="li-{{ concept.title | slugify }}" class="mb-1">
+                <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#{{ concept.title | slugify }}-collapse" {% if page.title == concept.title or page.concept == concept.title %}aria-expanded="true"{% endif %}>
+                    {{ concept.title }}
+                </button>
+                <div class="collapse{% if page.title == concept.title or page.concept == concept.title %} show{% endif %}" id="{{ concept.title | slugify }}-collapse">
+                    <ul id="list-{{ concept.title | slugify }}" class="btn-toggle-nav list-unstyled fw-normal pb-1 ">
+                        {% assign proofs = site.proofs | where:"concept",concept.title | sort: 'order' %}
+                        {% for proof in proofs %}
+                            <li id="li-{{proof.concept | slugify }}-{{ proof.title | slugify }}">
+                                <a href="/{{ proof.concept | slugify }}/{{ proof.title | slugify }}" class="link-dark rounded {% if page.title == proof.title %} active{% endif %}">{{ proof.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </aside>
+

@@ -7,9 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-ruby@v1
+    - uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '3.0.1'
+        ruby-version: '3.0'
     - uses: actions/setup-node@v1
       with:
         node-version: '10.x'
@@ -24,13 +24,6 @@ jobs:
         gem install bundler
         bundle install --jobs=3 --retry=3
         bundle exec rake deploy
-    - name: Highlighting
-      run: |
-        git clone --recursive https://github.com/Gama11/Highlighter
-        cd Highlighter
-        npm install
-        node bin/highlighter.js ../_site
-        cd ..
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:

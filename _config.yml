@@ -1,17 +1,21 @@
 safe: false
 permalink: pretty
 google-analytics-id: "UA-63717309-1"
+url: https://snippets.haxeflixel.com/
 
-assets:
-    js_compressor: yui
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
 gems:
-- jekyll-assets
-- jekyll-sitemap
+    - jekyll-sitemap
+    - jekyll-minifier
 
 collections:
   concepts:
-    output: true
+    output: false
     permalink: /:title/
 
   proofs:
@@ -24,9 +28,9 @@ defaults:
             path: ""
             type: "concepts"
         values:
-            layout: concept
+            layout: 
             type: concept
-            tags: [untagged]
+            tags: 
     -
         scope:
             path: ""
@@ -39,7 +43,7 @@ defaults:
 
 
 
-exclude: [vendor, .gitignore, Gemfile, Gemfile.lock, README.md, Rakefile, credentials.yaml, .travis.yml, build, key, key.enc]
+exclude: [vendor, .gitignore, Gemfile, Gemfile.lock, README.md, Rakefile, credentials.yaml, .travis.yml, build, key, key.enc, package.json, package-lock.json, "*/*.hxproj", "*/Project.xml", "*/export/html5/haxe", "*/export/html5/obj", "*/.vscode", Highlighter, hxformat.json]
 
 tag_page_layout: tag_page
 tag_page_dir: tags

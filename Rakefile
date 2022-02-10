@@ -26,6 +26,7 @@ end
 
 desc "Build the site with Jekyll"
 task :build_site do
+  ENV["JEKYLL_ENV"] = "production"
   jekyll('build')
 end
 
@@ -37,9 +38,8 @@ task :serve => [:build_demos, :serve_site]
 
 desc "Just serves the site, does not rebuild demos"
 task :serve_site do
-  jekyll('serve')
+  jekyll('serve --incremental --force_polling')
 end
-
 
 def jekyll(opts = '')
   sh 'jekyll ' + opts

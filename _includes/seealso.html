@@ -1,9 +1,9 @@
 {% if page.seealso | first %}
-<div class="panel panel-info">
-  <div class="panel-heading">
-    <h3 class="panel-title"><i class="fa fa-bookmark fa-lg fa-fw"></i> See Also</h3>
+<div class="card border border-info">
+  <div class="card-header bg-indo">
+    <h3 class="card-title text-primary fs-6 m-0"><i class="fa fa-bookmark fa-lg fa-fw"></i> See Also</h3>
   </div>
-  <div class="panel-body">
+  <div class="card-body">
     <ul class="fa-ul">
     {% assign links = page.seealso %}
     {% for link in links %}

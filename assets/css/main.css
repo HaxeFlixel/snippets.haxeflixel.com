@@ -1,0 +1,323 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  background-image: url(https://haxeflixel.com/images/highlight-bg.png), url(https://haxeflixel.com/images/site-bg.png);
+  background-repeat: no-repeat, repeat;
+  background-position: center top, left top;
+  color: #1e1e1e;
+  line-height: 1.5;
+  font-size: 16px;
+  height: 100%;
+  margin-bottom:0;
+  padding-bottom:0;
+}
+
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+  border-color:#101010;
+}
+
+.search-form {
+  float: right;
+  padding: 10px 15px;
+  border-top:1px solid transparent;
+  border-bottom: 1px solid transparent;
+  margin-top:7px;
+  margin-bottom:7px;
+}
+
+.navbar {
+  min-height: 50px;
+  margin-bottom:22px;
+  border: 1px solid transparent;
+  height: 50px;
+  margin: 0 0 20px 0;
+  padding: 0;
+  color: white;
+}
+
+.navbar-inverse {
+  background-color: #222;
+}
+
+.navbar.fixed-top {
+  box-shadow: 0 0 3px 3px rgba(0,0,0,0.3);
+  top: 0;
+  z-index: 1030;
+
+}
+
+.navbar .fixed-top, .navbar .fixed-bottom {
+  position: fixed;
+  right:0;
+  left: 0;
+  border-width: 0 0 1px;
+}
+
+.navbar-top-links {
+  margin-right:0;
+}
+
+.navbar-top-links>li {
+  display:inline-block;
+}
+
+.navbar-top-links>li:first-child {
+  margin-left: 15px;
+}
+
+.navbar-top-links>li>a {
+  padding:15px;
+  min-height:50px;
+  color: #9d9d9d;
+  text-decoration: none;
+}
+
+.navbar-top-links>li>a:hover, .navbar-top-links>li>a.active  {
+  background-color: black;
+  color:white;
+}
+
+.navbar-brand:active, .navbar-brand:visited, .navbar-brand:hover {
+  color:white;
+}
+
+.navbar-brand {
+  padding:10px;
+  float:left;
+  line-height:32px;
+  font-size: 26px;
+  color: white;
+}
+
+.navbar-brand img {
+  vertical-align: middle;
+  height: 30px;
+  width: 30px;
+  margin-top: -6px;
+}
+
+.container-main {
+  margin-top: 24px;
+  margin-bottom:15px;
+  background:white;
+  border: 1px solid #d0d0d0;
+  border-radius: 10px;
+  padding:16px;
+  overflow:hidden;
+  padding-top:50px;
+}
+
+
+
+@media(min-width:768px) {
+
+    .navbar-fixed-top {
+      border-radius: 0;
+    }
+
+    .navbar-top-links .dropdown-messages,
+    .navbar-top-links .dropdown-tasks,
+    .navbar-top-links .dropdown-alerts {
+        margin-left: auto;
+    }
+
+    .navbar-form {
+      width: auto;
+      border: 0;
+      margin-left: 0;
+      margin-right: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      -webkit-box-shadow:none;
+      -moz-box-shadow:none;
+      box-shadow:none;
+    }
+}
+
+canvas.demo-back {
+  position:absolute;
+  border: 4px solid #3c3c3c;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+
+.title-logo {
+  border: none;
+  margin: 0 auto;
+}
+
+.demo {
+  position:relative;
+  top:4px;
+  left:4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  border: none;
+  margin: 0 auto;
+  display: block;
+  background: url(/demos/demo-assets/back-tile.png);
+}
+
+.sidebar-nav {
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+  width:25%;
+}
+
+.sidebar-nav .btn-toggle {
+  display: inline-flex;
+  padding: 0.25rem, 0.5rem;
+  font-weight: 600;
+  background-color: transparent;
+  border: 0;
+  width:100%;
+
+}
+
+.sidebar-nav .btn-toggle[aria-expanded="true"]::before {
+  transform: rotate(90deg);
+}
+
+.sidebar-nav .btn-toggle:hover, .sidebar-nav .btn-toggle:focus {
+  background-color: #eee;
+  box-shadow: none;
+}
+
+.sidebar-nav .btn-toggle::before {
+  display:inline-block;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "FontAwesome";
+  font-weight: normal;
+  height: 16px;
+  width: 16px;
+  color: rgb(200,200,200);
+  font-size: 16px;
+  content: "\f18e";
+  transition: transform .35s ease;
+  transform-origin: center;
+  line-height:16px;
+  margin-right:0.5rem;
+}
+
+.sidebar-nav .btn-toggle-nav a {
+  display: inline-flex;
+  padding: 0.15rem 0.5rem;
+  margin-top: 0.125rem;
+  margin-left: 1.25rem;
+  text-decoration: none;
+  background-color: transparent;
+  font-weight: 400;
+  border: 0;
+  width:100%;
+}
+
+.sidebar-nav .btn-toggle-nav a::before {
+  
+  display:inline-block;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "FontAwesome";
+  font-weight: normal;
+  height: 16px;
+  width: 16px;
+  color: rgb(200,200,200);
+  font-size: 16px;
+  content: "\f192";
+  transition: transform .35s ease;
+  transform-origin: center;
+  
+  margin-right:0.5rem;
+}
+
+.sidebar-nav .btn-toggle-nav a.active {
+  background: #9090902e;
+}
+
+.sidebar-nav .btn-toggle-nav a:hover, .sidebar-nav .btn-toggle-nav a:focus {
+  background-color: #eee;
+  box-shadow: none;
+}
+
+main {
+  width: 75%;
+}
+
+.jumbotron {
+  border-radius: 6px;
+  background-color: #eee;
+  padding: 48px 20px !important;
+  margin-bottom:30px;
+  color: inherit;
+
+}
+
+footer {
+  color: white;
+  width:100%;
+  background: url("https://haxeflixel.com/images/footer-shadow.png") repeat-x scroll 0 0 #515151;
+  min-height: 60px;
+  text-shadow: none;
+}
+
+.rainbow-bar {
+  background-image: -webkit-linear-gradient(left, #ffdb2d 0, #ffdb2d 20%, #e30019 20%, #e30019 40%, #9cb641 40%, #9cb641 60%, #1a2eef 60%, #1a2eef 80%, #00abf3 80%, #00abf3 100%);
+  background-image: -moz-linear-gradient(left center, #ffdb2d 0, #ffdb2d 20%, #e30019 20%, #e30019 40%, #9cb641 40%, #9cb641 60%, #1a2eef 60%, #1a2eef 80%, #00abf3 80%, #00abf3 100%);
+  padding:0;
+  width: 100%;
+}
+
+footer .hf-link {
+  margin-top:10px;
+  text-align:center;
+}
+
+footer .hf-link a {
+  font-size:28px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+footer .hf-link  a:visited{
+  color: white;
+  text-decoration: none;
+}
+
+footer .hf-link  a:hover {
+  color: #9d9d9d;
+  text-decoration: none;
+}
+
+footer .hf-link  a:active{
+  color: black;
+  text-decoration: none;
+}
+
+#footer-logo {
+	width: 32px;
+	height: 32px;
+
+	padding-bottom: 6px;
+}
+
+footer .social {
+  margin-top:15px;
+  text-align:left;
+}
+
+.page-header {
+  margin-top: 0px;
+  border: 0;
+}
+

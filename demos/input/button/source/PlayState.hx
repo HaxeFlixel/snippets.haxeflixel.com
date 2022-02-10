@@ -9,7 +9,9 @@ class PlayState extends FlxState
 {
 	override public function create()
 	{
-		super.create();
+		bgColor = 0;
+
+super.create();
 
 		var button = new FlxButton(0, 0, "Click me", onButtonClicked);
 		button.screenCenter();

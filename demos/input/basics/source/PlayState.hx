@@ -13,7 +13,9 @@ class PlayState extends FlxState
 
 	override public function create()
 	{
-		super.create();
+		bgColor = 0;
+
+super.create();
 
 		status = new FlxText(0, 12, FlxG.width, "", 12);
 		status.alignment = FlxTextAlign.CENTER;

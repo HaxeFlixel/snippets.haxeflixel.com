@@ -8,7 +8,9 @@ class PlayState extends FlxState
 {
 	override public function create()
 	{
-		super.create();
+		bgColor = 0;
+
+super.create();
 
 		var group = new FlxTypedGroup<Sprite>(10);
 		add(group);

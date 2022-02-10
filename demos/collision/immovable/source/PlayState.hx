@@ -15,7 +15,9 @@ class PlayState extends FlxState
 
 	override public function create()
 	{
-		super.create();
+		bgColor = 0;
+
+super.create();
 
 		boxA = createBox(0.25);
 		boxB = createBox(0.75);
