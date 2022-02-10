@@ -15,12 +15,11 @@ class PlayState extends FlxState
 	{
 		bgColor = 0;
 
-		super.create();
+super.create();
 
 		status = new FlxText(0, 12, FlxG.width, "", 12);
 		status.alignment = FlxTextAlign.CENTER;
-		status.color = 0xff000000;
-		status.setBorderStyle(FlxTextBorderStyle.SHADOW, 0xFF808080);
+		status.setBorderStyle(FlxTextBorderStyle.SHADOW, 0xff333333);
 		status.text = "Released";
 		add(status);
 

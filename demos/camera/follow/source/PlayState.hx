@@ -25,7 +25,7 @@ class PlayState extends FlxState
 	{
 		bgColor = 0;
 
-		super.create();
+super.create();
 
 		back = new FlxTileblock(0, 0, FlxG.width * 2, FlxG.height * 2);
 		back.loadTiles("assets/back-tile.png", 16, 16, 0);
@@ -48,8 +48,8 @@ class PlayState extends FlxState
 		statusText.autoSize = false;
 		statusText.wordWrap = false;
 		statusText.fieldWidth = FlxG.width;
-		statusText.color = FlxColor.BLACK;
-		statusText.setBorderStyle(FlxTextBorderStyle.SHADOW, FlxColor.GRAY, 2, 1);
+		statusText.color = FlxColor.WHITE;
+		statusText.setBorderStyle(FlxTextBorderStyle.SHADOW, FlxColor.BLACK, 2, 1);
 		statusText.alignment = FlxTextAlign.CENTER;
 		statusText.screenCenter(FlxAxes.X);
 		statusText.y = 8;
