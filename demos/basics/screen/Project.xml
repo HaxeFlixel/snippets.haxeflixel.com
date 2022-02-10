@@ -2,7 +2,7 @@
 <project xmlns="http://lime.software/project/1.0.2"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://lime.software/project/1.0.2 http://lime.software/xsd/project-1.0.2.xsd">
 
-	<app title="basics-screen" file="basics-screen" main="Main" version="0.0.1" company="HaxeFlixel" />
+	<app title="screen" file="screen" main="Main" version="0.0.1" company="HaxeFlixel" />
 	<set name="SWF_VERSION" value="11.8" />
 	<window width="320" height="240" fps="60" hardware="true" vsync="false" />
 	<window if="web" orientation="portrait" />
