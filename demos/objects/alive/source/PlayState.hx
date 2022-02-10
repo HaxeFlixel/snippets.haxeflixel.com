@@ -18,7 +18,7 @@ class PlayState extends FlxState
 	{
 		bgColor = 0;
 
-super.create();
+		super.create();
 
 		sprite = new FlxSprite("assets/sprite.png");
 		sprite.screenCenter();
@@ -30,8 +30,8 @@ super.create();
 		healthText.autoSize = false;
 		healthText.wordWrap = false;
 		healthText.fieldWidth = FlxG.width;
-		healthText.color = FlxColor.WHITE;
-		healthText.setBorderStyle(FlxTextBorderStyle.SHADOW, FlxColor.BLACK, 2, 1);
+		healthText.color = FlxColor.BLACK;
+		healthText.setBorderStyle(FlxTextBorderStyle.SHADOW, FlxColor.GRAY, 2, 1);
 		healthText.alignment = FlxTextAlign.CENTER;
 		healthText.screenCenter(FlxAxes.X);
 		healthText.y = 8;
