@@ -61,26 +61,17 @@ module Jekyll
 
         code = IO.binread("demos/#{path}/#{file}")
 
-        #filter = Class.new { include Jekyll::Filters }
-
-        #contents = filter.new.xml_escape(IO.binread("demos/#{path}/#{file}"))
-        #code = "<div class="language-haxe highlighter-rouge"><div class="highlight"><pre class="highlight"><code>" + code + "</code></pre></div></div>"
-
         contents = render_rouge(filetype, code)
-
-
-        # <pre ><code class=\"language-#{filetype}\">#{contents}</code></pre>
-
 
         slug = Utils.slugify(file)
         sources << "<div class=\"accordion\" id=\"accordion-#{slug}\" >
   <div class=\"accordion-item\">
     <h2 class=\"accordion-header\" id=\"heading-#{slug}\">
-      <button class=\"accordion-button\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#collapse-#{slug}\" aria-expanded=\"false\" aria-controls=\"collapse-#{slug}\">
-        <span class=\"pull-right\"><i class=\"source-chevron fa fa-chevron-circle-right fa-lg fa-fw\"></i></span>#{file}
+      <button class=\"accordion-button\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#collapse-#{slug}\" aria-expanded=\"true\" aria-controls=\"collapse-#{slug}\">
+        <i class=\"mr-1 source-chevron fa fa-file-code-o fa-lg fa-fw\"></i>#{file}
       </button>
     </h2>
-    <div id=\"collapse-#{slug}\" class=\"accordion-collapse collapse\" aria-labelledby=\"heading-#{slug}\" data-bs-parent=\"#accordion-#{slug}\">
+    <div id=\"collapse-#{slug}\" class=\"accordion-collapse collapse show\" aria-labelledby=\"heading-#{slug}\" data-bs-parent=\"#accordion-#{slug}\">
       <div class=\"accordion-body\">
         <div class=\"language-#{filetype} highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>#{contents}</code></pre></div></div>
       </div>

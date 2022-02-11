@@ -10,14 +10,15 @@ class PlayState extends FlxState
 	{
 		bgColor = 0;
 
-super.create();
+		super.create();
 
 		var text = new FlxText(0, 0, FlxG.width,
-			"The Screen's dimensions are " + FlxG.width + "x" + FlxG.height);
+			"The Screen's dimensions\nare " + FlxG.width + "x" + FlxG.height + " pixels", 12);
+
+		text.color = 0xff000000;
 		text.alignment = FlxTextAlign.CENTER;
-		text.setBorderStyle(FlxTextBorderStyle.SHADOW, 0xff333333);
-		text.scale.set(1.5, 1.5);
-		text.y = FlxG.height / 2 - text.height / 2;
+		text.setBorderStyle(FlxTextBorderStyle.SHADOW, 0xFF808080);
+		text.screenCenter();
 		add(text);
 	}
 }
