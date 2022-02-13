@@ -1,8 +1,8 @@
 ---
 title: Tilemap
-concept: Tiling
+concept: Tiles
 order: 2
-tags: [tiling, tilemap]
+tags: [tiles, tilemap]
 complexity: 1
 sourcefiles: source/PlayState.hx ../../demo-assets/map.csv
 ---
