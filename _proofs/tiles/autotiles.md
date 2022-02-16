@@ -33,3 +33,7 @@ There are 3 'flavors' of autotiling available:
 Why not just always use {% api flixel.tile.FlxBaseTilemap.FlxTilemapAutoTiling.FULL %}? Your individual project may not need to do all 48 tile configurations, so sticking with just {% api flixel.tile.FlxBaseTilemap.FlxTilemapAutoTiling.AUTO %} or {% api flixel.tile.FlxBaseTilemap.FlxTilemapAutoTiling.ALT %} may cut down on the number of tiles you need to draw.
 
 <div class="alert alert-info"><span class="glyphicon glyphicon-paperclip"> </span> <strong> Note:</strong> You can use {% api flixel.tile.FlxBaseTilemap.customTileRemap %} to build your own auto-tiling map logic. This is especially useful if you want to use something like {% api flixel.addons.tile.FileTilemapExt %} to do slopes, as an example.</div>
+
+```haxe
+map.loadMapFromCSV(mapData, tilesImage, tileWidth, tileHeight, FlxTilemapAutoTiling.AUTO);
+```
