@@ -15,4 +15,4 @@ Set an object's velocity to these values to move that object (or use it for some
 velocity = FlxVelocity.velocityFromAngle(angle, speed);
 ```
 
-<div class="alert alert-info"><span class="glyphicon glyphicon-paperclip"> </span> <strong> Note:</strong> There is a simlar {% api flixel.math.FlxVelocity.accelerateFromAngle %} function that will actually move an {% api flixel.FlxSprite %} based on an angle, acceleration, and maxSpeed.</div>
+<div class="alert alert-info"><i class="fa fa-paperclip" aria-hidden="true"></i> <strong> Note:</strong> There is a simlar {% api flixel.math.FlxVelocity.accelerateFromAngle %} function that will actually move an {% api flixel.FlxSprite %} based on an angle, acceleration, and maxSpeed.</div>

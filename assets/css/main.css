@@ -153,21 +153,21 @@ canvas.demo-back {
 }
 
 .demo {
-  position:relative;
-  top:4px;
-  left:4px;
+  
   border-radius: 4px;
-  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
-  box-shadow: 0 1px 1px rgba(0,0,0,.05);
-  border: none;
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.40);
+  box-shadow: 0 1px 1px rgba(0,0,0,.40);
   margin: 0 auto;
   display: block;
   background: url(/demos/demo-assets/back-tile.png);
+  padding:0;
+  border: 2px solid #333333;
+  box-sizing: content-box;
 }
 
 .sidebar-nav {
   background-color: #f5f5f5;
-  border: 1px solid #e3e3e3;
+  border: 2px solid #e3e3e3;
   border-radius: 4px;
   box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
   width:25%;
@@ -321,3 +321,12 @@ footer .social {
   border: 0;
 }
 
+figure {
+    display: inline-block;
+    padding: 0.5rem;
+    border: 1px solid #666;
+    border-radius: 4px;
+    margin: auto;
+    background: lightgray;
+    margin-bottom: 1rem;
+}

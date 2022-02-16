@@ -15,4 +15,4 @@ Use {% api flixel.math.FlxVelocity.moveTowardsMouse %},  {% api flixel.math.FlxV
 FlxVelocity.moveTowardsMouse(target, speed);
 ```
 
-<div class="alert alert-info"><span class="glyphicon glyphicon-paperclip"> </span> <strong> Note:</strong> There are similar `accelerateTowards*` functions that can be used as well.</div>
+<div class="alert alert-info"><<i class="fa fa-paperclip" aria-hidden="true"></i> <strong> Note:</strong> There are similar `accelerateTowards*` functions that can be used as well.</div>

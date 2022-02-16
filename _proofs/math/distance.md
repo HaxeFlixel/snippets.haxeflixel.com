@@ -15,4 +15,4 @@ Use {% api flixel.math.FlxMath.distanceToMouse %},  {% api flixel.math.FlxMath.d
 distance = FlxVelocity.distanceToPoint(target, point);
 ```
 
-<div class="alert alert-info"><span class="glyphicon glyphicon-paperclip"> </span> <strong> Note:</strong> Use the related `isDistanceTo*Within` functions if you just want to check if the distance is within a specific value. These functions avoid the expensive `Math.sqrt` call that is used in the other functions.</div>
+<div class="alert alert-info"><i class="fa fa-paperclip" aria-hidden="true"></i> <strong> Note:</strong> Use the related `isDistanceTo*Within` functions if you just want to check if the distance is within a specific value. These functions avoid the expensive `Math.sqrt` call that is used in the other functions.</div>

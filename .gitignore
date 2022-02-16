@@ -14,3 +14,4 @@ package.json
 package-lock.json
 .jekyll-metadata
 Highlighter
+demos/tiles/autotiles/hxformat.json
