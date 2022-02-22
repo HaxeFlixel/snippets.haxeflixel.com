@@ -32,7 +32,7 @@ class PlayState extends FlxState
 		map_full.y = map_auto.height;
 		add(map_full);
 
-		var text:FlxText = new FlxText("AUTO");
+		var text:FlxText = new FlxText(0, 0, 0, "AUTO");
 		text.size = 16;
 		text.color = 0xFF28288e;
 		text.alignment = FlxTextAlign.CENTER;
@@ -41,7 +41,7 @@ class PlayState extends FlxState
 		text.y = map_auto.y + (map_auto.height / 2) - (text.height / 2);
 		add(text);
 
-		text = new FlxText("ALT");
+		text = new FlxText(0, 0, 0, "ALT");
 		text.size = 16;
 		text.color = 0xFFa3e6b4;
 		text.alignment = FlxTextAlign.CENTER;
@@ -50,7 +50,7 @@ class PlayState extends FlxState
 		text.y = map_alt.y + (map_alt.height / 2) - (text.height / 2);
 		add(text);
 
-		text = new FlxText("FULL");
+		text = new FlxText(0, 0, 0, "FULL");
 		text.size = 16;
 		text.color = 0xFF3c341a;
 		text.alignment = FlxTextAlign.CENTER;

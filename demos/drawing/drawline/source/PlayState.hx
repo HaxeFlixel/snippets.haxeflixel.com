@@ -26,9 +26,9 @@ class PlayState extends FlxState
         spriteright = new FlxSprite(FlxG.width - 10 - spriteleft.width, FlxG.height - 10 - spriteleft.height, "assets/sprite.png");
         add(spriteright);
 
-        FlxTween.linearMotion(spriteleft, 10, 10, 10, FlxG.height - 10 - spriteleft.height, 2, {type: FlxTweenType.PINGPONG});
+        FlxTween.linearMotion(spriteleft, 10, 10, 10, FlxG.height - 10 - spriteleft.height, 2, true, {type: FlxTweenType.PINGPONG});
 
-        FlxTween.linearMotion(spriteright, FlxG.width - 10 - spriteright.width, FlxG.height - 10 - spriteright.height, FlxG.width - 10 - spriteright.width, 10, 2, {
+        FlxTween.linearMotion(spriteright, FlxG.width - 10 - spriteright.width, FlxG.height - 10 - spriteright.height, FlxG.width - 10 - spriteright.width, 10, 2, true, {
             type: FlxTweenType.PINGPONG
         });
 
