@@ -1,4 +1,4 @@
-[![Logo](title-logo/assets/logo.png)](snippets.haxeflixel.com) snippets.haxeflixel.com
+[![Logo](title-logo/assets/logo.png)](https://snippets.haxeflixel.com) [snippets.haxeflixel.com](https://snippets.haxeflixel.com)
 ==========================
 
 [![CI](https://img.shields.io/github/workflow/status/HaxeFlixel/snippets.haxeflixel.com/CI.svg?logo=github)](https://github.com/HaxeFlixel/snippets.haxeflixel.com/actions?query=workflow%3ACI)
