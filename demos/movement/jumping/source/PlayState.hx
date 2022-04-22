@@ -47,7 +47,11 @@ super.create();
 		if (jumping && !jumpPressed)
 			jumping = false;
 
-		// reset jumpTimer when touching the floor
+		/*
+		 * Reset jumpTimer when touching the floor
+		 * Note: This sprite's touching flags are set via FlxG.collide,
+		 * and are reset to false on super.update
+		 */
 		if (sprite.isTouching(DOWN) && !jumping)
 			jumpTimer = 0;
 
