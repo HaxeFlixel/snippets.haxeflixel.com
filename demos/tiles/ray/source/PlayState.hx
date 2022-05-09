@@ -54,7 +54,7 @@ class PlayState extends FlxState
 	{
 		super.update(elapsed);
 
-		var madeIt:Bool = map.ray(center.getMidpoint(), target.getMidpoint(), endPoint, 4);
+		var madeIt:Bool = map.ray(center.getMidpoint(), target.getMidpoint(), endPoint);
 
 		FlxSpriteUtil.fill(line, 0);
 		if (madeIt)
