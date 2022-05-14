@@ -23,10 +23,10 @@ class PlayState extends FlxState
 		map.loadMapFromCSV("assets/tile-prop-map.csv", "assets/tile-props.png");
 		map.screenCenter();
 
-		map.setTileProperties(2, FlxObject.CEILING);
-		map.setTileProperties(3, FlxObject.ANY, bounceUp);
-		map.setTileProperties(4, FlxObject.ANY, bounceLeft);
-		map.setTileProperties(5, FlxObject.ANY, bounceRight);
+		map.setTileProperties(2, CEILING);
+		map.setTileProperties(3, ANY, bounceUp);
+		map.setTileProperties(4, ANY, bounceLeft);
+		map.setTileProperties(5, ANY, bounceRight);
 
 		add(sprite = new FlxSprite("assets/sprite.png"));
 		sprite.x = 48;
