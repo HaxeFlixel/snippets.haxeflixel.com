@@ -10,6 +10,7 @@
 	<window background="null" if="html5" />
 	<set name="BUILD_DIR" value="export" />
 	<source path="source" />
+	<source path="../../shared/" />
 	<assets path="../../demo-assets" rename="assets" />
 	<haxelib name="flixel"/>
 	<haxedef name="FLX_NO_GAMEPAD" />

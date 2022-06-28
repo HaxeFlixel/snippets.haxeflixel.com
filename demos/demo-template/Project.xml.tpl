@@ -9,6 +9,7 @@
 	<window if="mobile" orientation="landscape" fullscreen="true" width="0" height="0" />
 	<set name="BUILD_DIR" value="export" />
 	<source path="source" />
+	<source path="../../shared/" />
 	<assets path="../../demo-assets" rename="assets" />
 	<haxelib name="flixel"/>
 	<!--haxelib name="flixel-addons" /-->
