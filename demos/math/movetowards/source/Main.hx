@@ -1,5 +1,6 @@
 package;
 
+import flixel.FlxSnippet;
 import openfl.display.Sprite;
 
 class Main extends Sprite
@@ -10,4 +11,3 @@ class Main extends Sprite
 		addChild(new FlxSnippet(0, 0, PlayState));
 	}
 }
-

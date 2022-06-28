@@ -1,5 +1,6 @@
 package;
 
+import flixel.FlxSnippet;
 import openfl.display.Sprite;
 
 class Main extends Sprite
