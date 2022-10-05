@@ -44,10 +44,9 @@ class PlayState extends FlxState
 
 		hitPoint = FlxPoint.get();
 
-		tween = FlxTween.circularMotion(target, center.x, center.y, FlxG.height / 2, 0, false, 4,
-			true, {
-				type: FlxTweenType.LOOPING
-			});
+		var halfHeight = center.height / 2;
+		tween = FlxTween.circularMotion(target, center.x, center.y + halfHeight,
+			FlxG.height / 2 - halfHeight, 0, false, 4, true, { type: FlxTweenType.LOOPING });
 
 		super.create();
 	}
