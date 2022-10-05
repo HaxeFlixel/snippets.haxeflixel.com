@@ -4,8 +4,10 @@ import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.math.FlxPoint;
+import flixel.text.FlxText;
 import flixel.tile.FlxTilemap;
 import flixel.tweens.FlxTween;
+import flixel.util.FlxColor;
 import flixel.util.FlxSpriteUtil;
 
 class PlayState extends FlxState
@@ -31,6 +33,12 @@ class PlayState extends FlxState
 		add(map = new FlxTilemap());
 		map.loadMapFromCSV("assets/ray-map.csv", "assets/tiles.png");
 		map.screenCenter();
+
+		var instructions = new FlxText("Click anywhere to place the target");
+		instructions.color = FlxColor.BLACK;
+		instructions.x = 4;
+		instructions.y = FlxG.height - instructions.height - 4;
+		add(instructions);
 
 		add(center = new FlxSprite("assets/sprite.png"));
 		center.offset.copyFrom(center.origin);
