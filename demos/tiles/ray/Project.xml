@@ -13,7 +13,7 @@
 	<assets path="../../demo-assets" rename="assets" />
 	<haxelib name="flixel"/>
 	<!--haxelib name="flixel-addons" /-->
-	<!--haxelib name="flixel-ui"/-->s
+	<!--haxelib name="flixel-ui"/-->
 	<haxedef name="FLX_NO_KEYBOARD" unless="debug" />
 	<haxedef name="FLX_NO_GAMEPAD" />
 	<haxedef name="FLX_NO_FOCUS_LOST_SCREEN" />
