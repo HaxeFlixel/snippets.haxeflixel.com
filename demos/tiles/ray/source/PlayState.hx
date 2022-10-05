@@ -34,7 +34,8 @@ class PlayState extends FlxState
 		map.loadMapFromCSV("assets/ray-map.csv", "assets/tiles.png");
 		map.screenCenter();
 
-		var instructions = new FlxText("Click anywhere to place the target");
+		var instructions = new FlxText();
+		instructions.text = "Click anywhere to place the target";
 		instructions.color = FlxColor.BLACK;
 		instructions.x = 4;
 		instructions.y = FlxG.height - instructions.height - 4;
