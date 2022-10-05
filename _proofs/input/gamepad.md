@@ -13,3 +13,5 @@ if (FlxG.gamepads.lastActive != null && FlxG.gamepads.lastActive.pressed.A)
 	sprite.velocity.y = -100;
 }
 ```
+
+Check out the [GamepadTest Demo](https://haxeflixel.com/demos/GamepadTest/) for more examples.
