@@ -15,9 +15,7 @@
 	<haxelib name="flixel"/>
 	<!--haxelib name="flixel-addons" /-->
 	<!--haxelib name="flixel-ui"/-->
-	<haxedef name="FLX_NO_MOUSE" />
 	<haxedef name="FLX_NO_KEYBOARD" unless="debug" />
-	<haxedef name="FLX_NO_TOUCH" />
 	<haxedef name="FLX_NO_GAMEPAD" />
 	<haxedef name="FLX_NO_FOCUS_LOST_SCREEN" />
 	<haxedef name="FLX_NO_DEBUG" unless="debug" />
