@@ -29,6 +29,7 @@
 	<window background="null" if="html5" />
 	<set name="BUILD_DIR" value="export" />
 	<source path="source" />
+	<source path="../../shared/" />
 	<assets path="../../demo-assets" rename="assets" />
 
 	<!-- _______________________________ Libraries ______________________________ -->
