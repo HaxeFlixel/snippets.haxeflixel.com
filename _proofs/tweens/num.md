@@ -12,7 +12,7 @@ Using {% api flixel.tweens.FlxTween.num %} allows you to change a numerical valu
 
 ```haxe
 // create a numeric tween
-FlxTween.num(fromValue, toValue, duration, {type: tweenType, easing: FlxEase: easeFunction}, updateFunction);
+FlxTween.num(fromValue, toValue, duration, {type: tweenType, easing: easeFunction}, updateFunction);
 
 private function updateFunction(Value:Float):Void
 {
