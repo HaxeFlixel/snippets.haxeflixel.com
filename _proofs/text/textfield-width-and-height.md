@@ -1,10 +1,10 @@
 ---
-title: Textfield size
+title: Textfield Width and Height
 concept: Text
 complexity: 2
 order: 2
-tags: [text, size, autosize]
-seealso: [Text/FlxText, Sprites]
+tags: [text, autosize]
+seealso: [Text/FlxText, Input/Button, Sprites]
 ---
 
 By default {% api flixel.text.FlxText %} object is autosized - its height and width
