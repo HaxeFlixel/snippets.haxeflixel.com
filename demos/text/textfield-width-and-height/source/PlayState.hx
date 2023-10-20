@@ -1,10 +1,10 @@
 package;
 
 import flixel.FlxG;
+import flixel.FlxState;
+import flixel.text.FlxText;
 import flixel.ui.FlxButton;
 import flixel.util.FlxColor;
-import flixel.text.FlxText;
-import flixel.FlxState;
 
 class PlayState extends FlxState
 {
@@ -14,64 +14,73 @@ class PlayState extends FlxState
 
 		bgColor = 0;
 
-		var fontSize = 18;
-		var xCoord = 10;
-		var yCoord = 20;
-		var gap = 10;
+		final gap = 4;
+		final margin = 8;
+		var xCoord:Float = margin;
+		var yCoord:Float = margin;
 
-		var autoSized = new FlxText(xCoord, yCoord, 0, "autosized", fontSize);
-		colorizeText(autoSized);
+		var autoSized = createText(xCoord, yCoord, "autosized");
 		add(autoSized);
+		yCoord += autoSized.height + gap;
 
-		var fixedSize = new FlxText(xCoord);
-		fixedSize.fieldWidth = 140;
-		fixedSize.fieldHeight = 50;
-		fixedSize.text = "fixed size";
-		fixedSize.size = fontSize;
-		fixedSize.y = autoSized.y + autoSized.height + gap;
-		colorizeText(fixedSize);
+		var fixedSize = createText(xCoord, yCoord, "fixed size");
+		fixedSize.fieldWidth = 70;
+		fixedSize.fieldHeight = 24;
 		add(fixedSize);
+		yCoord += fixedSize.height + gap;
 
-		var autoHeight = new FlxText(xCoord);
-		autoHeight.fieldWidth = 150;
+		var autoHeight = createText(xCoord, yCoord, 'fixed width\nauto height');
+		autoHeight.fieldWidth = 70;
 		autoHeight.fieldHeight = 0;
-		autoHeight.text = 'fixed width\nauto height';
-		autoHeight.size = fontSize;
-		autoHeight.y = fixedSize.y + fixedSize.height + gap;
-		colorizeText(autoHeight);
 		add(autoHeight);
+		yCoord += autoHeight.height + gap;
 
-		var sf = 1.5;
-		var btn = new FlxButton(0, 0, () ->
+		final prefix = 'Description: ';
+
+		// create a button that add or removes the prefix on click
+		var btn:FlxButton = null;
+		btn = new FlxButton(0, 0, "Add Text", function()
 		{
-			var addon = 'Description: ';
-			updateText(autoSized, addon);
-			updateText(fixedSize, addon);
-			updateText(autoHeight, addon);
+			if (btn.text == "Add Text")
+			{
+				addText(autoSized, prefix);
+				addText(fixedSize, prefix);
+				addText(autoHeight, prefix);
+				btn.text = "Remove Text";
+			}
+			else
+			{
+				removeText(autoSized, prefix);
+				removeText(fixedSize, prefix);
+				removeText(autoHeight, prefix);
+				btn.text = "Add Text";
+			}
 		});
-		btn.text = 'Update Text';
-		btn.scale.scale(sf);
-		btn.updateHitbox();
-		btn.label.scale.scale(sf);
-		btn.label.updateHitbox();
-		btn.x = FlxG.width - btn.width - 10;
-		btn.y = FlxG.height - btn.height - 10;
+		btn.x = FlxG.width - btn.width - margin;
+		btn.y = FlxG.height - btn.height - margin;
 		add(btn);
 	}
 
-	function colorizeText(text:FlxText)
+	/**
+	 * Simple helper to create a stylish FlxText
+	 */
+	function createText(x:Float = 0, y:Float = 0, text:String, size = 8)
 	{
-		text.color = FlxColor.CYAN;
+		var field = new FlxText(x, y, 0, text, size);
+		field.color = FlxColor.CYAN;
 		// accessing background through underlying openfl TextField object
-		text.textField.background = true;
-		text.textField.backgroundColor = 0x0C365F;
+		field.textField.background = true;
+		field.textField.backgroundColor = 0x0C365F;
+		return field;
 	}
 
-	function updateText(textField:FlxText, addon:String)
+	function addText(field:FlxText, prefix:String)
 	{
-		if (textField.text.indexOf(addon) == -1)
-			textField.text = addon + textField.text;
-		else
-			textField.text = textField.text.split(addon)[1];
+		field.text = prefix + field.text;
+	}
+
+	function removeText(field:FlxText, prefix:String)
+	{
+		field.text = field.text.split(prefix)[1];
 	}
 }
