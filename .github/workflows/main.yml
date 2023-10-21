@@ -10,15 +10,15 @@ jobs:
     - uses: ruby/setup-ruby@v1
       with:
         ruby-version: '3.0'
-    - uses: actions/setup-node@v1
-      with:
-        node-version: '10.x'
-    - uses: lix-pm/setup-lix@master
-    - uses: HaxeFlixel/setup-flixel@master
-      with:
-        haxe-version: stable
-        flixel-versions: dev
-        target: html5
+    # - uses: actions/setup-node@v1
+    #   with:
+    #     node-version: '10.x'
+    # - uses: lix-pm/setup-lix@master
+    # - uses: HaxeFlixel/setup-flixel@master
+    #   with:
+    #     haxe-version: stable
+    #     flixel-versions: dev
+    #     target: html5
     - name: Build Site
       run: |
         gem install bundler
