@@ -5,11 +5,11 @@
 
     {% include navbar.html %}
 
-    <div class="container navbar-offset d-flex container-main">
+    <div class="container-main container-lg d-flex flex-wrap">
 
         {% include sidebarnav.html %}
 
-        <main >
+        <main class="prevent-wrap-flex-item w-100">
           {% if page.title %}
           {% if page.title <> 'Index' %}
           <div class="page-header">
