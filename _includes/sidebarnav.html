@@ -1,8 +1,8 @@
-    <aside class="sidebar-nav p-3 me-4 ">
-        <ul class="list-unstyled ps-0" role="navigation">
+    <nav class="sidebar-nav me-lg-4 mb-5 mb-lg-0 p-3 navbar navbar-expand flex-column justify-content-start align-items-stretch h-100 w-100 w-lg-25">
+        <ul class="list-unstyled navbar-nav ps-0 flex-column justify-content-start w-100" role="navigation">
             {% assign concepts = site.concepts | sort: 'order' %}
             {% for concept in concepts %}
-            <li id="li-{{ concept.title | slugify }}" class="mb-1">
+            <li id="li-{{ concept.title | slugify }}" class="mb-1 nav-item">
                 <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#{{ concept.title | slugify }}-collapse" {% if page.title == concept.title or page.concept == concept.title %}aria-expanded="true"{% endif %}>
                     {{ concept.title }}
                 </button>
@@ -11,7 +11,7 @@
                         {% assign proofs = site.proofs | where:"concept",concept.title | sort: 'order' %}
                         {% for proof in proofs %}
                             <li id="li-{{proof.concept | slugify }}-{{ proof.title | slugify }}">
-                                <a href="/{{ proof.concept | slugify }}/{{ proof.title | slugify }}" class="link-dark rounded {% if page.title == proof.title %} active{% endif %}">{{ proof.title }}</a>
+                                <a href="{{ proof.concept | prepend: '/' | slugify | relative_url }}/{{ proof.title | slugify }}" class="link-dark rounded {% if page.title == proof.title %} active{% endif %}">{{ proof.title }}</a>
                             </li>
                         {% endfor %}
                     </ul>
@@ -19,5 +19,4 @@
             </li>
             {% endfor %}
         </ul>
-    </aside>
-
+    </nav>

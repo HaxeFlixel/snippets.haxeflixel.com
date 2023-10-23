@@ -1,13 +1,17 @@
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-inverse fixed-top" style="margin-bottom: 0">
+    <nav class="top-navbar navbar navbar-expand-lg navbar-inverse fixed-top" style="margin-bottom: 0">
       <div class="container">
-        <a class="navbar-brand" href="/"><span><img id="brand-logo" src="/assets/images/hfm-logo.svg" alt="HaxeFlixel Logo"/> HaxeFlixel Snippets</span></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="{{ '/' | relative_url }}">
+          <span><img id="brand-logo" src="{{ '/assets/images/hfm-logo.svg' | relative_url }}" alt="HaxeFlixel Logo"/> HaxeFlixel Snippets</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#site-navbar" aria-controls="site-navbar" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="site-navbar">
           <ul class="navbar-nav navbar-top-links me-auto mb-2 mb-lg-0">
-            <li class="nav-link{% if page.title == "About" %} active" aria-current="page{% endif %}"><a href="/about" >About</a></li>
+            <li class="nav-link{% if page.title == 'About' %} active" aria-current="page{% endif %}">
+              <a href="{{'/about' | relative_url }}" >About</a>
+            </li>
             <li class="nav-link">
               <a href="https://haxeflixel.com" title="" data-original-title="">
                 <i class="fa fa-fw fa-share"></i>
@@ -17,7 +21,7 @@
           </ul>
           <form class="d-flex navbar-form search-form" role="search" action="https://google.com/search" method="get">
               <input type="search" name="q" class="form-control me-2" placeholder="Search" aria-label="Search">
-              <input type="hidden" name="q" value="site:https://snippets.haxeflixel.com/">
+              <input type="hidden" name="q" value="site:{{ site.url | relative_url }}">
           </form>
         </div>
       </div>
