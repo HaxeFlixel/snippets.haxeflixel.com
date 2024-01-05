@@ -6,17 +6,20 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - run: sudo apt-get update
+    - uses: actions/checkout@v3
     - uses: ruby/setup-ruby@v1
       with:
         ruby-version: '3.0'
     - uses: actions/setup-node@v1
       with:
         node-version: '10.x'
-    - uses: lix-pm/setup-lix@master
-    - uses: HaxeFlixel/setup-flixel@master
+    - uses: krdlab/setup-haxe@v1
       with:
-        haxe-version: stable
+        haxe-version: "4.3.3"
+    - uses: HaxeFlixel/setup-flixel@v1
+      with:
+        haxe-version: current
         flixel-versions: dev
         target: html5
     - name: Build Site
