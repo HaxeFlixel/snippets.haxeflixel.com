@@ -6,12 +6,12 @@ order: 1
 tags: [text]
 seealso: [Sprites]
 ---
-You can embed TTS fonts by including them in your assets, like so:
+You can embed TTF fonts by including them in your assets, like so:
 ```xml
 <assets path="assets/fonts" rename="fonts"/>
 ```
 
-Once the font is embedded, you can use it via {% api flixel.text.FlxText.font %}, like so:
+Once the font is embedded, you can have {% api flixel.text.FlxText %} instances use via {% api flixel.text.FlxText.font %}, like so:
 ```haxe
 text.font = "fonts/Arial Rounded Bold.ttf";
 ```
