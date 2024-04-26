@@ -18,7 +18,7 @@ class PlayState extends FlxState
 		text.color = FlxColor.BLACK;
 		text.size = 32;
 		text.screenCenter();
-		text.font = "Arial";
+		text.font = "fonts/Arial Rounded Bold.ttf";
 		add(text);
 	}
 }
