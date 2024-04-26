@@ -15,10 +15,10 @@ class PlayState extends FlxState
 		
 		var text = new FlxText();
 		text.text = "Hello, World!";
-		text.color = FlxColor.CYAN;
+		text.color = FlxColor.BLACK;
 		text.size = 32;
-		text.setBorderStyle(FlxTextBorderStyle.SHADOW, FlxColor.BLUE, 4);
 		text.screenCenter();
+		text.font = "Arial";
 		add(text);
 	}
 }

@@ -1,7 +1,4 @@
 {
-	"wrapping": {
-		"maxLineLength": 100
-	},
 	"lineEnds": {
 		"leftCurly": "both",
 		"rightCurly": "both",
@@ -14,5 +11,8 @@
 		"doWhile": "next",
 		"tryBody": "next",
 		"tryCatch": "next"
+	},
+	"indentation": {
+		"trailingWhitespace": true
 	}
 }
