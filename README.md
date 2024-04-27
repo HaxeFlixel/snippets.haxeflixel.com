@@ -1,7 +1,6 @@
 [![Logo](title-logo/assets/logo.png)](https://snippets.haxeflixel.com)
 ==========================
-
-[![CI](https://img.shields.io/github/workflow/status/HaxeFlixel/snippets.haxeflixel.com/CI.svg?logo=github)](https://github.com/HaxeFlixel/snippets.haxeflixel.com/actions?query=workflow%3ACI)
+[![CI](https://img.shields.io/github/actions/workflow/status/HaxeFlixel/snippets.haxeflixel.com/main.yml?branch=dev&logo=github)](https://github.com/HaxeFlixel/snippets.haxeflixel.com/actions?query=workflow%3ACI)
 
 This is the source code for the HaxeFlixel Snippets website. It is built using [Jekyll](https://jekyllrb.com/) and [Bootstrap](https://getbootstrap.com/).
 
