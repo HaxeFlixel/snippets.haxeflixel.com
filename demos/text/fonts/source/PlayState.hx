@@ -15,7 +15,7 @@ class PlayState extends FlxState
 		
 		var text = new FlxText();
 		text.text = "Hello, World!";
-		text.font = "fonts/Arial Rounded Bold.ttf";
+		text.font = "assets/fonts/Arial Rounded Bold.ttf";
 		text.color = FlxColor.BLACK;
 		text.size = 32;
 		text.screenCenter();

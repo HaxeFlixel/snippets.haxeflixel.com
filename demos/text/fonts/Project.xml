@@ -23,5 +23,5 @@
 	<haxedef name="FLX_NO_DEBUG" unless="debug" />
 	
 	<!-- Embed the fonts -->
-	<assets path="assets/fonts" rename="fonts"/>
+	<assets path="assets"/>
 </project>
