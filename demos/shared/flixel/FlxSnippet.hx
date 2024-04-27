@@ -12,6 +12,6 @@ class FlxSnippet extends FlxGame
 		FlxG.autoPause = false;
 		
 		// show graph bg
-		FlxG.signals.postStateSwitch.add(() -> FlxG.camera.bgColor = 0x0);
+		FlxG.signals.postStateSwitch.add(() -> FlxG.cameras.bgColor = 0x0);
 	}
 }
