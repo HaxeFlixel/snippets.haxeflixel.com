@@ -14,7 +14,7 @@ class PlayState extends FlxState
 	
 	var time:Float = 1;
 	
-	override public function create()
+	override function create()
 	{
 		super.create();
 		
@@ -36,7 +36,7 @@ class PlayState extends FlxState
 		add(healthText);
 	}
 	
-	override public function update(elapsed:Float)
+	override function update(elapsed:Float)
 	{
 		time -= elapsed;
 		if (time <= 0)

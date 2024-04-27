@@ -8,7 +8,7 @@ import flixel.util.FlxColor;
 
 class PlayState extends FlxState
 {
-	override public function create()
+	override function create()
 	{
 		super.create();
 		

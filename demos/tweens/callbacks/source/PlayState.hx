@@ -11,7 +11,7 @@ class PlayState extends FlxState
 	var spriteA:FlxSprite;
 	var spriteB:FlxSprite;
 	
-	override public function create()
+	override function create()
 	{
 		super.create();
 		

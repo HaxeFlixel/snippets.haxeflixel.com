@@ -12,7 +12,7 @@ class PlayState extends FlxState
 {
 	var text:FlxText;
 	
-	override public function create()
+	override function create()
 	{
 		super.create();
 		

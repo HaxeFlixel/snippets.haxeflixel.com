@@ -12,7 +12,7 @@ class PlayState extends FlxState
     private var spriteright:FlxSprite;
     private var line:FlxSprite;
 
-    override public function create()
+    override function create()
     {
         line = new FlxSprite();
         line.makeGraphic(FlxG.width, FlxG.height, 0, true);
@@ -33,7 +33,7 @@ class PlayState extends FlxState
         super.create();
     }
 
-    override public function update(elapsed:Float):Void
+    override function update(elapsed:Float):Void
     {
         super.update(elapsed);
 

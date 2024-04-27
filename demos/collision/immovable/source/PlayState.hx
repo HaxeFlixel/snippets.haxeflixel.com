@@ -13,7 +13,7 @@ class PlayState extends FlxState
 	var spriteB:FlxSprite;
 	var boxB:FlxSprite;
 	
-	override public function create()
+	override function create()
 	{
 		super.create();
 		
@@ -45,7 +45,7 @@ class PlayState extends FlxState
 		return sprite;
 	}
 	
-	override public function update(elapsed:Float)
+	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
 		

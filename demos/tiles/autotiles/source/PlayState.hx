@@ -11,7 +11,7 @@ class PlayState extends FlxState
 	var map_alt:FlxTilemap;
 	var map_full:FlxTilemap;
 	
-	override public function create()
+	override function create()
 	{
 		super.create();
 		

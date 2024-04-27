@@ -8,7 +8,7 @@ import flixel.text.FlxBitmapText;
 
 class PlayState extends FlxState
 {
-	override public function create()
+	override function create()
 	{
 		super.create();
 		

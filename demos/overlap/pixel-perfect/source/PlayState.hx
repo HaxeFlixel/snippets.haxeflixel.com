@@ -13,7 +13,7 @@ class PlayState extends FlxState
 	var box:FlxSprite;
 	var overlaps:Bool;
 	
-	override public function create()
+	override function create()
 	{
 		super.create();
 		
@@ -32,7 +32,7 @@ class PlayState extends FlxState
 		add(circle);
 	}
 	
-	override public function update(elapsed:Float)
+	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
 		

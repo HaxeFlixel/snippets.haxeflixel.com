@@ -14,7 +14,7 @@ class PlayState extends FlxState
 	var jumpTimer:Float = 0;
 	var jumping:Bool = false;
 	
-	override public function create()
+	override function create()
 	{
 		super.create();
 		
@@ -34,7 +34,7 @@ class PlayState extends FlxState
 		add(pad);
 	}
 	
-	override public function update(elapsed:Float)
+	override function update(elapsed:Float)
 	{
 		// call super.update first, because it will set touching flags to NONE
 		super.update(elapsed);

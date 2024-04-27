@@ -8,7 +8,7 @@ class PlayState extends FlxState
 {
 	var sprite:FlxSprite;
 	
-	override public function create()
+	override function create()
 	{
 		super.create();
 		
@@ -19,7 +19,7 @@ class PlayState extends FlxState
 		sprite.acceleration.x = 400;
 	}
 	
-	override public function update(elapsed:Float)
+	override function update(elapsed:Float)
 	{
 		if (sprite.velocity.x > 0 && sprite.x >= FlxG.width - sprite.width)
 		{

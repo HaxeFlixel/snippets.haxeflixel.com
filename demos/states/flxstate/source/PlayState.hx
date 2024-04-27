@@ -9,7 +9,7 @@ import flixel.util.FlxDestroyUtil;
 
 class PlayState extends FlxState
 {
-	override public function create()
+	override function create()
 	{
 		super.create();
 		
@@ -35,7 +35,7 @@ class PlayState extends FlxState
 
 class OtherState extends FlxState
 {
-	override public function create()
+	override function create()
 	{
 		super.create();
 		

@@ -8,7 +8,7 @@ class PlayState extends FlxState
 {
 	var timer:Float = 2;
 	
-	override public function update(elapsed:Float)
+	override function update(elapsed:Float)
 	{
 		timer -= elapsed;
 		if (timer <= 0)

@@ -10,7 +10,7 @@ class PlayState extends FlxState
 	var hue:Float = 0;
 	var sprite:FlxSprite;
 	
-	override public function create()
+	override function create()
 	{
 		super.create();
 		
@@ -19,7 +19,7 @@ class PlayState extends FlxState
 		add(sprite);
 	}
 	
-	override public function update(elapsed:Float)
+	override function update(elapsed:Float)
 	{
 		hue += elapsed * 50;
 		if (hue > 360)

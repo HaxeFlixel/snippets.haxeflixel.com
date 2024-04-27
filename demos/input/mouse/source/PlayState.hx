@@ -11,7 +11,7 @@ class PlayState extends FlxState
 	var v:FlxSprite;
 	var center:FlxSprite;
 	
-	override public function create()
+	override function create()
 	{
 		super.create();
 		
@@ -28,7 +28,7 @@ class PlayState extends FlxState
 		add(center);
 	}
 	
-	override public function update(elapsed:Float)
+	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
 		

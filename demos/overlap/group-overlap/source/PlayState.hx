@@ -10,7 +10,7 @@ class PlayState extends FlxState
 	var circles:FlxTypedGroup<FlxSprite>;
 	var boxes:FlxTypedGroup<FlxSprite>;
 	
-	override public function create()
+	override function create()
 	{
 		super.create();
 		

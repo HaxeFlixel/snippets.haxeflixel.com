@@ -13,7 +13,7 @@ class PlayState extends FlxState
 	
 	var healthText:FlxText;
 	
-	override public function create()
+	override function create()
 	{
 		super.create();
 		
@@ -37,7 +37,7 @@ class PlayState extends FlxState
 		add(healthText);
 	}
 	
-	override public function update(elapsed:Float)
+	override function update(elapsed:Float)
 	{
 		if (sprite.health < -1)
 		{

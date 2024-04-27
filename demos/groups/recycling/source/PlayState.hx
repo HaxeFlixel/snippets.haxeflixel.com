@@ -9,14 +9,14 @@ class PlayState extends FlxState
 	var group:FlxTypedGroup<Sprite>;
 	var spawnTimer:Float = 0;
 	
-	override public function create()
+	override function create()
 	{
 		super.create();
 		
 		add(group = new FlxTypedGroup<Sprite>(20));
 	}
 	
-	override public function update(elapsed:Float)
+	override function update(elapsed:Float)
 	{
 		spawnTimer += elapsed * 5;
 		if (spawnTimer > 1)

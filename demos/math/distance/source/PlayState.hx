@@ -11,7 +11,7 @@ class PlayState extends FlxState
 	var box:FlxSprite;
 	var inRange:Bool;
 	
-	override public function create()
+	override function create()
 	{
 		super.create();
 		
@@ -27,7 +27,7 @@ class PlayState extends FlxState
 		add(sprite);
 	}
 	
-	override public function update(elapsed:Float)
+	override function update(elapsed:Float)
 	{
 		if ((sprite.velocity.x > 0 && sprite.x >= FlxG.width - sprite.width) || (sprite.velocity.x < 0 && sprite.x <= 0))
 		{

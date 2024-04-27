@@ -21,7 +21,7 @@ class PlayState extends FlxState
 	var styleNo:Int = 0;
 	var currentStyle:FlxCameraFollowStyle = FlxCameraFollowStyle.LOCKON;
 	
-	override public function create()
+	override function create()
 	{
 		super.create();
 		
@@ -58,8 +58,10 @@ class PlayState extends FlxState
 		FlxG.camera.follow(sprite, currentStyle);
 	}
 	
-	override public function update(elapsed:Float)
+	override function update(elapsed:Float)
 	{
+		super.update(elapsed);
+		
 		timer -= elapsed;
 		if (timer <= 0)
 		{
@@ -85,8 +87,6 @@ class PlayState extends FlxState
 			statusText.text = Std.string(currentStyle);
 			FlxG.camera.follow(sprite, currentStyle);
 		}
-		
-		super.update(elapsed);
 		
 		FlxG.collide(walls, sprite);
 	}

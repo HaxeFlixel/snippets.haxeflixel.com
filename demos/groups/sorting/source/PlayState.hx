@@ -12,7 +12,7 @@ class PlayState extends FlxState
 {
 	var sortGroup:FlxTypedGroup<FlxSprite>;
 	
-	override public function create()
+	override function create()
 	{
 		super.create();
 		
@@ -51,7 +51,7 @@ class PlayState extends FlxState
 			});
 	}
 	
-	override public function update(elapsed:Float):Void
+	override function update(elapsed:Float):Void
 	{
 		super.update(elapsed);
 		

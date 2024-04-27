@@ -9,7 +9,7 @@ class PlayState extends FlxState
 {
 	private var sprite:FlxSprite;
 	
-	override public function create()
+	override function create()
 	{
 		super.create();
 		
@@ -22,7 +22,7 @@ class PlayState extends FlxState
 		timer.start(5, bounce, 0);
 	}
 	
-	override public function update(elapsed:Float):Void
+	override function update(elapsed:Float):Void
 	{
 		super.update(elapsed);
 		

@@ -10,7 +10,7 @@ class PlayState extends FlxState
 	var timer:Float = 0;
 	var speed:Int = 1;
 	
-	override public function create()
+	override function create()
 	{
 		super.create();
 		
@@ -21,7 +21,7 @@ class PlayState extends FlxState
 		sprite.angularVelocity = 30;
 	}
 	
-	override public function update(elapsed:Float)
+	override function update(elapsed:Float)
 	{
 		timer += elapsed;
 		if (timer >= 2)

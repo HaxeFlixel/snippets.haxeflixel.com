@@ -10,7 +10,7 @@ class PlayState extends FlxState
 {
 	private var signal:FlxSignal;
 	
-	override public function create()
+	override function create()
 	{
 		signal = new FlxSignal();
 		
@@ -51,7 +51,7 @@ class SignalSprite extends FlxSprite
 		velocity.y = -200;
 	}
 	
-	override public function update(elapsed:Float):Void
+	override function update(elapsed:Float):Void
 	{
 		super.update(elapsed);
 		

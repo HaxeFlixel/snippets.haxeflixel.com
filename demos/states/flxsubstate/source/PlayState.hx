@@ -14,7 +14,7 @@ class PlayState extends FlxState
 {
 	private var sprite:FlxSprite;
 	
-	override public function create()
+	override function create()
 	{
 		super.create();
 		
@@ -42,7 +42,7 @@ class PlayState extends FlxState
 		openSubState(new OtherState());
 	}
 	
-	override public function update(elapsed:Float):Void
+	override function update(elapsed:Float):Void
 	{
 		super.update(elapsed);
 		
@@ -64,7 +64,7 @@ class OtherState extends FlxSubState
 		super(0x33000000);
 	}
 	
-	override public function create()
+	override function create()
 	{
 		super.create();
 		

@@ -5,7 +5,12 @@ import flixel.FlxState;
 
 class PlayState extends FlxState
 {
-	override public function update(elapsed:Float)
+	override function create()
+	{
+		super.create();
+	}
+	
+	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
 	}

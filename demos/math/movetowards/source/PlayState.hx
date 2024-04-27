@@ -12,7 +12,7 @@ class PlayState extends FlxState
 	private var mover:FlxSprite;
 	private var target:FlxSprite;
 	
-	override public function create()
+	override function create()
 	{
 		super.create();
 		
@@ -29,7 +29,7 @@ class PlayState extends FlxState
 		mover.offset.y = mover.height / 2;
 	}
 	
-	override public function update(elapsed:Float):Void
+	override function update(elapsed:Float):Void
 	{
 		if (FlxMath.inBounds(FlxG.mouse.x, 0, FlxG.width) && FlxMath.inBounds(FlxG.mouse.y, 0, FlxG.height))
 		{

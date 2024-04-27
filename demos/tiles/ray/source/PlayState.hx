@@ -24,7 +24,7 @@ class PlayState extends FlxState
 	
 	var tween:FlxTween;
 	
-	override public function create()
+	override function create()
 	{
 		FlxG.mouse.useSystemCursor = true;
 		
@@ -57,7 +57,7 @@ class PlayState extends FlxState
 		super.create();
 	}
 	
-	override public function update(elapsed:Float):Void
+	override function update(elapsed:Float):Void
 	{
 		super.update(elapsed);
 		

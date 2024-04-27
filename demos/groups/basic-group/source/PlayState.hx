@@ -11,7 +11,7 @@ class PlayState extends FlxState
 	var groupA:FlxGroup;
 	var groupB:FlxGroup;
 	
-	override public function create()
+	override function create()
 	{
 		super.create();
 		

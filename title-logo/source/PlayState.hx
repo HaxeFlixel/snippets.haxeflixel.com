@@ -31,7 +31,7 @@ class PlayState extends FlxState
 	var baseline:Float = -1;
 	var fullRainbow:FlxTypedGroup<FlxEffectSprite>;
 	
-	override public function create()
+	override function create()
 	{
 		super.create();
 		
@@ -72,7 +72,7 @@ class PlayState extends FlxState
 		add(fullRainbow);
 	}
 	
-	override public function update(elapsed:Float)
+	override function update(elapsed:Float)
 	{
 		_timer += elapsed;
 		if (_timer > 4)

@@ -9,7 +9,7 @@ class PlayState extends FlxState
 	var sprite:FlxSprite;
 	var box:FlxSprite;
 	
-	override public function create()
+	override function create()
 	{
 		super.create();
 		
@@ -23,7 +23,7 @@ class PlayState extends FlxState
 		add(sprite);
 	}
 	
-	override public function update(elapsed:Float)
+	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
 		// if touching the right side of the screen

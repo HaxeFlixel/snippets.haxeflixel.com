@@ -15,7 +15,7 @@ class PlayState extends FlxState
 	private var angle:Float = 30;
 	private var sprite:FlxSprite;
 	
-	override public function create()
+	override function create()
 	{
 		sprite = new FlxSprite("assets/sprite.png");
 		sprite.screenCenter();
@@ -52,7 +52,7 @@ class PlayState extends FlxState
 		statusText.text = "angle: " + Std.string(FlxMath.roundDecimal(angle, 2));
 	}
 	
-	override public function update(elapsed:Float):Void
+	override function update(elapsed:Float):Void
 	{
 		super.update(elapsed);
 		

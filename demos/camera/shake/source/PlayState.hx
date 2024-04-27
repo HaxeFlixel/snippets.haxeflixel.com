@@ -11,7 +11,7 @@ class PlayState extends FlxState
 	var styleNo:Int = -1;
 	var style:FlxAxes;
 	
-	override public function create()
+	override function create()
 	{
 		super.create();
 		
@@ -21,7 +21,7 @@ class PlayState extends FlxState
 		add(map);
 	}
 	
-	override public function update(elapsed:Float)
+	override function update(elapsed:Float)
 	{
 		timer -= elapsed;
 		if (timer <= 0)
