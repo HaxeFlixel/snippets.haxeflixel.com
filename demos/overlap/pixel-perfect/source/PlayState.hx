@@ -36,9 +36,9 @@ class PlayState extends FlxState
 	
 	override public function update(elapsed:Float)
 	{
+		super.update(elapsed);
+		
 		final overlaps = FlxCollision.pixelPerfectCheck(circle, box);
 		box.alpha = overlaps ? 0.5 : 1;
-		
-		super.update(elapsed);
 	}
 }
