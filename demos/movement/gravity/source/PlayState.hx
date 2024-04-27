@@ -7,25 +7,23 @@ import flixel.FlxState;
 class PlayState extends FlxState
 {
 	var sprite:FlxSprite;
-
-	override public function create()
+	
+	override function create()
 	{
-		bgColor = 0;
-
-super.create();
-
+		super.create();
+		
 		sprite = new FlxSprite("assets/sprite.png");
 		sprite.x = FlxG.width / 2 - sprite.width / 2;
 		sprite.acceleration.y = 600;
 		sprite.maxVelocity.y = 200;
-
+		
 		add(sprite);
 	}
-
-	override public function update(elapsed:Float)
+	
+	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
-
+		
 		if (sprite.velocity.y > 0 && sprite.y >= FlxG.height + 8)
 		{
 			sprite.y = FlxG.height + 8;

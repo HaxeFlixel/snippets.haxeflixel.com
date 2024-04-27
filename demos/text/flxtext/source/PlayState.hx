@@ -7,10 +7,8 @@ import flixel.util.FlxColor;
 
 class PlayState extends FlxState
 {
-	override public function create()
+	override function create()
 	{
-		bgColor = 0;
-		
 		super.create();
 		
 		var text = new FlxText();

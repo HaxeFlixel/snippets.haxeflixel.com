@@ -10,28 +10,26 @@ class PlayState extends FlxState
 	var status:FlxText;
 	var pad:FlxVirtualPad;
 	var lastInput:Int = -1;
-
-	override public function create()
+	
+	override function create()
 	{
-		bgColor = 0;
-
 		super.create();
-
+		
 		status = new FlxText(0, 12, FlxG.width, "", 12);
 		status.alignment = FlxTextAlign.CENTER;
 		status.color = 0xff000000;
 		status.setBorderStyle(FlxTextBorderStyle.SHADOW, 0xFF808080);
 		status.text = "Released";
 		add(status);
-
+		
 		pad = new FlxVirtualPad(FlxDPadMode.NONE, FlxActionMode.A);
 		add(pad);
 	}
-
-	override public function update(elapsed:Float)
+	
+	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
-
+		
 		if (pad.buttonA.justPressed || FlxG.keys.justPressed.X)
 		{
 			if (lastInput != 0)

@@ -11,9 +11,11 @@ import flixel.util.FlxColor;
 class PlayState extends FlxState
 {
 	var text:FlxText;
-
-	override public function create()
+	
+	override function create()
 	{
+		super.create();
+		
 		text = new FlxText();
 		text.text = "0";
 		text.color = FlxColor.CYAN;
@@ -21,14 +23,10 @@ class PlayState extends FlxState
 		text.setBorderStyle(FlxTextBorderStyle.SHADOW, FlxColor.BLUE, 4);
 		text.screenCenter();
 		add(text);
-
-		bgColor = 0;
-
-		super.create();
-
+		
 		FlxTween.num(0, 100, 10, {type: FlxTweenType.PINGPONG, ease: FlxEase.quintIn}, updateValue);
 	}
-
+	
 	private function updateValue(value:Float):Void
 	{
 		text.text = Std.string(Std.int(value));

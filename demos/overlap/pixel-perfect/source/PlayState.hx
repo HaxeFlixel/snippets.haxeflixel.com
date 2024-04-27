@@ -13,10 +13,8 @@ class PlayState extends FlxState
 	var box:FlxSprite;
 	var overlaps:Bool;
 	
-	override public function create()
+	override function create()
 	{
-		bgColor = 0;
-		
 		super.create();
 		
 		box = new FlxSprite("assets/bigbox.png");
@@ -34,11 +32,11 @@ class PlayState extends FlxState
 		add(circle);
 	}
 	
-	override public function update(elapsed:Float)
+	override function update(elapsed:Float)
 	{
+		super.update(elapsed);
+		
 		final overlaps = FlxCollision.pixelPerfectCheck(circle, box);
 		box.alpha = overlaps ? 0.5 : 1;
-		
-		super.update(elapsed);
 	}
 }

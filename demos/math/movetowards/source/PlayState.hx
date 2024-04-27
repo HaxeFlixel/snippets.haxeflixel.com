@@ -11,30 +11,27 @@ class PlayState extends FlxState
 {
 	private var mover:FlxSprite;
 	private var target:FlxSprite;
-
-	override public function create()
+	
+	override function create()
 	{
-		bgColor = 0;
-
+		super.create();
+		
 		add(target = new FlxSprite("assets/bigbox.png"));
 		target.x = FlxG.width - target.width - 10;
 		target.y = FlxG.height - target.height - 10;
 		target.offset.x = target.width / 2;
 		target.offset.y = target.height / 2;
-
+		
 		add(mover = new FlxSprite("assets/sprite.png"));
 		mover.x = 10;
 		mover.y = 10;
 		mover.offset.x = mover.width / 2;
 		mover.offset.y = mover.height / 2;
-
-		super.create();
 	}
-
-	override public function update(elapsed:Float):Void
+	
+	override function update(elapsed:Float):Void
 	{
-		if (FlxMath.inBounds(FlxG.mouse.x, 0, FlxG.width)
-			&& FlxMath.inBounds(FlxG.mouse.y, 0, FlxG.height))
+		if (FlxMath.inBounds(FlxG.mouse.x, 0, FlxG.width) && FlxMath.inBounds(FlxG.mouse.y, 0, FlxG.height))
 		{
 			if (FlxMath.isDistanceToMouseWithin(target, 10))
 			{
@@ -42,7 +39,7 @@ class PlayState extends FlxState
 			}
 			else
 				FlxVelocity.moveTowardsMouse(target, 100);
-
+				
 			if (FlxMath.isDistanceWithin(mover, target, 10))
 			{
 				mover.velocity.set();
@@ -52,7 +49,7 @@ class PlayState extends FlxState
 		}
 		else
 			target.velocity.set();
-
+			
 		super.update(elapsed);
 	}
 }

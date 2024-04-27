@@ -9,16 +9,11 @@ class PlayState extends FlxState
 	var timer:Float = 0;
 	var direction:Bool = false;
 	var color:FlxColor;
-
-	override public function create()
+	
+	override function update(elapsed:Float)
 	{
-		bgColor = 0;
-
-super.create();
-	}
-
-	override public function update(elapsed:Float)
-	{
+		super.update(elapsed);
+		
 		timer -= elapsed;
 		if (timer <= 0)
 		{
@@ -30,7 +25,5 @@ super.create();
 			FlxG.camera.fade(color, 1, direction, null, true);
 			direction = !direction;
 		}
-
-		super.update(elapsed);
 	}
 }

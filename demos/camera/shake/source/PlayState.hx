@@ -10,20 +10,18 @@ class PlayState extends FlxState
 	var timer:Float = 0;
 	var styleNo:Int = -1;
 	var style:FlxAxes;
-
-	override public function create()
+	
+	override function create()
 	{
-		bgColor = 0;
-
-super.create();
-
+		super.create();
+		
 		var map = new FlxTilemap();
 		map.loadMapFromCSV("assets/map.csv", "assets/tiles.png", 16, 16);
 		map.screenCenter();
 		add(map);
 	}
-
-	override public function update(elapsed:Float)
+	
+	override function update(elapsed:Float)
 	{
 		timer -= elapsed;
 		if (timer <= 0)
@@ -38,10 +36,10 @@ super.create();
 				case 1: FlxAxes.X;
 				case _: FlxAxes.Y;
 			}
-
+			
 			FlxG.camera.shake(0.05, 0.5, null, true, style);
 		}
-
+		
 		super.update(elapsed);
 	}
 }
