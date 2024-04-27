@@ -14,8 +14,6 @@ class PlayState extends FlxState
 
     override public function create()
     {
-        bgColor = 0;
-
         line = new FlxSprite();
         line.makeGraphic(FlxG.width, FlxG.height, 0, true);
         add(line);

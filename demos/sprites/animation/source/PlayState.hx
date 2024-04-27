@@ -8,10 +8,8 @@ class PlayState extends FlxState
 {
 	override public function create()
 	{
-		bgColor = 0;
-
-super.create();
-
+		super.create();
+		
 		var sprite = new FlxSprite();
 		sprite.loadGraphic("assets/anim-sprite.png", true, 24, 24);
 		sprite.screenCenter();

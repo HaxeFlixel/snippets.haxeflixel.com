@@ -30,16 +30,13 @@ class PlayState extends FlxState
 	var target:Int = -1;
 	var baseline:Float = -1;
 	var fullRainbow:FlxTypedGroup<FlxEffectSprite>;
-
+	
 	override public function create()
 	{
-		bgColor = 0;
-		bgColor = 0;
-
 		super.create();
-
+		
 		sprites.push(new FlxSprite(0, 0, AssetPaths.logo__png));
-
+		
 		var text:FlxText;
 		var spr:FlxSprite;
 		var pt:Point = new Point();
@@ -49,8 +46,7 @@ class PlayState extends FlxState
 			text.color = 0xff000000;
 			text.font = "Ubuntu Medium";
 			spr = new FlxSprite();
-			spr.makeGraphic(Math.ceil(text.width), Math.ceil(text.height), 0x0, true,
-				'letter' + letter);
+			spr.makeGraphic(Math.ceil(text.width), Math.ceil(text.height), 0x0, true, 'letter' + letter);
 			spr.pixels.copyPixels(text.pixels, text.pixels.rect, pt);
 			spr.dirty = true;
 			sprites.push(spr);
@@ -68,21 +64,21 @@ class PlayState extends FlxState
 				sprites[sNo].x = 8;
 			}
 			sprites[sNo].y = FlxG.height - sprites[sNo].height - 4;
-
+			
 			add(sprites[sNo]);
 		}
 		sprites[0].y -= 4;
 		fullRainbow = new FlxTypedGroup<FlxEffectSprite>();
 		add(fullRainbow);
 	}
-
+	
 	override public function update(elapsed:Float)
 	{
 		_timer += elapsed;
 		if (_timer > 4)
 		{
 			_timer = 0;
-
+			
 			if (doingEffect)
 			{
 				endEffect();
@@ -92,7 +88,7 @@ class PlayState extends FlxState
 				startEffect();
 			}
 		}
-
+		
 		if (baseline > -1)
 		{
 			if (sprites[target].y + sprites[target].height > baseline)
@@ -106,14 +102,14 @@ class PlayState extends FlxState
 				sprites[target].y = baseline - sprites[target].height;
 			}
 		}
-
+		
 		super.update(elapsed);
 	}
-
+	
 	function endEffect()
 	{
 		doingEffect = false;
-
+		
 		switch (whichEffect)
 		{
 			case 0:
@@ -129,7 +125,7 @@ class PlayState extends FlxState
 			default:
 		}
 	}
-
+	
 	function startEffect()
 	{
 		doingEffect = true;
@@ -150,7 +146,7 @@ class PlayState extends FlxState
 			default:
 		}
 	}
-
+	
 	function startFullRainbow()
 	{
 		var totals:Int = sprites.length;
@@ -173,7 +169,7 @@ class PlayState extends FlxState
 			//	s.alpha = 1 - Value;
 		});
 	}
-
+	
 	function endFullRainbow()
 	{
 		FlxTween.num(1, 0, 1, {
@@ -194,21 +190,21 @@ class PlayState extends FlxState
 			//	s.alpha = 1 - Value;
 		});
 	}
-
+	
 	function endJump()
 	{
 		sprites[target].velocity.y = 0;
 		sprites[target].acceleration.y = 0;
 		sprites[target].y = baseline - sprites[target].height;
 	}
-
+	
 	function startJump()
 	{
 		baseline = sprites[target].y + sprites[target].height;
 		sprites[target].acceleration.y = 1600;
 		sprites[target].velocity.y = -300;
 	}
-
+	
 	function startRainbow()
 	{
 		_colorEffect = new FlxRainbowEffect();
@@ -221,7 +217,7 @@ class PlayState extends FlxState
 			// sprites[target].alpha = 1 - Value;
 		});
 	}
-
+	
 	function endRainbow()
 	{
 		FlxTween.num(1, 0, 0.25, {
@@ -237,7 +233,7 @@ class PlayState extends FlxState
 			// sprites[target].alpha = 1 - Value;
 		});
 	}
-
+	
 	function startWave()
 	{
 		sprites[target].visible = false;
@@ -250,7 +246,7 @@ class PlayState extends FlxState
 			_waveEffect.strength = 4 * Math.floor(Value);
 		});
 	}
-
+	
 	function endWave()
 	{
 		FlxTween.num(5, 0, 1, {
@@ -267,7 +263,7 @@ class PlayState extends FlxState
 			_waveEffect.strength = 4 * Math.floor(Value);
 		});
 	}
-
+	
 	function startGlitch()
 	{
 		sprites[target].visible = false;
@@ -279,7 +275,7 @@ class PlayState extends FlxState
 			_glitchEffect.strength = Math.floor(Value);
 		});
 	}
-
+	
 	function endGlitch()
 	{
 		FlxTween.num(2, 0, 0.5, {
@@ -296,7 +292,7 @@ class PlayState extends FlxState
 			_glitchEffect.strength = Math.floor(Value);
 		});
 	}
-
+	
 	function createEffectSprite(target:FlxSprite, effects:Array<IFlxEffect>):FlxEffectSprite
 	{
 		var sprite = new FlxEffectSprite(target, effects);

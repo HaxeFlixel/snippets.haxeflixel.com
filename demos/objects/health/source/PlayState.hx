@@ -10,21 +10,19 @@ import flixel.util.FlxColor;
 class PlayState extends FlxState
 {
 	var sprite:FlxSprite;
-
+	
 	var healthText:FlxText;
-
+	
 	override public function create()
 	{
-		bgColor = 0;
-
-super.create();
-
+		super.create();
+		
 		sprite = new FlxSprite("assets/sprite.png");
 		sprite.screenCenter();
 		add(sprite);
-
+		
 		sprite.health = 5;
-
+		
 		healthText = new FlxText();
 		healthText.size = 16;
 		healthText.text = "Health: 5";
@@ -38,7 +36,7 @@ super.create();
 		healthText.y = 8;
 		add(healthText);
 	}
-
+	
 	override public function update(elapsed:Float)
 	{
 		if (sprite.health < -1)
@@ -48,12 +46,12 @@ super.create();
 		}
 		else
 			sprite.hurt(elapsed);
-
+			
 		if (sprite.health > 0)
 			healthText.text = "Health: " + Std.string(Math.ceil(sprite.health));
 		else
 			healthText.text = "DEAD!";
-
+			
 		super.update(elapsed);
 	}
 }

@@ -11,32 +11,30 @@ class PlayState extends FlxState
 	override public function create()
 	{
 		super.create();
-
-		bgColor = 0;
-
+		
 		final gap = 4;
 		final margin = 8;
 		var xCoord:Float = margin;
 		var yCoord:Float = margin;
-
+		
 		var autoSized = createText(xCoord, yCoord, "autosized");
 		add(autoSized);
 		yCoord += autoSized.height + gap;
-
+		
 		var fixedSize = createText(xCoord, yCoord, "fixed size");
 		fixedSize.fieldWidth = 70;
 		fixedSize.fieldHeight = 24;
 		add(fixedSize);
 		yCoord += fixedSize.height + gap;
-
+		
 		var autoHeight = createText(xCoord, yCoord, 'fixed width\nauto height');
 		autoHeight.fieldWidth = 70;
 		autoHeight.fieldHeight = 0;
 		add(autoHeight);
 		yCoord += autoHeight.height + gap;
-
+		
 		final prefix = 'Description: ';
-
+		
 		// create a button that add or removes the prefix on click
 		var btn:FlxButton = null;
 		btn = new FlxButton(0, 0, "Add Text", function()
@@ -60,7 +58,7 @@ class PlayState extends FlxState
 		btn.y = FlxG.height - btn.height - margin;
 		add(btn);
 	}
-
+	
 	/**
 	 * Simple helper to create a stylish FlxText
 	 */
@@ -73,12 +71,12 @@ class PlayState extends FlxState
 		field.textField.backgroundColor = 0x0C365F;
 		return field;
 	}
-
+	
 	function addText(field:FlxText, prefix:String)
 	{
 		field.text = prefix + field.text;
 	}
-
+	
 	function removeText(field:FlxText, prefix:String)
 	{
 		field.text = field.text.split(prefix)[1];

@@ -12,8 +12,6 @@ class PlayState extends FlxState
 	
 	override public function create()
 	{
-		bgColor = 0;
-		
 		super.create();
 		
 		// make a 5x5 grid of boxes

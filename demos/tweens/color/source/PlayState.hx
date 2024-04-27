@@ -9,19 +9,16 @@ import flixel.util.FlxColor;
 class PlayState extends FlxState
 {
 	var sprite:FlxSprite;
-
+	
 	override public function create()
 	{
+		super.create();
+		
 		sprite = new FlxSprite();
 		sprite.makeGraphic(128, 128, FlxColor.WHITE);
 		sprite.screenCenter();
 		add(sprite);
-
-		bgColor = 0;
-
-		super.create();
-
-		FlxTween.color(sprite, 1, FlxColor.RED, FlxColor.CYAN,
-			{type: FlxTweenType.PINGPONG, ease: FlxEase.sineInOut});
+		
+		FlxTween.color(sprite, 1, FlxColor.RED, FlxColor.CYAN, {type: FlxTweenType.PINGPONG, ease: FlxEase.sineInOut});
 	}
 }

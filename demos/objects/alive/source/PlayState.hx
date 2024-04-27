@@ -11,19 +11,17 @@ class PlayState extends FlxState
 {
 	var sprite:FlxSprite;
 	var healthText:FlxText;
-
+	
 	var time:Float = 1;
-
+	
 	override public function create()
 	{
-		bgColor = 0;
-
 		super.create();
-
+		
 		sprite = new FlxSprite("assets/sprite.png");
 		sprite.screenCenter();
 		add(sprite);
-
+		
 		healthText = new FlxText();
 		healthText.size = 16;
 		healthText.text = "Alive";
@@ -37,7 +35,7 @@ class PlayState extends FlxState
 		healthText.y = 8;
 		add(healthText);
 	}
-
+	
 	override public function update(elapsed:Float)
 	{
 		time -= elapsed;

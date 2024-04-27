@@ -8,8 +8,6 @@ class PlayState extends FlxState
 {
 	override public function create()
 	{
-		bgColor = 0;
-		
 		super.create();
 		
 		var box = new FlxSprite("assets/bigbox.png");
