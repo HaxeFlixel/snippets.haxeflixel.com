@@ -24,6 +24,6 @@ function handleCollision(objA:FlxObject, objB:FlxObject)
 FlxG.overlap(groupA, groupB, handleCollision);
 // check if the player overlaps anything in groupB
 FlxG.overlap(player, groupB, handleCollision);
-// Chech if any objects in groupA overlap each other
+// Check if any objects in groupA overlap each other
 FlxG.overlap(groupA, groupA, handleCollision);
 ```
