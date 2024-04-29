@@ -29,12 +29,3 @@ text.wordWrap = false; // must be explicitly set to `false`
 // or
 text.fieldWidth = text.fieldHeight = -1;
 ```
-
-**Note**: "fixed height - auto width" has no sence, it behaves the same way
-as the default autosized text:
-
-```haxe
-// no sense, same as default autosize behavior
-text.fieldWidth = -1;
-text.fieldHeight = 50;
-```
