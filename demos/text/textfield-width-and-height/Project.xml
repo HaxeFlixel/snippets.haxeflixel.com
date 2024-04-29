@@ -7,6 +7,7 @@
 	<window width="320" height="240" fps="60" hardware="true" vsync="false" />
 	<window if="desktop" orientation="landscape" fullscreen="false" resizable="true" />
 	<window if="mobile" orientation="landscape" fullscreen="true" width="0" height="0" />
+	<window background="null" if="html5" />
 	<set name="BUILD_DIR" value="export" />
 	<source path="source" />
 	<source path="../../shared/" />
