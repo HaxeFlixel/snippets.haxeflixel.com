@@ -1,0 +1,50 @@
+{
+  "excludes": [
+    "\\assets",
+    "/assets",
+    "\\node_modules",
+    "/node_modules"
+  ],
+  "indentation": {
+    "character": "    ",
+    "conditionalPolicy": "fixedZeroIncrease"
+  },
+  "lineEnds": {
+    "rightCurly": "both",
+    "emptyCurly": "noBreak",
+    "leftCurly": "both",
+    "blockCurly": {
+      "leftCurly": "both",
+      "emptyCurly": "noBreak",
+      "rightCurly": "both"
+    },
+    "anonTypeCurly": {
+      "rightCurly": "both",
+      "leftCurly": "both",
+      "emptyCurly": "noBreak"
+    },
+    "objectLiteralCurly": {
+      "leftCurly": "after"
+    }
+  },
+  "sameLine": {
+    "ifBody": "next",
+    "ifElse": "next",
+    "doWhile": "next",
+    "tryBody": "next",
+    "tryCatch": "next",
+    "anonFunctionBody": "same",
+    "functionBody": "same"
+  },
+  "wrapping": {
+    "anonFunctionSignature": {
+      "defaultAdditionalIndent": 1
+      
+    },
+    "methodChain":{
+      "defaultWrap": "fillLine"
+    },
+    "maxLineLength": 255
+  
+  }
+}
