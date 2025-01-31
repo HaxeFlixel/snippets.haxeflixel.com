@@ -40,7 +40,7 @@ class PlayState extends FlxState
 		FlxG.collide(box, sprite);
 		
 		// jump if touching the box, and jump is pressed
-		if (sprite.isTouching(DOWN) && pad.buttonA.justPressed)
+		if (sprite.isTouching(DOWN) && pad.getButton(A).justPressed)
 		{
 			sprite.velocity.y = -300;
 		}

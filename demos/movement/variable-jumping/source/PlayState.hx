@@ -45,7 +45,7 @@ class PlayState extends FlxState
 		FlxG.collide(box, sprite);
 		
 		// Reset jumpTimer when touching the floor and jump is pressed
-		if (sprite.isTouching(DOWN) && pad.buttonA.justPressed)
+		if (sprite.isTouching(DOWN) && pad.getButton(A).justPressed)
 		{
 			jumpTimer = 0;
 		}

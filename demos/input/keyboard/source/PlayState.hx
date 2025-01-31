@@ -26,10 +26,10 @@ class PlayState extends FlxState
 	{
 		super.update(elapsed);
 		
-		var up:Bool = pad.buttonUp.pressed || FlxG.keys.anyPressed([UP, W]);
-		var down:Bool = pad.buttonDown.pressed || FlxG.keys.anyPressed([DOWN, S]);
-		var left:Bool = pad.buttonLeft.pressed || FlxG.keys.anyPressed([LEFT, A]);
-		var right:Bool = pad.buttonRight.pressed || FlxG.keys.anyPressed([RIGHT, D]);
+		var up:Bool = pad.getButton(UP).pressed || FlxG.keys.anyPressed([UP, W]);
+		var down:Bool = pad.getButton(DOWN).pressed || FlxG.keys.anyPressed([DOWN, S]);
+		var left:Bool = pad.getButton(LEFT).pressed || FlxG.keys.anyPressed([LEFT, A]);
+		var right:Bool = pad.getButton(RIGHT).pressed || FlxG.keys.anyPressed([RIGHT, D]);
 		
 		if (up && down)
 			up = down = false;

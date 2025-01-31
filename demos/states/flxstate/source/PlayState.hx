@@ -29,7 +29,7 @@ class PlayState extends FlxState
 	
 	private function switchState():Void
 	{
-		FlxG.switchState(new OtherState());
+		FlxG.switchState(OtherState.new);
 	}
 }
 
@@ -55,6 +55,6 @@ class OtherState extends FlxState
 	
 	private function switchState():Void
 	{
-		FlxG.switchState(new PlayState());
+		FlxG.switchState(PlayState.new);
 	}
 }

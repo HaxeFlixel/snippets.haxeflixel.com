@@ -54,8 +54,8 @@ class PlayState extends FlxState
 		if (sprite.y >= FlxG.height - (16 * 3))
 			resetSprite();
 			
-		var left:Bool = pad.buttonLeft.pressed || FlxG.keys.anyPressed([A, LEFT]);
-		var right:Bool = pad.buttonRight.pressed || FlxG.keys.anyPressed([D, RIGHT]);
+		var left:Bool = pad.getButton(LEFT).pressed || FlxG.keys.anyPressed([A, LEFT]);
+		var right:Bool = pad.getButton(RIGHT).pressed || FlxG.keys.anyPressed([D, RIGHT]);
 		
 		if (left && right)
 			left = right = false;

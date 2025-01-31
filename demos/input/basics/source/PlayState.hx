@@ -30,7 +30,7 @@ class PlayState extends FlxState
 	{
 		super.update(elapsed);
 		
-		if (pad.buttonA.justPressed || FlxG.keys.justPressed.X)
+		if (pad.getButton(A).justPressed || FlxG.keys.justPressed.X)
 		{
 			if (lastInput != 0)
 			{
@@ -38,7 +38,7 @@ class PlayState extends FlxState
 				lastInput = 0;
 			}
 		}
-		else if (pad.buttonA.pressed || FlxG.keys.pressed.X)
+		else if (pad.getButton(A).pressed || FlxG.keys.pressed.X)
 		{
 			if (lastInput != 1)
 			{
@@ -46,7 +46,7 @@ class PlayState extends FlxState
 				lastInput = 1;
 			}
 		}
-		else if (pad.buttonA.justReleased || FlxG.keys.justReleased.X)
+		else if (pad.getButton(A).justReleased || FlxG.keys.justReleased.X)
 		{
 			if (lastInput != 2)
 			{
@@ -54,7 +54,7 @@ class PlayState extends FlxState
 				lastInput = 2;
 			}
 		}
-		else if (pad.buttonA.released || !FlxG.keys.pressed.X)
+		else if (pad.getButton(A).released || !FlxG.keys.pressed.X)
 		{
 			if (lastInput != -1)
 			{
