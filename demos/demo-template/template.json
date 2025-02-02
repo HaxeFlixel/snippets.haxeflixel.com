@@ -1,0 +1,10 @@
+{
+    "replacements":
+    [
+        {
+            "replacement":"FlxProject",
+            "pattern":"${PROJECT_NAME}",
+            "cmdOption":"-n"
+        }
+    ]
+}

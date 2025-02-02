@@ -1,0 +1,60 @@
+package;
+
+import flixel.FlxG;
+import flixel.FlxState;
+import flixel.text.FlxText;
+import flixel.ui.FlxButton;
+import flixel.util.FlxColor;
+import flixel.util.FlxDestroyUtil;
+
+class PlayState extends FlxState
+{
+	override function create()
+	{
+		super.create();
+		
+		var text = new FlxText();
+		text.text = "I am the PlayState.";
+		text.color = FlxColor.CYAN;
+		text.size = 16;
+		text.setBorderStyle(FlxTextBorderStyle.SHADOW, FlxColor.BLUE, 4);
+		text.screenCenter();
+		add(text);
+		
+		var button = new FlxButton(0, 0, "Switch States", switchState);
+		button.screenCenter();
+		button.y = text.y + text.height + 16;
+		add(button);
+	}
+	
+	private function switchState():Void
+	{
+		FlxG.switchState(OtherState.new);
+	}
+}
+
+class OtherState extends FlxState
+{
+	override function create()
+	{
+		super.create();
+		
+		var text = new FlxText();
+		text.text = "I am the OtherState.";
+		text.color = FlxColor.PINK;
+		text.size = 16;
+		text.setBorderStyle(FlxTextBorderStyle.SHADOW, FlxColor.RED, 4);
+		text.screenCenter();
+		add(text);
+		
+		var button = new FlxButton(0, 0, "Switch States", switchState);
+		button.screenCenter();
+		button.y = text.y + text.height + 16;
+		add(button);
+	}
+	
+	private function switchState():Void
+	{
+		FlxG.switchState(PlayState.new);
+	}
+}
