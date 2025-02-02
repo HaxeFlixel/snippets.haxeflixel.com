@@ -16,13 +16,13 @@ super.update(elapsed);
 FlxG.collide(box, sprite);
 
 // Reset jumpTimer when touching the floor and jump is pressed
-if (sprite.isTouching(DOWN) && pad.buttonA.justPressed)
+if (sprite.isTouching(DOWN) && pad.getButton(A).justPressed)
 {
 	jumpTimer = 0;
 }
 
 // hold button to jump higher (up to 0.25s)
-if (pad.buttonA.pressed)
+if (pad.getButton(A).pressed)
 {
 	jumpTimer += elapsed;
 	
