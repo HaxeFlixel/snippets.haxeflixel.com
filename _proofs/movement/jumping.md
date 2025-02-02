@@ -17,6 +17,6 @@ super.update(elapsed);
 FlxG.collide(box, sprite);
 
 // jump if touching the box, and jump is pressed
-if (sprite.isTouching(DOWN) && pad.buttonA.pressed)
+if (sprite.isTouching(DOWN) && pad.getButton(A).pressed)
 	sprite.velocity.y = -300;
 ```
