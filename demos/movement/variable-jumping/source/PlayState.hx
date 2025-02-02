@@ -51,7 +51,7 @@ class PlayState extends FlxState
 		}
 		
 		// hold button to jump higher (up to 0.25s)
-		if (pad.getbutton(A).pressed)
+		if (pad.getButton(A).pressed)
 		{
 			jumpTimer += elapsed;
 			
