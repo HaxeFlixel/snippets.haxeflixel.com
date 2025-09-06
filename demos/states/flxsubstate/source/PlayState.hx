@@ -46,11 +46,11 @@ class PlayState extends FlxState
 	{
 		super.update(elapsed);
 		
-		if (sprite.x < 0 || sprite.x > FlxG.width)
+		if (sprite.x < 0 || sprite.x > FlxG.width - sprite.width)
 		{
 			sprite.velocity.x *= -1;
 		}
-		if (sprite.y < 0 || sprite.y > FlxG.height)
+		if (sprite.y < 0 || sprite.y > FlxG.height - sprite.height)
 		{
 			sprite.velocity.y *= -1;
 		}
